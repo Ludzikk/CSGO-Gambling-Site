@@ -3,10 +3,13 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
-const openAudio = new Audio("./dist/audio/open.mp3")
+const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsImg = [
 	["./dist/img/anubis/eyeofhorus.png"],
-	["./dist/img/anubis/apep'scurse.png", "./dist/img/anubis/watersofnephthys.png"],
+	[
+		"./dist/img/anubis/apep'scurse.png",
+		"./dist/img/anubis/watersofnephthys.png",
+	],
 	[
 		"./dist/img/anubis/ramese'sreach.png",
 		"./dist/img/anubis/scarabrush.png",
@@ -118,11 +121,10 @@ const setWinningItem = () => {
 		winningItem.style.background = grey;
 	}
 
-	console.log(chances);
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsImg[chances].length
 	);
-	console.log(randomItemFromColor);
+
 	winningItem.setAttribute("class", "case-item");
 	winningItemImg.setAttribute("class", "case-item-img");
 	winningItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
@@ -269,7 +271,6 @@ openBtn.addEventListener("click", () => {
 		openAudio.play();
 	}
 });
-console.log(openAudio);
 
 winningButton.addEventListener("click", () => {
 	winningItemBox.classList.add("hidden");
