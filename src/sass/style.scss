@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body,
+button,
+input {
+	font-family: "Wix Madefor Display", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.6rem;
+	min-height: 100vh;
+	background-color: #333;
+	overflow: hidden;
+}
+
+.open-anim {
+	animation: open 5s forwards;
+}
+
+.casebox {
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 5em;
+}
+
+.line {
+	position: absolute;
+	left: 50%;
+	width: 5px;
+	height: 75%;
+	background-color: yellow;
+	z-index: 100;
+}
+
+.case {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	left: 50%;
+
+	&-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 250px;
+		height: 250px;
+
+		&-img {
+			width: 90%;
+		}
+
+		&-name {
+			font-weight: bold;
+			font-size: 2rem;
+			color: white;
+		}
+	}
+}
+
+.winning-item {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: black;
+	z-index: 100;
+}
+
+.open-btn {
+	padding: 0.5em 2em;
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 2px solid black;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: orange;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+@keyframes open {
+	from {
+		left: 50%;
+	}
+
+	to {
+		left: -2750px;
+	}
+}
