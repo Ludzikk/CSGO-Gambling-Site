@@ -257,7 +257,7 @@ const addItemsBefore = () => {
 
 		setTimeout(() => {
 			normalItemDiv.remove();
-		}, 5500);
+		}, 6000);
 	}
 };
 
@@ -271,6 +271,7 @@ openBtn.addEventListener("click", () => {
 		openAudio.play();
 	}
 });
+
 
 winningButton.addEventListener("click", () => {
 	winningItemBox.classList.add("hidden");

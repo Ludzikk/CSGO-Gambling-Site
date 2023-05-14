@@ -142,6 +142,25 @@ body {
 	display: none;
 }
 
+.casesbox {
+	&-case {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: .3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&-name {
+			font-size: 3rem;
+			color: white;
+		}
+	}
+}
+
 @keyframes open {
 	from {
 		left: 50%;
