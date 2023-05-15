@@ -82,7 +82,7 @@ const startOpeningAnimation = () => {
 	setTimeout(() => {
 		opened = false;
 		resetOpening();
-	}, 6000);
+	}, 6500);
 };
 
 const setWinningItem = () => {
@@ -198,7 +198,7 @@ const addItemsAfter = () => {
 
 		setTimeout(() => {
 			normalItemDiv.remove();
-		}, 5500);
+		}, 6500);
 	}
 };
 
@@ -257,7 +257,7 @@ const addItemsBefore = () => {
 
 		setTimeout(() => {
 			normalItemDiv.remove();
-		}, 6000);
+		}, 6500);
 	}
 };
 
