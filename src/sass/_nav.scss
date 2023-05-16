@@ -1,0 +1,47 @@
+.nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 1em;
+
+	&__link {
+		text-decoration: none;
+		color: white;
+		font-size: 3rem;
+
+		&--home {
+			display: flex;
+			align-items: center;
+		}
+
+		&--hometext {
+			position: relative;
+			display: none;
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				width: 0%;
+				height: 2px;
+				background-color: orange;
+				transition: .3s;
+
+			}
+
+			&:hover::before {
+				height: 2px;
+				width: 100%;
+				background-color: orange;
+			}
+		}
+
+		&-logo {
+			width: 100px;
+		}
+	}
+}

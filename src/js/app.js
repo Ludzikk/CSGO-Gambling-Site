@@ -3,6 +3,10 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
+const dropsList = document.querySelector(".drops__list");
+const dropsBox = document.querySelector(".drops");
+const openDropsBtn = document.querySelector(".drops-btn");
+const closeDropsBtn = document.querySelector(".drops__close");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsImg = [
 	["./dist/img/anubis/eyeofhorus.png"],
@@ -74,9 +78,7 @@ let opened = false;
 
 const startOpeningAnimation = () => {
 	caseBox.classList.add("open-anim");
-	addItemsBefore();
-	setWinningItem();
-	addItemsAfter();
+	addItems();
 	opened = true;
 
 	setTimeout(() => {
@@ -91,6 +93,9 @@ const setWinningItem = () => {
 	const winningItem = document.createElement("li");
 	const winningItemImg = document.createElement("img");
 	const winningItemText = document.createElement("p");
+	const dropsItem = document.createElement("li");
+	const dropsItemImg = document.createElement("img");
+	const dropsItemName = document.createElement("p");
 	let chances = winningItemNumber;
 
 	if (chances <= 1) {
@@ -125,6 +130,17 @@ const setWinningItem = () => {
 		Math.random() * itemsImg[chances].length
 	);
 
+	dropsItem.setAttribute("class", "drops__list-item");
+	dropsItemImg.setAttribute("class", "drops__list-item-img");
+	dropsItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
+	dropsItemImg.setAttribute("alt", itemsName[chances][randomItemFromColor]);
+	dropsItemName.setAttribute("class", "drops__list-item-name");
+	dropsItemName.textContent = itemsName[chances][randomItemFromColor];
+	dropsItem.append(dropsItemImg, dropsItemName);
+	console.log(dropsList);
+	console.log(dropsItem);
+	dropsList.append(dropsItem);
+
 	winningItem.setAttribute("class", "case-item");
 	winningItemImg.setAttribute("class", "case-item-img");
 	winningItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
@@ -143,8 +159,8 @@ const setWinningItem = () => {
 	}, 5500);
 };
 
-const addItemsAfter = () => {
-	for (let i = 0; i <= 4; i++) {
+const addItems = () => {
+	for (let i = 0; i <= 10; i++) {
 		const normalItemNumber = Math.floor(Math.random() * 100);
 		const normalItemDiv = document.createElement("div");
 		const normalItem = document.createElement("li");
@@ -200,10 +216,10 @@ const addItemsAfter = () => {
 			normalItemDiv.remove();
 		}, 6500);
 	}
-};
 
-const addItemsBefore = () => {
-	for (let i = 0; i <= 10; i++) {
+	setWinningItem();
+
+	for (let i = 0; i <= 4; i++) {
 		const normalItemNumber = Math.floor(Math.random() * 100);
 		const normalItemDiv = document.createElement("div");
 		const normalItem = document.createElement("li");
@@ -272,7 +288,12 @@ openBtn.addEventListener("click", () => {
 	}
 });
 
-
 winningButton.addEventListener("click", () => {
 	winningItemBox.classList.add("hidden");
 });
+
+openDropsBtn.addEventListener("click", () =>
+	dropsBox.classList.remove("hidden")
+);
+
+closeDropsBtn.addEventListener("click", () => dropsBox.classList.add("hidden"));
