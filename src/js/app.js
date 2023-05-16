@@ -8,7 +8,15 @@ const dropsBox = document.querySelector(".drops");
 const openDropsBtn = document.querySelector(".drops-btn");
 const closeDropsBtn = document.querySelector(".drops__close");
 const openAudio = new Audio("./dist/audio/open.mp3");
-const itemsImg = [
+const itemsAnubisPrice = [
+	[2031],
+	[232, 156],
+	[21, 12, 9],
+	[9, 4, 2, 1],
+	[0.9, 0.8, 0.6, 0.7],
+	[0.12, 0.15, 0.2, 0.14, 0.11],
+];
+const itemsAnubisImg = [
 	["./dist/img/anubis/eyeofhorus.png"],
 	[
 		"./dist/img/anubis/apep'scurse.png",
@@ -39,7 +47,7 @@ const itemsImg = [
 		"./dist/img/anubis/inlay.png",
 	],
 ];
-const itemsName = [
+const itemsAnubisName = [
 	["M4A4 | Eye of Horus"],
 	["P250 | Apep's Curse", "FAMAS | Waters of Nephthys"],
 	["Glock-18 | Ramese's Reach", "P90 | ScaraB Rush", "Nova | Sobek's Bite"],
@@ -127,26 +135,36 @@ const setWinningItem = () => {
 	}
 
 	const randomItemFromColor = Math.floor(
-		Math.random() * itemsImg[chances].length
+		Math.random() * itemsAnubisImg[chances].length
 	);
-
+	console.log(`Price is: ${itemsAnubisPrice[chances][randomItemFromColor]}$`);
 	dropsItem.setAttribute("class", "drops__list-item");
 	dropsItemImg.setAttribute("class", "drops__list-item-img");
-	dropsItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
-	dropsItemImg.setAttribute("alt", itemsName[chances][randomItemFromColor]);
+	dropsItemImg.setAttribute(
+		"src",
+		itemsAnubisImg[chances][randomItemFromColor]
+	);
+	dropsItemImg.setAttribute(
+		"alt",
+		itemsAnubisName[chances][randomItemFromColor]
+	);
 	dropsItemName.setAttribute("class", "drops__list-item-name");
-	dropsItemName.textContent = itemsName[chances][randomItemFromColor];
+	dropsItemName.textContent = itemsAnubisName[chances][randomItemFromColor];
 	dropsItem.append(dropsItemImg, dropsItemName);
-	console.log(dropsList);
-	console.log(dropsItem);
 	dropsList.append(dropsItem);
 
 	winningItem.setAttribute("class", "case-item");
 	winningItemImg.setAttribute("class", "case-item-img");
-	winningItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
-	winningItemImg.setAttribute("alt", itemsName[chances][randomItemFromColor]);
+	winningItemImg.setAttribute(
+		"src",
+		itemsAnubisImg[chances][randomItemFromColor]
+	);
+	winningItemImg.setAttribute(
+		"alt",
+		itemsAnubisName[chances][randomItemFromColor]
+	);
 	winningItemText.setAttribute("class", "case-item-name");
-	winningItemText.textContent = itemsName[chances][randomItemFromColor];
+	winningItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
 	winningItem.append(winningItemImg, winningItemText);
 	winningItemDiv.append(winningItem);
@@ -155,7 +173,10 @@ const setWinningItem = () => {
 	setTimeout(() => {
 		winningItemDiv.remove();
 		winningItemBox.classList.remove("hidden");
-		winningImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
+		winningImg.setAttribute(
+			"src",
+			itemsAnubisImg[chances][randomItemFromColor]
+		);
 	}, 5500);
 };
 
@@ -184,7 +205,7 @@ const addItems = () => {
 		}
 
 		const randomItemFromColor = Math.floor(
-			Math.random() * itemsImg[chances].length
+			Math.random() * itemsAnubisImg[chances].length
 		);
 
 		if (normalItemNumber <= 1) {
@@ -203,10 +224,16 @@ const addItems = () => {
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
-		normalItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
-		normalItemImg.setAttribute("alt", itemsName[chances][randomItemFromColor]);
+		normalItemImg.setAttribute(
+			"src",
+			itemsAnubisImg[chances][randomItemFromColor]
+		);
+		normalItemImg.setAttribute(
+			"alt",
+			itemsAnubisName[chances][randomItemFromColor]
+		);
 		normalItemText.setAttribute("class", "case-item-name");
-		normalItemText.textContent = itemsName[chances][randomItemFromColor];
+		normalItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
 		normalItem.append(normalItemImg, normalItemText);
 		normalItemDiv.append(normalItem);
@@ -243,7 +270,7 @@ const addItems = () => {
 		}
 
 		const randomItemFromColor = Math.floor(
-			Math.random() * itemsImg[chances].length
+			Math.random() * itemsAnubisImg[chances].length
 		);
 
 		if (normalItemNumber <= 1) {
@@ -262,10 +289,16 @@ const addItems = () => {
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
-		normalItemImg.setAttribute("src", itemsImg[chances][randomItemFromColor]);
-		normalItemImg.setAttribute("alt", itemsName[chances][randomItemFromColor]);
+		normalItemImg.setAttribute(
+			"src",
+			itemsAnubisImg[chances][randomItemFromColor]
+		);
+		normalItemImg.setAttribute(
+			"alt",
+			itemsAnubisName[chances][randomItemFromColor]
+		);
 		normalItemText.setAttribute("class", "case-item-name");
-		normalItemText.textContent = itemsName[chances][randomItemFromColor];
+		normalItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
 		normalItem.append(normalItemImg, normalItemText);
 		normalItemDiv.append(normalItem);
