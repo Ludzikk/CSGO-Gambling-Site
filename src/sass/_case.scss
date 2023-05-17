@@ -102,18 +102,28 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	
 	&__list {
+		display: flex;
+		flex-wrap: wrap;
 		list-style-type: none;
 		z-index: 2000;
 
 		&-item {
+			padding: 0 0.5em;
+			transition: transform .3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
 			&-img {
-				width: 250px;
+				width: 150px;
 			}
 
 			&-name {
-				font-size: 3rem;
+				font-size: 2rem;
 				text-align: center;
 				color: white;
 			}
@@ -121,7 +131,21 @@
 	}
 
 	&__close {
+		margin: 1em 0 0 0;
+		padding: 0.2em 0.4em;
+		font-size: 2rem;
+		font-weight: bold;
+		border: 1px solid black;
+		border-radius: 10px;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: all .3s;
 		z-index: 2000;
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: orange;
+	}
 	}
 
 	&__bg {
@@ -132,5 +156,21 @@
 		bottom: 0;
 		background-color: rgba(0,0,0,0.8);
 		z-index: 1000;
+	}
+}
+
+.drops-btn {
+	margin: 1em;
+	padding: 0.2em 0.4em;
+	font-size: 2rem;
+	font-weight: bold;
+	border: 1px solid black;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: all .3s;
+
+	&:hover {
+		transform: scale(1.2);
+		background-color: orange;
 	}
 }
