@@ -37,13 +37,25 @@
 		<button class="drops-btn">See Drop</button>
 		<div class="drops hidden">
 			<div class="drops__bg"></div>
-			<ul class="drops__list">
-			</ul>
+			<ul class="drops__list"></ul>
 			<button class="drops__close">close</button>
 		</div>
 		<div class="winning-item hidden">
 			<img src="./dist/img/anubis/apep'scurse.png" alt="" />
-				<button class="winning-item-button">close</button>
+			<button class="winning-item-button">close</button>
+			<button class="winning-item-button winning-item-button--upgrade">
+				upgrade
+			</button>
+		</div>
+		<div class="upgrader hidden">
+			<div class="bg"></div>
+			<div class="upgrader__text">
+				<p class="upgrader__text-item">Your balance:</p>
+				<p class="upgrader__text-chance">?%</p>
+				<p class="upgrader__text-amount">Chance to win:</p>
+			</div>
+			<button class="upgrader__start">upgrade</button>
+			<input class="amount" type="number" placeholder="Put amount">
 		</div>
 		<script src="./dist/js/app.min.js"></script>
 	</body>

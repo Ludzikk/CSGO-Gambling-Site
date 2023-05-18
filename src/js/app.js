@@ -82,7 +82,16 @@ const blue =
 	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(50,113,255,1) 100%)";
 const grey =
 	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(78,78,78,1) 100%)";
+const upgraderBox = document.querySelector(".upgrader");
+const upgraderInput = document.querySelector(".amount");
+const upgraderBtn = document.querySelector(".upgrader__start");
+const upgraderPlayerAmount = document.querySelector(".upgrader__text-item");
+const upgraderChance = document.querySelector(".upgrader__text-chance");
+const upgraderAmount = document.querySelector(".upgrader__text-amount");
+const upgraderShow = document.querySelector(".winning-item-button--upgrade");
 let opened = false;
+let currentWinningItemPrice;
+let chanceToUpgrade;
 
 const startOpeningAnimation = () => {
 	caseBox.classList.add("open-anim");
@@ -137,7 +146,7 @@ const setWinningItem = () => {
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsAnubisImg[chances].length
 	);
-	console.log(`Price is: ${itemsAnubisPrice[chances][randomItemFromColor]}$`);
+
 	dropsItem.setAttribute("class", "drops__list-item");
 	dropsItemImg.setAttribute("class", "drops__list-item-img");
 	dropsItemImg.setAttribute(
@@ -170,6 +179,8 @@ const setWinningItem = () => {
 	winningItemDiv.append(winningItem);
 	caseBox.append(winningItemDiv);
 
+	currentWinningItemPrice = itemsAnubisPrice[chances][randomItemFromColor];
+	console.log(currentWinningItemPrice);
 	setTimeout(() => {
 		winningItemDiv.remove();
 		winningItemBox.classList.remove("hidden");
@@ -314,6 +325,29 @@ const resetOpening = () => {
 	caseBox.classList.remove("open-anim");
 };
 
+const upgraderStart = () => {
+	const randomNum = Math.floor(Math.random() * 100);
+
+	if (chanceToUpgrade >= randomNum) {
+		console.log("won");
+	} else {
+		console.log("lost");
+	}
+};
+
+const upgraderUpdatePlayerAmount = () => {
+	upgraderPlayerAmount.textContent = `${currentWinningItemPrice}$`;
+};
+
+const upgraderUpdateChanceToWin = () => {
+	const winNumber = (currentWinningItemPrice / upgraderInput.value) * 100;
+
+	chanceToUpgrade = winNumber;
+
+	upgraderChance.textContent = `${winNumber.toFixed(2)}%`;
+	upgraderAmount.textContent = `${upgraderInput.value}$`;
+};
+
 openBtn.addEventListener("click", () => {
 	if (opened === false) {
 		startOpeningAnimation();
@@ -330,3 +364,9 @@ openDropsBtn.addEventListener("click", () =>
 );
 
 closeDropsBtn.addEventListener("click", () => dropsBox.classList.add("hidden"));
+upgraderShow.addEventListener("click", () => {
+	upgraderBox.classList.remove("hidden");
+	upgraderUpdatePlayerAmount();
+});
+upgraderBtn.addEventListener("click", upgraderStart);
+upgraderInput.addEventListener("keyup", upgraderUpdateChanceToWin);
