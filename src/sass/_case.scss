@@ -3,9 +3,20 @@
 	height: 250px;
 	width: 75vw;
 	margin: 5em auto;
-	border: 2px solid orange;
+	border: 2px solid rgb(0, 179, 0);
 	border-radius: 100px;
 	overflow: hidden;
+
+	&__caseimg {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		&-img {
+			width: 350px;
+		}
+	}
 
 	&-arrows {
 		display: flex;
@@ -23,9 +34,9 @@
 			align-items: center;
 			width: 50px;
 			height: 50px;
-			border: 2px solid orange;
+			border: 2px solid rgb(0, 179, 0);
 			border-radius: 50%;
-			color: orange;
+			color: rgb(0, 179, 0);
 			background-color: rgba(0, 0, 0, 0.6);
 		}
 	}
@@ -80,18 +91,32 @@
 // }
 
 .open-btn {
+	display: flex;
+	align-items: center;
 	padding: 0.5em 2em;
 	font-size: 2rem;
 	font-weight: bold;
 	text-transform: uppercase;
-	border: 2px solid black;
+	border: none;
 	border-radius: 15px;
+	background-color: #00a941;
+	color: white;
 	cursor: pointer;
-	transition: 0.3s;
+	transition: background-color 0.3s;
 
 	&:hover {
-		transform: scale(1.2);
-		background-color: orange;
+		background-color: #008232;
+	}
+
+	&-icon {
+		margin: 0 0.2em 0 0.5em;
+		width: 35px;
+		height: 35px;
+	}
+
+	&-box {
+		display: flex;
+		justify-content: center;
 	}
 }
 

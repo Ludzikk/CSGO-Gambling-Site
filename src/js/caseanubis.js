@@ -90,6 +90,8 @@ let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
 // let chanceToUpgrade;
 
+balanceAmount.textContent = localStorage.getItem("Balance");
+
 const addBalance = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
 	let value = amountValue + currentWinningItemPrice;
@@ -99,7 +101,7 @@ const addBalance = () => {
 
 const removeBalanceOnOpen = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
-	let value = amountValue - 1;
+	let value = amountValue - 5;
 
 	balanceAmount.textContent = value.toFixed(2);
 };
@@ -153,7 +155,7 @@ const setWinningItem = () => {
 	} else {
 		winningItem.style.background = grey;
 	}
-	winningItem.style.background = "red";
+	// winningItem.style.background = "red";
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsAnubisImg[chances].length
 	);
@@ -186,7 +188,7 @@ const setWinningItem = () => {
 	winningItemText.setAttribute("class", "case-item-name");
 	winningItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
-	console.log(itemsAnubisName[chances][randomItemFromColor]);
+	// console.log(itemsAnubisName[chances][randomItemFromColor]);
 
 	winningItem.append(winningItemImg, winningItemText);
 	winningItemDiv.append(winningItem);
@@ -198,6 +200,7 @@ const setWinningItem = () => {
 
 	setTimeout(() => {
 		addBalance();
+		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 	}, 5500);
 
 	setTimeout(() => {

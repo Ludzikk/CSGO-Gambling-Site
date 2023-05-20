@@ -2,6 +2,8 @@ const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
 const depositInput = document.querySelector("#amount");
 const depositButton = document.querySelector(".main-dep__middle-deposit");
 
+balanceAmount.textContent = localStorage.getItem("Balance")
+
 const addBalance = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
 	let inputValue = parseFloat(depositInput.value);
