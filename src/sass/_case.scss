@@ -120,6 +120,83 @@
 	}
 }
 
+.chances {
+	display: flex;
+	justify-content: center;
+	padding: 2em 0 2em 0;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		list-style: none;
+
+		&-item {
+			width: 20%;
+
+			&--red {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(135, 0, 0, 1) 100%
+				);
+			}
+
+			&--pink {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(255, 50, 240, 1) 100%
+				);
+			}
+
+			&--purple {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(125, 50, 255, 1) 100%
+				);
+			}
+
+			&--lightblue {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(160, 211, 255, 1) 100%
+				);
+			}
+
+			&--blue {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(50, 113, 255, 1) 100%
+				);
+			}
+
+			&--grey {
+				background: linear-gradient(
+					180deg,
+					rgba(0, 0, 0, 1) 50%,
+					rgba(78, 78, 78, 1) 100%
+				);
+			}
+
+			&-img {
+				width: 100%;
+			}
+
+			&-text {
+				font-size: 2rem;
+				text-align: center;
+				color: white;
+			}
+		}
+	}
+}
 // .drops {
 // 	position: absolute;
 // 	top: 0;
@@ -130,7 +207,7 @@
 // 	justify-content: center;
 // 	align-items: center;
 // 	flex-direction: column;
-	
+
 // 	&__list {
 // 		display: flex;
 // 		flex-wrap: wrap;

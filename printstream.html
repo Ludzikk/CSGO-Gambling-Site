@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>CSGOLuck | Cases</title>
+		<title>CSGOLuck | Printstream Case</title>
 		<link rel="icon" href="./dist/img/other/icon.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,41 +63,74 @@
 	</ul>
 </nav>
 
-		<div class="main-cases">
-			<ul class="main-cases__list">
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/anubis/eyeofhorus.png"
-							alt="M4A4 Eye of Horus"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/anubis/case.png"
-							alt="Anubis Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
-					</div>
-					<a class="main-cases__list-item-button" href="anubis.html">Open</a>
+		<div class="casebox">
+			<div class="casebox__caseimg">
+				<img
+					class="casebox__caseimg-img"
+					src="./dist/img/printstream/case.png"
+					alt="Anubis Case"
+				/>
+			</div>
+			<div class="casebox-arrows">
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--down">
+					<i class="casebox-arrow-down-icon fa-solid fa-arrow-down"></i>
+				</div>
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--up">
+					<i class="casebox-arrow-up-icon fa-solid fa-arrow-up"></i>
+				</div>
+			</div>
+			<ul class="case"></ul>
+		</div>
+		<div class="open-btn-box">
+			<button class="open-btn">
+				open
+				<img
+					class="open-btn-icon"
+					src="./dist/img/other/coin.png"
+					alt="Coin Icon"
+				/>
+				<p class="open-btn-amount">15.00</p>
+			</button>
+		</div>
+		<div class="chances">
+			<ul class="chances__list">
+				<li class="chances__list-item chances__list-item--red">
+					<img
+						src="./dist/img/printstream/m4a1-sprintstream.png"
+						alt="M4A1-S Printstream"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">5%</p>
 				</li>
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/printstream/m4a1-sprintstream.png"
-							alt="M4A1-S Printstream"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/printstream/case.png"
-							alt="Anubis Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
-					</div>
-					<a class="main-cases__list-item-button" href="printstream.html">Open</a>
+				<li class="chances__list-item
+				chances__list-item--pink">
+					<img
+						src="./dist/img/printstream/uspprintstream.png"
+						alt="USP-S Printstream"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">12.5%</p>
+				</li>
+				<li class="chances__list-item
+				chances__list-item--pink">
+					<img
+						src="./dist/img/printstream/deserteagleprintstream.png"
+						alt="Desert Eagle Printstream"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">12.5%</p>
+				</li>
+				<li class="chances__list-item
+				chances__list-item--grey">
+					<img
+						src="./dist/img/printstream/cz-75-autojungledashed.png"
+						alt="CZ-75 Auto Jungle Dashed"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">70%</p>
 				</li>
 			</ul>
 		</div>
-		<script src="./dist/js/cases.min.js"></script>
-		<script src="./dist/js/setbalance.min.js"></script>
+		<script src="./dist/js/caseprintstream.min.js"></script>
 	</body>
 </html>
