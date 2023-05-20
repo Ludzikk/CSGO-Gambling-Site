@@ -1,0 +1,75 @@
+.main-roulette {
+	max-width: 1200px;
+	width: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+
+	&__arrow {
+		position: absolute;
+		left: 50%;
+		top: 150px;
+		width: 3px;
+		height: 135px;
+		background-color: white;
+		z-index: 1000;
+	}
+
+	&__list {
+		margin: 4em 0;
+		list-style: none;
+
+		&-box {
+			display: flex;
+		}
+
+		&-item {
+			padding: 1em;
+			color: white;
+
+			&-img {
+				width: 100px;
+			}
+
+			&--red {
+				background-color: red;
+			}
+
+			&--black {
+				background-color: black;
+			}
+
+			&--green {
+				background-color: green;
+			}
+		}
+	}
+
+	&__lastdrops {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 200px;
+		height: 40px;
+		overflow: hidden;
+		background-color: #1d2126;
+
+		&-item {
+			margin: 0 0.2em;
+			height: 25px;
+			width: 25px;
+			border-radius: 50%;
+
+			&--red {
+				background-color: red;
+			}
+
+			&--black {
+				background-color: black;
+			}
+
+			&--green {
+				background-color: green;
+			}
+		}
+	}
+}

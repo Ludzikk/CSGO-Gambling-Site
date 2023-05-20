@@ -6,6 +6,10 @@
 	animation: open 5s forwards;
 }
 
+.spin {
+	transition: transform 5s cubic-bezier(0, 0, 0, 0.97);
+}
+
 .bg {
 	position: absolute;
 	top: 0;
