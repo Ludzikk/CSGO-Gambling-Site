@@ -1,7 +1,7 @@
 .main-cases {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
@@ -21,7 +21,15 @@
 			&-photo {
 				max-width: 100%;
 				max-height: 100%;
-				// object-fit: cover;
+
+				&--item {
+					transform: scale(0.8);
+					transition: transform 0.3s;
+
+					&:hover {
+						transform: scale(1);
+					}
+				}
 			}
 
 			&-button {

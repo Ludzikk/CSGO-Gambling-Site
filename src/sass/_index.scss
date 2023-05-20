@@ -1,0 +1,36 @@
+.main-index {
+    display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+
+		&-item {
+			padding: 1em;
+            margin: 0.5em;
+            background-color: #2c2f36;
+
+            &-link {
+                font-size: 2rem;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                color: white;
+
+                &-img{
+                    transition: transform .3s;
+
+                    &:hover {
+                        transform: scale(0.9);
+                    }
+                }
+            }
+		}
+	}
+}

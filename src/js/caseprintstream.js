@@ -18,17 +18,18 @@ const itemsAnubisName = [
 	["USP-S | Printstream", "Desert Eagle | Printstream"],
 	["CZ-75 | Jungle Dashed"],
 ];
-const red = "linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(135,0,0,1) 100%)";
+const red =
+	"radial-gradient(circle, rgba(135, 0, 0, .7) 0%, rgba(0, 0, 0, 1) 75%";
 const pink =
-	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(255,50,240,1) 100%)";
+	"radial-gradient(circle, rgba(255, 50, 240, .5) 0%, rgba(0, 0, 0, 1) 75%)";
 const purple =
-	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(125,50,255,1) 100%)";
+	"radial-gradient(circle, rgba(125, 50, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
 const lightBlue =
-	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(160,211,255,1) 100%)";
+	"radial-gradient(circle, rgba(160, 211, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
 const blue =
-	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(50,113,255,1) 100%)";
+	"radial-gradient(circle, rgba(50, 113, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
 const grey =
-	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(78,78,78,1) 100%)";
+	"radial-gradient(circle, rgba(78, 78, 78, .5) 0%, rgba(0, 0, 0, 1) 75%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -44,7 +45,7 @@ const addBalance = () => {
 
 const removeBalanceOnOpen = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
-	let value = amountValue - 15;
+	let value = amountValue - 20;
 
 	balanceAmount.textContent = value.toFixed(2);
 };
@@ -232,7 +233,7 @@ const resetOpening = () => {
 };
 
 openBtn.addEventListener("click", () => {
-	if (opened === false && parseFloat(balanceAmount.textContent) >= 1) {
+	if (opened === false && parseFloat(balanceAmount.textContent) >= 15) {
 		startOpeningAnimation();
 		openAudio.play();
 	}

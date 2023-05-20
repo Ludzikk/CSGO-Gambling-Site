@@ -1,0 +1,33 @@
+.footer {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 4em 0;
+	color: white;
+	background-color: #1d2126;
+
+	&__icons-list {
+		display: flex;
+		padding: 2em 0;
+		list-style-type: none;
+
+		&-item {
+			padding: 0 1em;
+			font-size: 3rem;
+
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.5);
+			}
+            
+			&-link {
+				color: white;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 2rem;
+	}
+}
