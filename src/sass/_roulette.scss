@@ -4,6 +4,49 @@
 	overflow: hidden;
 	margin: 0 auto;
 
+	&__countdown {
+		display: flex;
+		justify-content: center;
+		color: white;
+		font-size: 2rem;
+	}
+
+	&-under {
+		display: flex;
+		justify-content: space-between;
+
+	}
+
+	&__betbox {
+		display: flex;
+
+		&-bet {
+			padding: 0.4em;
+			margin: 0 0.2em;
+			height: 80px;
+			width: 80px;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&--green {
+				background-color: green;
+			}
+
+			&--red {
+				background-color: red;
+			}
+
+			&--black {
+				background-color: black;
+			}
+
+			&-img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+
 	&__arrow {
 		position: absolute;
 		left: 50%;

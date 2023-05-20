@@ -1184,10 +1184,28 @@
 					</li>
 				</div>
 			</ul>
-			<div class="main-roulette__lastdrops">
+			<div class="main-roulette__countdown">
+				<p class="main-roulette__countdown-timer"><span class="main-roulette__countdown-timer-seconds">10:</span><span class="main-roulette__countdown-timer-mili">00</span>s</p>
+			</div>
+			<div class="main-roulette-under">
+				<div class="main-roulette__lastdrops">
+				</div>
+				<div class="main-roulette__betbox">
+					<input type="number" id="bet" placeholder="0.00">
+					<div class="main-roulette__betbox-bet main-roulette__betbox-bet--red">
+						<img class="main-roulette__betbox-bet-img" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+					<div class="main-roulette__betbox-bet main-roulette__betbox-bet--green">
+						<img class="main-roulette__betbox-bet-img" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+					<div class="main-roulette__betbox-bet main-roulette__betbox-bet--black">
+						<img class="main-roulette__betbox-bet-img" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+				</div>
 			</div>
 		</main>
 		<!-- @include "footer.kit" -->
 		<script src="./dist/js/roulette.min.js"></script>
+		<script src="./dist/js/setbalance.min.js"></script>
 	</body>
 </html>
