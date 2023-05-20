@@ -3,10 +3,6 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
-const dropsList = document.querySelector(".drops__list");
-const dropsBox = document.querySelector(".drops");
-const openDropsBtn = document.querySelector(".drops-btn");
-const closeDropsBtn = document.querySelector(".drops__close");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [
 	[2031],
@@ -82,16 +78,31 @@ const blue =
 	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(50,113,255,1) 100%)";
 const grey =
 	"linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(78,78,78,1) 100%)";
-const upgraderBox = document.querySelector(".upgrader");
-const upgraderInput = document.querySelector(".amount");
-const upgraderBtn = document.querySelector(".upgrader__start");
-const upgraderPlayerAmount = document.querySelector(".upgrader__text-item");
-const upgraderChance = document.querySelector(".upgrader__text-chance");
-const upgraderAmount = document.querySelector(".upgrader__text-amount");
-const upgraderShow = document.querySelector(".winning-item-button--upgrade");
+// const upgraderBox = document.querySelector(".upgrader");
+// const upgraderInput = document.querySelector(".amount");
+// const upgraderBtn = document.querySelector(".upgrader__start");
+// const upgraderPlayerAmount = document.querySelector(".upgrader__text-item");
+// const upgraderChance = document.querySelector(".upgrader__text-chance");
+// const upgraderAmount = document.querySelector(".upgrader__text-amount");
+// const upgraderShow = document.querySelector(".winning-item-button--upgrade");
 let opened = false;
 let currentWinningItemPrice;
-let chanceToUpgrade;
+const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
+// let chanceToUpgrade;
+
+const addBalance = () => {
+	let amountValue = parseFloat(balanceAmount.textContent);
+	let value = amountValue + currentWinningItemPrice;
+
+	balanceAmount.textContent = value.toFixed(2);
+};
+
+const removeBalanceOnOpen = () => {
+	let amountValue = parseFloat(balanceAmount.textContent);
+	let value = amountValue - 1;
+
+	balanceAmount.textContent = value.toFixed(2);
+};
 
 const startOpeningAnimation = () => {
 	caseBox.classList.add("open-anim");
@@ -110,9 +121,9 @@ const setWinningItem = () => {
 	const winningItem = document.createElement("li");
 	const winningItemImg = document.createElement("img");
 	const winningItemText = document.createElement("p");
-	const dropsItem = document.createElement("li");
-	const dropsItemImg = document.createElement("img");
-	const dropsItemName = document.createElement("p");
+	// const dropsItem = document.createElement("li");
+	// const dropsItemImg = document.createElement("img");
+	// const dropsItemName = document.createElement("p");
 	let chances = winningItemNumber;
 
 	if (chances <= 1) {
@@ -142,25 +153,25 @@ const setWinningItem = () => {
 	} else {
 		winningItem.style.background = grey;
 	}
-
+	winningItem.style.background = "red";
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsAnubisImg[chances].length
 	);
 
-	dropsItem.setAttribute("class", "drops__list-item");
-	dropsItemImg.setAttribute("class", "drops__list-item-img");
-	dropsItemImg.setAttribute(
-		"src",
-		itemsAnubisImg[chances][randomItemFromColor]
-	);
-	dropsItemImg.setAttribute(
-		"alt",
-		itemsAnubisName[chances][randomItemFromColor]
-	);
-	dropsItemName.setAttribute("class", "drops__list-item-name");
-	dropsItemName.textContent = itemsAnubisName[chances][randomItemFromColor];
-	dropsItem.append(dropsItemImg, dropsItemName);
-	dropsList.append(dropsItem);
+	// dropsItem.setAttribute("class", "drops__list-item");
+	// dropsItemImg.setAttribute("class", "drops__list-item-img");
+	// dropsItemImg.setAttribute(
+	// 	"src",
+	// 	itemsAnubisImg[chances][randomItemFromColor]
+	// );
+	// dropsItemImg.setAttribute(
+	// 	"alt",
+	// 	itemsAnubisName[chances][randomItemFromColor]
+	// );
+	// dropsItemName.setAttribute("class", "drops__list-item-name");
+	// dropsItemName.textContent = itemsAnubisName[chances][randomItemFromColor];
+	// dropsItem.append(dropsItemImg, dropsItemName);
+	// dropsList.append(dropsItem);
 
 	winningItem.setAttribute("class", "case-item");
 	winningItemImg.setAttribute("class", "case-item-img");
@@ -175,20 +186,28 @@ const setWinningItem = () => {
 	winningItemText.setAttribute("class", "case-item-name");
 	winningItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
+	console.log(itemsAnubisName[chances][randomItemFromColor]);
+
 	winningItem.append(winningItemImg, winningItemText);
 	winningItemDiv.append(winningItem);
 	caseBox.append(winningItemDiv);
 
 	currentWinningItemPrice = itemsAnubisPrice[chances][randomItemFromColor];
-	console.log(currentWinningItemPrice);
+
+	removeBalanceOnOpen();
+
+	setTimeout(() => {
+		addBalance();
+	}, 5500);
+
 	setTimeout(() => {
 		winningItemDiv.remove();
-		winningItemBox.classList.remove("hidden");
+		// winningItemBox.classList.remove("hidden");
 		winningImg.setAttribute(
 			"src",
 			itemsAnubisImg[chances][randomItemFromColor]
 		);
-	}, 5500);
+	}, 6500);
 };
 
 const addItems = () => {
@@ -325,48 +344,48 @@ const resetOpening = () => {
 	caseBox.classList.remove("open-anim");
 };
 
-const upgraderStart = () => {
-	const randomNum = Math.floor(Math.random() * 100);
+// const upgraderStart = () => {
+// 	const randomNum = Math.floor(Math.random() * 100);
 
-	if (chanceToUpgrade >= randomNum) {
-		console.log("won");
-	} else {
-		console.log("lost");
-	}
-};
+// 	if (chanceToUpgrade >= randomNum) {
+// 		console.log("won");
+// 	} else {
+// 		console.log("lost");
+// 	}
+// };
 
-const upgraderUpdatePlayerAmount = () => {
-	upgraderPlayerAmount.textContent = `${currentWinningItemPrice}$`;
-};
+// const upgraderUpdatePlayerAmount = () => {
+// 	upgraderPlayerAmount.textContent = `${currentWinningItemPrice}$`;
+// };
 
-const upgraderUpdateChanceToWin = () => {
-	const winNumber = (currentWinningItemPrice / upgraderInput.value) * 100;
+// const upgraderUpdateChanceToWin = () => {
+// 	const winNumber = (currentWinningItemPrice / upgraderInput.value) * 100;
 
-	chanceToUpgrade = winNumber;
+// 	chanceToUpgrade = winNumber;
 
-	upgraderChance.textContent = `${winNumber.toFixed(2)}%`;
-	upgraderAmount.textContent = `${upgraderInput.value}$`;
-};
+// 	upgraderChance.textContent = `${winNumber.toFixed(2)}%`;
+// 	upgraderAmount.textContent = `${upgraderInput.value}$`;
+// };
 
 openBtn.addEventListener("click", () => {
-	if (opened === false) {
+	if (opened === false && parseFloat(balanceAmount.textContent) >= 1) {
 		startOpeningAnimation();
 		openAudio.play();
 	}
 });
 
-winningButton.addEventListener("click", () => {
-	winningItemBox.classList.add("hidden");
-});
+// winningButton.addEventListener("click", () => {
+// 	winningItemBox.classList.add("hidden");
+// });
 
-openDropsBtn.addEventListener("click", () =>
-	dropsBox.classList.remove("hidden")
-);
+// openDropsBtn.addEventListener("click", () =>
+// 	dropsBox.classList.remove("hidden")
+// );
 
-closeDropsBtn.addEventListener("click", () => dropsBox.classList.add("hidden"));
-upgraderShow.addEventListener("click", () => {
-	upgraderBox.classList.remove("hidden");
-	upgraderUpdatePlayerAmount();
-});
-upgraderBtn.addEventListener("click", upgraderStart);
-upgraderInput.addEventListener("keyup", upgraderUpdateChanceToWin);
+// closeDropsBtn.addEventListener("click", () => dropsBox.classList.add("hidden"));
+// upgraderShow.addEventListener("click", () => {
+// 	upgraderBox.classList.remove("hidden");
+// 	upgraderUpdatePlayerAmount();
+// });
+// upgraderBtn.addEventListener("click", upgraderStart);
+// upgraderInput.addEventListener("keyup", upgraderUpdateChanceToWin);

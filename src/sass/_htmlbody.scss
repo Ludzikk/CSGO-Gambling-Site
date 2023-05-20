@@ -17,14 +17,8 @@ input {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	font-size: 1.6rem;
 	min-height: 100vh;
 	overflow: hidden;
-	background-image: url("../img/other/bg.png");
-	background-position: center;
-	background-size: cover;
+	background-color: #31353d;
 }
