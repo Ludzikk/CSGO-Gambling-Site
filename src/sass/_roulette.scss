@@ -11,14 +11,108 @@
 		font-size: 2rem;
 	}
 
-	&-under {
+	&__betbuttons {
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-around;
 
+		&-box {
+			width: 300px;
+		}
+
+		&-button {
+			width: 100%;
+			padding: 0.5em 0;
+			font-size: 2rem;
+			font-weight: bold;
+			border: none;
+			color: white;
+			background-color: #00a941;
+			box-shadow: 0px 0px 10px #00a941;
+			cursor: pointer;
+			transition: background-color 0.3s, transform 0.3s;
+
+			
+			&:hover {
+				background-color: #008232;
+				transform: translateY(-2px);
+			}
+
+			&--red {
+				background-color: #de4c41;
+				box-shadow: 0px 0px 10px #de4c41;
+
+				&:hover {
+					background-color: #bf4138;
+					
+				}
+			}
+
+			&--black {
+				background-color: #40454f;
+				box-shadow: 0px 0px 10px #40454f;
+
+				&:hover {
+					background-color: #353942;
+				}
+			}
+		}
+
+		&-betsamount {
+			&-coinsvalue {
+				&-img {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+
+		&-top {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.6em 0;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+			background-color: #1d2126;
+
+			&-imgbox {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 0.5em;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+
+				&--red {
+					background-color: #de4c41;
+				}
+	
+				&--black {
+					background-color: #40454f;
+				}
+	
+				&--green {
+					background-color: #00a941;
+				}
+
+				&-img {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			&-text {
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: white;
+			}
+		}
 	}
 
 	&__betbox {
 		display: flex;
+		justify-content: space-around;
 
 		&-bet {
 			padding: 0.4em;
@@ -28,16 +122,16 @@
 			border-radius: 50%;
 			cursor: pointer;
 
-			&--green {
-				background-color: green;
-			}
-
 			&--red {
-				background-color: red;
+				background-color: #de4c41;
 			}
 
 			&--black {
-				background-color: black;
+				background-color: #40454f;
+			}
+
+			&--green {
+				background-color: #00a941;
 			}
 
 			&-img {
@@ -50,7 +144,7 @@
 	&__arrow {
 		position: absolute;
 		left: 50%;
-		top: 150px;
+		top: 220px;
 		width: 3px;
 		height: 135px;
 		background-color: white;
@@ -74,15 +168,15 @@
 			}
 
 			&--red {
-				background-color: red;
+				background-color: #de4c41;
 			}
 
 			&--black {
-				background-color: black;
+				background-color: #40454f;
 			}
 
 			&--green {
-				background-color: green;
+				background-color: #00a941;
 			}
 		}
 	}
@@ -91,27 +185,37 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		width: 200px;
+		margin-top: 2em;
+		width: 280px;
 		height: 40px;
+		border-radius: 10px;
 		overflow: hidden;
 		background-color: #1d2126;
 
 		&-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			margin: 0 0.2em;
 			height: 25px;
 			width: 25px;
 			border-radius: 50%;
 
+			&-img {
+				width: 20px;
+				height: 20px;
+			}
+
 			&--red {
-				background-color: red;
+				background-color: #de4c41;
 			}
 
 			&--black {
-				background-color: black;
+				background-color: #40454f;
 			}
 
 			&--green {
-				background-color: green;
+				background-color: #00a941;
 			}
 		}
 	}

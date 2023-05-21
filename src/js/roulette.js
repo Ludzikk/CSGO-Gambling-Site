@@ -11,9 +11,9 @@ const seconds = document.querySelector(
 );
 let secondTime = 10;
 const betInput = document.querySelector("#bet");
-const redButton = document.querySelector(".main-roulette__betbox-bet--red");
-const greenButton = document.querySelector(".main-roulette__betbox-bet--green");
-const blackButton = document.querySelector(".main-roulette__betbox-bet--black");
+const redButton = document.querySelector(".main-roulette__betbuttons-button--red");
+const greenButton = document.querySelector(".main-roulette__betbuttons-button--green");
+const blackButton = document.querySelector(".main-roulette__betbuttons-button--black");
 let playerBet = 0;
 let playerBetAmount;
 let spinning = false;
@@ -57,12 +57,20 @@ setInterval(() => {
 				winningColor = "red";
 
 				const lastDropItem = document.createElement("div");
+				const lastDropItemImg = document.createElement("img");
+				lastDropItemImg.setAttribute(
+					"class",
+					"main-roulette__lastdrops-item-img"
+				);
+				lastDropItemImg.setAttribute("alt", "Coin Icon");
+				lastDropItemImg.setAttribute("src", "./dist/img/other/coin.png");
+				lastDropItem.append(lastDropItemImg);
 				lastDropItem.setAttribute(
 					"class",
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--red"
 				);
 
-				if (lastDropsChildCount === 6) {
+				if (lastDropsChildCount === 9) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
@@ -86,12 +94,20 @@ setInterval(() => {
 				winningColor = "black";
 
 				const lastDropItem = document.createElement("div");
+				const lastDropItemImg = document.createElement("img");
+				lastDropItemImg.setAttribute(
+					"class",
+					"main-roulette__lastdrops-item-img"
+				);
+				lastDropItemImg.setAttribute("alt", "Coin Icon");
+				lastDropItemImg.setAttribute("src", "./dist/img/other/coin.png");
+				lastDropItem.append(lastDropItemImg);
 				lastDropItem.setAttribute(
 					"class",
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--black"
 				);
 
-				if (lastDropsChildCount === 6) {
+				if (lastDropsChildCount === 9) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
@@ -114,12 +130,20 @@ setInterval(() => {
 				winningColor = "green";
 
 				const lastDropItem = document.createElement("div");
+				const lastDropItemImg = document.createElement("img");
+				lastDropItemImg.setAttribute(
+					"class",
+					"main-roulette__lastdrops-item-img"
+				);
+				lastDropItemImg.setAttribute("alt", "Coin Icon");
+				lastDropItemImg.setAttribute("src", "./dist/img/other/coin.png");
+				lastDropItem.append(lastDropItemImg);
 				lastDropItem.setAttribute(
 					"class",
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--green"
 				);
 
-				if (lastDropsChildCount === 6) {
+				if (lastDropsChildCount === 9) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
