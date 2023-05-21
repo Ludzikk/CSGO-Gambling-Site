@@ -1,34 +1,79 @@
 .main-dep {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    &__top {
-        display: flex;
-        justify-content: space-around;
-        width: 75%;
-        padding-bottom: 5em;
-        color: white;
+	&__top {
+		display: flex;
+		justify-content: space-around;
+		width: 75%;
+		padding-bottom: 5em;
+		color: white;
 
-        &-text {
-            font-size: 2.4rem;
-        }
+		&-text {
+			font-size: 2.4rem;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
 
-        &-button {
-            border: none;
-            padding: 1em;
-            background: none;
+		&-button {
+			padding: 1em;
+			border: none;
+			border-radius: 5px;
+			background-color: #00a941;
+			cursor: pointer;
+			transition: background-color 0.3s, transform 0.3s;
 
-            &-icon {
-                color: white;
-                font-size: 2rem;
-            }
-        }
-    }
+			&:hover {
+				background-color: #008232;
+				transform: scale(1.1);
+			}
 
-    &__middle {
-     
-    }
+			&-icon {
+				color: white;
+				font-size: 2rem;
+			}
+		}
+	}
+
+	&__middle {
+		&-label {
+			font-size: 2.2rem;
+			color: white;
+		}
+
+		&-input {
+			margin: 0 0.5em;
+			padding: 0.2em 0.4em;
+			font-size: 2rem;
+			border: 2px solid #00a941;
+			border-radius: 10px;
+			outline: none;
+			color: white;
+			background-color: #1d2126;
+			transition: background-color 0.3s;
+
+			&:focus,
+			&:hover {
+				border: 2px solid #008232;
+			}
+		}
+
+		&-deposit {
+			padding: 0.2em 0.4em;
+			font-size: 2rem;
+			text-transform: uppercase;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			background-color: #00a941;
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: #008232;
+			}
+		}
+	}
 }

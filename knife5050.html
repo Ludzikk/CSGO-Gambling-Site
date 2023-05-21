@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>CSGOLuck | Cases</title>
+		<title>CSGOLuck | Printstream Case</title>
 		<link rel="icon" href="./dist/img/other/icon.png">
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,90 +66,64 @@
 	</ul>
 </nav>
 
-		<main class="main-cases">
-			<ul class="main-cases__list">
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/anubis/eyeofhorus.png"
-							alt="M4A4 Eye of Horus"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/anubis/case.png"
-							alt="Anubis Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
+		<div class="casebox">
+			<div class="casebox__caseimg">
+				<img
+					class="casebox__caseimg-img"
+					src="./dist/img/knife5050/case.png"
+					alt="Anubis Case"
+				/>
+			</div>
+			<div class="casebox-arrows">
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--down">
+					<i class="casebox-arrow-down-icon fa-solid fa-arrow-down"></i>
+				</div>
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--up">
+					<i class="casebox-arrow-up-icon fa-solid fa-arrow-up"></i>
+				</div>
+			</div>
+			<ul class="case"></ul>
+		</div>
+		<div class="open-btn-box">
+			<button class="open-btn">
+				open
+				<img
+					class="open-btn-icon"
+					src="./dist/img/other/coin.png"
+					alt="Coin Icon"
+				/>
+				<p class="open-btn-amount">800.00</p>
+			</button>
+		</div>
+		<div class="chances">
+			<ul class="chances__list">
+				<li class="chances__list-item chances__list-item--gold">
+					<img
+						src="./dist/img/knife5050/doppler.png"
+						alt="Karambit | Doppler"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">50%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">1521.0</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
 					</div>
-					<p class="main-cases__list-item-name">Anubis</p>
-					<p class="main-cases__list-item-price">
-						<img src="./dist/img/other/coin.png" alt="Coin Icon" class="main-cases__list-item-price-img">
-						5.00
-					</p>
-					<a class="main-cases__list-item-button" href="anubis.html">Open</a>
 				</li>
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/printstream/m4a1-sprintstream.png"
-							alt="M4A1-S Printstream"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/printstream/case.png"
-							alt="Anubis Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
+				<li class="chances__list-item
+				chances__list-item--grey">
+					<img
+						src="./dist/img/knife5050/navaja.png"
+						alt="Navaja | Safari Mesh"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">50%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">98.28</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
 					</div>
-					<p class="main-cases__list-item-name">Printstream</p>
-					<p class="main-cases__list-item-price">
-						<img src="./dist/img/other/coin.png" alt="Coin Icon" class="main-cases__list-item-price-img">
-						20.00
-					</p>
-					<a class="main-cases__list-item-button" href="printstream.html">Open</a>
-				</li>
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/awp/dragonlore.png"
-							alt="AWP Dragonlore"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/awp/case.png"
-							alt="AWP Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
-					</div>
-					<p class="main-cases__list-item-name">awp case</p>
-					<p class="main-cases__list-item-price">
-						<img src="./dist/img/other/coin.png" alt="Coin Icon" class="main-cases__list-item-price-img">
-						2000.00
-					</p>
-					<a class="main-cases__list-item-button" href="awpcase.html">Open</a>
-				</li>
-				<li class="main-cases__list-item">
-					<div class="images">
-						<img
-							src="./dist/img/knife5050/doppler.png"
-							alt="Karambit Doppler"
-							class="main-cases__list-item-photo main-cases__list-item-photo--item hidden"
-						/>
-						<img
-							src="./dist/img/knife5050/case.png"
-							alt="AWP Case"
-							class="main-cases__list-item-photo main-cases__list-item-photo--case"
-						/>
-					</div>
-					<p class="main-cases__list-item-name">knife 50/50</p>
-					<p class="main-cases__list-item-price">
-						<img src="./dist/img/other/coin.png" alt="Coin Icon" class="main-cases__list-item-price-img">
-						800
-					</p>
-					<a class="main-cases__list-item-button" href="knife5050.html">Open</a>
 				</li>
 			</ul>
-		</main>
+		</div>
 		<footer class="footer">
 	<ul class="footer__icons-list">
 		<li class="footer__icons-list-item">
@@ -180,8 +154,8 @@
 	</p>
 </footer>
 
-		<script src="./dist/js/cases.min.js"></script>
-		<script src="./dist/js/setbalance.min.js"></script>
+		<script src="./dist/js/knife5050.min.js"></script>
+		<script src="./dist/js/casechances.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
 	</body>
 </html>

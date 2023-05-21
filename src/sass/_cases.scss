@@ -18,6 +18,35 @@
 			margin: 0.5em;
 			background-color: #2c2f36;
 
+			&-name,
+			&-price {
+				font-weight: bold;
+				text-transform: uppercase;
+				color: white;
+			}
+
+			&-name {
+				padding: 0.35em 0;
+				text-align: center;
+			}
+
+			&-price {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0.5em auto;
+				padding: 0.5em;
+				border-radius: 50px;
+				color: #00a941;
+				background-color: rgba(0, 130, 50, .6);
+
+				&-img {
+					margin: 0 0.15em;
+					width: 20px;
+					height: 20px;
+				}
+			}
+
 			&-photo {
 				max-width: 100%;
 				max-height: 100%;

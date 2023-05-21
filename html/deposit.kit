@@ -7,19 +7,26 @@
 	</head>
 	<body>
 		<!-- @include "nav.kit" -->
-        <main class="main-dep">
-            <div class="main-dep__top">
-                <p class="main-dep__top-text">Deposit</p>
-                <button class="main-dep__top-button"><i class="fa-solid fa-x main-dep__top-button-icon"></i></button>
-            </div>
-            <div class="main-dep__middle">
-                <label for="amount" class="main-dep__middle-label">Amount:</label>
-                <input type="number" class="main-dep__middle-input" id="amount" placeholder="Put value...">
-                <button class="main-dep__middle-deposit">Deposit</button>
-            </div>
-        </main>
-        <!-- @include "footer.kit" -->
-        <script src="./dist/js/balance.min.js"></script>
-        <script src="./dist/js/footeryear.min.js"></script>
+		<main class="main-dep">
+			<div class="main-dep__top">
+				<p class="main-dep__top-text">Deposit</p>
+				<a class="main-dep__top-button" href="index.html">
+					<i class="fa-solid fa-x main-dep__top-button-icon"></i>
+				</a>
+			</div>
+			<div class="main-dep__middle">
+				<label for="amount" class="main-dep__middle-label">Amount:</label>
+				<input
+					type="number"
+					class="main-dep__middle-input"
+					id="amount"
+					placeholder="Put value..."
+				/>
+				<button class="main-dep__middle-deposit">Deposit</button>
+			</div>
+		</main>
+		<!-- @include "footer.kit" -->
+		<script src="./dist/js/balance.min.js"></script>
+		<script src="./dist/js/footeryear.min.js"></script>
 	</body>
 </html>

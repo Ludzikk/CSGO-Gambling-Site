@@ -151,7 +151,7 @@ const betAmountRed = () => {
 
 	if (
 		betInput.value !== 0 &&
-		betInput.value <= balance &&
+		betInput.value <= parseFloat(balance) &&
 		playerBet === 0 &&
 		spinning === false
 	) {
@@ -171,7 +171,7 @@ const betAmountBlack = () => {
 
 	if (
 		betInput.value !== 0 &&
-		betInput.value <= balance &&
+		betInput.value <= parseFloat(balance) &&
 		playerBet === 0 &&
 		spinning === false
 	) {
@@ -185,13 +185,12 @@ const betAmountBlack = () => {
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 	}
 };
-
 const betAmountGreen = () => {
 	const balance = localStorage.getItem("Balance");
 
 	if (
 		betInput.value !== 0 &&
-		betInput.value <= balance &&
+		betInput.value <= parseFloat(balance) &&
 		playerBet === 0 &&
 		spinning === false
 	) {
