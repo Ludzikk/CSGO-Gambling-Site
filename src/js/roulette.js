@@ -11,13 +11,42 @@ const seconds = document.querySelector(
 );
 let secondTime = 10;
 const betInput = document.querySelector("#bet");
-const redButton = document.querySelector(".main-roulette__betbuttons-button--red");
-const greenButton = document.querySelector(".main-roulette__betbuttons-button--green");
-const blackButton = document.querySelector(".main-roulette__betbuttons-button--black");
+const redButton = document.querySelector(
+	".main-roulette__betbuttons-button--red"
+);
+const greenButton = document.querySelector(
+	".main-roulette__betbuttons-button--green"
+);
+const blackButton = document.querySelector(
+	".main-roulette__betbuttons-button--black"
+);
 let playerBet = 0;
 let playerBetAmount;
 let spinning = false;
+let lastBetAmount = 0;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
+const clearBtn = document.querySelector("#clear");
+const lastBtn = document.querySelector("#last");
+const plusOneBtn = document.querySelector("#plus1");
+const plusTenBtn = document.querySelector("#plus10");
+const plusOneHundredBtn = document.querySelector("#plus100");
+const plusOneThousandBtn = document.querySelector("#plus1000");
+const halfBtn = document.querySelector("#half");
+const timesTwoBtn = document.querySelector("#x2");
+const maxBtn = document.querySelector("#max");
+const totalAmountOfBetsForRed = document.querySelector("#totalvaluetextred");
+const totalAmountOfBetsBalanceForRed = document.querySelector("#totalvaluered");
+const totalAmountOfBetsForBlack = document.querySelector(
+	"#totalvaluetextblack"
+);
+const totalAmountOfBetsBalanceForBlack =
+	document.querySelector("#totalvalueblack");
+const totalAmountOfBetsForGreen = document.querySelector(
+	"#totalvaluetextgreen"
+);
+const totalAmountOfBetsBalanceForGreen =
+	document.querySelector("#totalvaluegreen");
+let totalBetAmount = 0;
 
 const spinRoulette = () => {
 	const randomNum = Math.floor(Math.random() * 25000 + 5000);
@@ -45,7 +74,14 @@ setInterval(() => {
 	setTimeout(() => {
 		const lastDropsChildCount = lastDrops.childElementCount;
 		spinning = false;
-
+		totalAmountOfBetsForBlack.textContent = "0";
+		totalAmountOfBetsForRed.textContent = "0";
+		totalAmountOfBetsForGreen.textContent = "0";
+		totalAmountOfBetsBalanceForBlack.textContent = "0.00"
+		totalAmountOfBetsBalanceForRed.textContent = "0.00"
+		totalAmountOfBetsBalanceForGreen.textContent = "0.00"
+		totalBetAmount = 0;
+	
 		rouletteItems.forEach((item) => {
 			let pos = item.getBoundingClientRect();
 
@@ -70,7 +106,7 @@ setInterval(() => {
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--red"
 				);
 
-				if (lastDropsChildCount === 9) {
+				if (lastDropsChildCount === 10) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
@@ -107,7 +143,7 @@ setInterval(() => {
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--black"
 				);
 
-				if (lastDropsChildCount === 9) {
+				if (lastDropsChildCount === 10) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
@@ -143,7 +179,7 @@ setInterval(() => {
 					"main-roulette__lastdrops-item main-roulette__lastdrops-item--green"
 				);
 
-				if (lastDropsChildCount === 9) {
+				if (lastDropsChildCount === 10) {
 					lastDrops.firstElementChild.remove();
 					lastDrops.append(lastDropItem);
 				} else {
@@ -183,6 +219,11 @@ const betAmountRed = () => {
 		let value = amountValue - betInput.value;
 		playerBet = "red";
 		playerBetAmount = betInput.value;
+		lastBetAmount = betInput.value;
+		betInput.value = "";
+		totalBetAmount++;
+		totalAmountOfBetsForRed.textContent = totalBetAmount;
+		totalAmountOfBetsBalanceForRed.textContent = playerBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -203,6 +244,11 @@ const betAmountBlack = () => {
 		let value = amountValue - betInput.value;
 		playerBet = "black";
 		playerBetAmount = betInput.value;
+		lastBetAmount = betInput.value;
+		betInput.value = "";
+		totalBetAmount++;
+		totalAmountOfBetsForBlack.textContent = totalBetAmount;
+		totalAmountOfBetsBalanceForBlack.textContent = playerBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -222,6 +268,11 @@ const betAmountGreen = () => {
 		let value = amountValue - betInput.value;
 		playerBet = "green";
 		playerBetAmount = betInput.value;
+		lastBetAmount = betInput.value;
+		betInput.value = "";
+		totalBetAmount++;
+		totalAmountOfBetsForGreen.textContent = totalBetAmount;
+		totalAmountOfBetsBalanceForGreen.textContent = playerBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -232,3 +283,47 @@ const betAmountGreen = () => {
 redButton.addEventListener("click", betAmountRed);
 greenButton.addEventListener("click", betAmountGreen);
 blackButton.addEventListener("click", betAmountBlack);
+
+clearBtn.addEventListener("click", () => {
+	betInput.value = "";
+});
+
+lastBtn.addEventListener("click", () => {
+	if (lastBetAmount !== 0) {
+		betInput.value = lastBetAmount;
+	}
+});
+
+plusOneBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value + 1;
+});
+
+plusTenBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value + 10;
+});
+
+plusOneHundredBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value + 100;
+});
+
+plusOneThousandBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value + 1000;
+});
+
+halfBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value / 2;
+});
+
+timesTwoBtn.addEventListener("click", () => {
+	let value = parseFloat(betInput.value);
+	betInput.value = value * 2;
+});
+
+maxBtn.addEventListener("click", () => {
+	betInput.value = localStorage.getItem("Balance");
+});

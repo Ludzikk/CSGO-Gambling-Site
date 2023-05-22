@@ -2264,12 +2264,36 @@
 					><span class="main-roulette__countdown-timer-mili">00</span>s
 				</p>
 			</div>
-			<input type="number" id="bet" placeholder="0.00" />
+			<div class="main-roulette__inputbox">
+				<input
+					class="main-roulette__inputbox-input"
+					type="number"
+					id="bet"
+					placeholder="0.00"
+					value="1"
+				/>
+				<div
+					class="main-roulette__inputbox-button main-roulette__inputbox-button--clear"
+					id="clear"
+				>
+					Clear
+				</div>
+				<div class="main-roulette__inputbox-button" id="last">Last</div>
+				<div class="main-roulette__inputbox-button" id="plus1">+1</div>
+				<div class="main-roulette__inputbox-button" id="plus10">+10</div>
+				<div class="main-roulette__inputbox-button" id="plus100">+100</div>
+				<div class="main-roulette__inputbox-button" id="plus1000">+1000</div>
+				<div class="main-roulette__inputbox-button" id="half">1/2</div>
+				<div class="main-roulette__inputbox-button" id="x2">x2</div>
+				<div class="main-roulette__inputbox-button" id="max">max</div>
+			</div>
 			<div class="main-roulette__betbox">
 				<div class="main-roulette__betbuttons">
 					<div class="main-roulette__betbuttons-box">
 						<div class="main-roulette__betbuttons-top">
-							<div class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--red">
+							<div
+								class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--red"
+							>
 								<img
 									class="main-roulette__betbuttons-top-imgbox-img"
 									src="./dist/img/other/coin.png"
@@ -2278,10 +2302,14 @@
 							</div>
 							<p class="main-roulette__betbuttons-top-text">Win 2x</p>
 						</div>
-						<button class="main-roulette__betbuttons-button main-roulette__betbuttons-button--red">Place Bet</button>
+						<button
+							class="main-roulette__betbuttons-button main-roulette__betbuttons-button--red"
+						>
+							Place Bet
+						</button>
 						<div class="main-roulette__betbuttons-betsamount">
 							<p class="main-roulette__betbuttons-betsamount-textvalue">
-								21 Bets
+							<span id="totalvaluetextred">0</span> Bet
 							</p>
 							<p class="main-roulette__betbuttons-betsamount-coinsvalue">
 								<img
@@ -2289,14 +2317,16 @@
 									src="./dist/img/other/coin.png"
 									alt="Coin Icon"
 								/>
-								242.00
+								<span id="totalvaluered">0.00</span>
 							</p>
 						</div>
 					</div>
 				</div>
 				<div class="main-roulette__betbuttons-box">
 					<div class="main-roulette__betbuttons-top">
-						<div class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--green">
+						<div
+							class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--green"
+						>
 							<img
 								class="main-roulette__betbuttons-top-imgbox-img"
 								src="./dist/img/other/coin.png"
@@ -2305,10 +2335,14 @@
 						</div>
 						<p class="main-roulette__betbuttons-top-text">Win 14x</p>
 					</div>
-					<button class="main-roulette__betbuttons-button main-roulette__betbuttons-button--green">Place Bet</button>
+					<button
+						class="main-roulette__betbuttons-button main-roulette__betbuttons-button--green"
+					>
+						Place Bet
+					</button>
 					<div class="main-roulette__betbuttons-betsamount">
 						<p class="main-roulette__betbuttons-betsamount-textvalue">
-							21 Bets
+							<span id="totalvaluetextgreen">0</span> Bet
 						</p>
 						<p class="main-roulette__betbuttons-betsamount-coinsvalue">
 							<img
@@ -2316,13 +2350,15 @@
 								src="./dist/img/other/coin.png"
 								alt="Coin Icon"
 							/>
-							242.00
+							<span id="totalvaluegreen">0.00</span>
 						</p>
 					</div>
 				</div>
 				<div class="main-roulette__betbuttons-box">
 					<div class="main-roulette__betbuttons-top">
-						<div class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--black">
+						<div
+							class="main-roulette__betbuttons-top-imgbox main-roulette__betbuttons-top-imgbox--black"
+						>
 							<img
 								class="main-roulette__betbuttons-top-imgbox-img"
 								src="./dist/img/other/coin.png"
@@ -2331,10 +2367,14 @@
 						</div>
 						<p class="main-roulette__betbuttons-top-text">Win 2x</p>
 					</div>
-					<button class="main-roulette__betbuttons-button main-roulette__betbuttons-button--black">Place Bet</button>
+					<button
+						class="main-roulette__betbuttons-button main-roulette__betbuttons-button--black"
+					>
+						Place Bet
+					</button>
 					<div class="main-roulette__betbuttons-betsamount">
 						<p class="main-roulette__betbuttons-betsamount-textvalue">
-							21 Bets
+							<span id="totalvaluetextblack">0</span> Bet
 						</p>
 						<p class="main-roulette__betbuttons-betsamount-coinsvalue">
 							<img
@@ -2342,11 +2382,10 @@
 								src="./dist/img/other/coin.png"
 								alt="Coin Icon"
 							/>
-							242.00
+							<span id="totalvalueblack">0.00</span>
 						</p>
 					</div>
 				</div>
-			</div>
 			</div>
 		</main>
 		<footer class="footer">

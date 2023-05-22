@@ -1,8 +1,52 @@
 .main-roulette {
 	max-width: 1200px;
 	width: 100%;
+	height: 100vh;
 	overflow: hidden;
 	margin: 0 auto;
+
+	&__inputbox {
+		display: flex;
+		justify-content: space-between;
+		margin: 2em 0;
+		padding: 0.5em;
+		border-radius: 8px;
+		background-color: #1d2126;
+
+		&-input {
+			width: 65%;
+			font-size: 1.8rem;
+			border: 1px solid #1d2126;
+			color: white;
+			background-color: #1d2126;
+			outline: none;
+		}
+
+		&-button {
+			padding: 0.25em 0.5em;
+			margin: 0 0.5em;
+			border: 1px solid #1d2126;
+			border-radius: 10px;
+			text-transform: uppercase;
+			font-weight: bold;
+			color: white;
+			background-color: #40454f;
+			cursor: pointer;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: translateY(-2px);
+			}
+
+			&--clear {
+				background: none;
+
+				&:hover {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
 
 	&__countdown {
 		display: flex;
@@ -19,6 +63,23 @@
 			width: 300px;
 		}
 
+		&-betsamount {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1em 0;
+			color: white;
+
+			&-textvalue {
+				font-size: 2rem;
+			}
+
+			&-coinsvalue {
+				display: flex;
+				align-items: center;
+			}
+		}
+
 		&-button {
 			width: 100%;
 			padding: 0.5em 0;
@@ -31,7 +92,6 @@
 			cursor: pointer;
 			transition: background-color 0.3s, transform 0.3s;
 
-			
 			&:hover {
 				background-color: #008232;
 				transform: translateY(-2px);
@@ -43,7 +103,6 @@
 
 				&:hover {
 					background-color: #bf4138;
-					
 				}
 			}
 
@@ -87,11 +146,11 @@
 				&--red {
 					background-color: #de4c41;
 				}
-	
+
 				&--black {
 					background-color: #40454f;
 				}
-	
+
 				&--green {
 					background-color: #00a941;
 				}
@@ -144,7 +203,7 @@
 	&__arrow {
 		position: absolute;
 		left: 50%;
-		top: 220px;
+		top: 260px;
 		width: 3px;
 		height: 135px;
 		background-color: white;
@@ -169,14 +228,17 @@
 
 			&--red {
 				background-color: #de4c41;
+				box-shadow: 0px 0px 10px #de4c41;
 			}
 
 			&--black {
 				background-color: #40454f;
+				box-shadow: 0px 0px 10px #40454f;
 			}
 
 			&--green {
 				background-color: #00a941;
+				box-shadow: 0px 0px 10px #00a941;
 			}
 		}
 	}
@@ -186,8 +248,8 @@
 		justify-content: flex-end;
 		align-items: center;
 		margin-top: 2em;
-		width: 280px;
-		height: 40px;
+		width: 560px;
+		height: 80px;
 		border-radius: 10px;
 		overflow: hidden;
 		background-color: #1d2126;
@@ -197,13 +259,13 @@
 			justify-content: center;
 			align-items: center;
 			margin: 0 0.2em;
-			height: 25px;
-			width: 25px;
+			height: 50px;
+			width: 50px;
 			border-radius: 50%;
 
 			&-img {
-				width: 20px;
-				height: 20px;
+				width: 80%;
+				height: 80%;
 			}
 
 			&--red {
