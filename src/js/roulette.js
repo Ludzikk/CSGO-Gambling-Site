@@ -1,7 +1,7 @@
 const rouletteDiv = document.querySelector(".main-roulette__list");
 const rouletteItems = document.querySelectorAll(".main-roulette__list-item");
 let winningColor;
-let elem = document.querySelector(".main-roulette__arrow");
+const elem = document.querySelector(".main-roulette__arrow");
 let elemOffset = elem.getBoundingClientRect();
 let middleLeft = elemOffset.left + 2;
 let middleRight = elemOffset.right - 2;
@@ -9,7 +9,11 @@ const lastDrops = document.querySelector(".main-roulette__lastdrops");
 const seconds = document.querySelector(
 	".main-roulette__countdown-timer-seconds"
 );
-let secondTime = 10;
+const miliseconds = document.querySelector(
+	".main-roulette__countdown-timer-mili"
+);
+let secondTime = 15;
+let milisecondsTime = 99;
 const betInput = document.querySelector("#bet");
 const redButton = document.querySelector(
 	".main-roulette__betbuttons-button--red"
@@ -20,8 +24,15 @@ const greenButton = document.querySelector(
 const blackButton = document.querySelector(
 	".main-roulette__betbuttons-button--black"
 );
-let playerBet = 0;
-let playerBetAmount;
+let playerBetRed = false;
+let playerBetBlack = false;
+let playerBetGreen = false;
+let playerBetAmountRed = 0;
+let playerBetAmountBlack = 0;
+let playerBetAmountGreen = 0;
+let playersRedBetAmount = 0;
+let playersBlackBetAmount = 0;
+let playersGreenBetAmount = 0;
 let spinning = false;
 let lastBetAmount = 0;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -46,7 +57,34 @@ const totalAmountOfBetsForGreen = document.querySelector(
 );
 const totalAmountOfBetsBalanceForGreen =
 	document.querySelector("#totalvaluegreen");
-let totalBetAmount = 0;
+const playersBetsBlack = document.querySelector(
+	".main-roulette__betbuttons-players--black"
+);
+const playersBetsRed = document.querySelector(
+	".main-roulette__betbuttons-players--red"
+);
+const playersBetsGreen = document.querySelector(
+	".main-roulette__betbuttons-players--green"
+);
+let totalBetAmountBlack = 0;
+let totalBetAmountGreen = 0;
+let totalBetAmountRed = 0;
+let secondBet = false;
+const randomNames = [
+	"Filipek",
+	"Januszko",
+	"Ludzik",
+	"Anomaly",
+	"KFC",
+	"Samu",
+	"Kexk",
+	"Pasha",
+	"Boby",
+	"Lolek",
+	"Valorant",
+	"Transformers",
+];
+const winAudio = new Audio("./dist/audio/roulettewin.wav");
 
 const spinRoulette = () => {
 	const randomNum = Math.floor(Math.random() * 25000 + 5000);
@@ -58,15 +96,78 @@ const spinRoulette = () => {
 
 setInterval(() => {
 	secondTime--;
-	seconds.textContent = secondTime + ":";
+	seconds.textContent = secondTime + "s";
+
+	if (secondBet === true && secondTime === 8) {
+		createRandomPlayersBetBlack();
+		createRandomPlayersBetRed();
+		createRandomPlayersBetGreen();
+	} else if (secondBet === true && secondTime === 9) {
+		const allBetsDiv = document.querySelectorAll(
+			".main-roulette__betbuttons-players-player"
+		);
+		allBetsDiv.forEach((bet) => bet.remove());
+		playersGreenBetAmount = 0;
+		playersRedBetAmount = 0;
+		playersBlackBetAmount = 0;
+		totalBetAmountBlack = 0;
+		totalBetAmountRed = 0;
+		totalBetAmountGreen = 0;
+		totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
+		totalAmountOfBetsForRed.textContent = totalBetAmountRed;
+		totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
+	}
 }, 1000);
 
 setInterval(() => {
 	if (secondTime === 0) {
-		secondTime = 10;
-		seconds.textContent = secondTime + ":";
+		secondTime = 15;
+		seconds.textContent = secondTime + "s";
 	}
+
+	elemOffset = elem.getBoundingClientRect();
+	middleLeft = elemOffset.left + 2;
+	middleRight = elemOffset.right - 2;
+
+	rouletteItems.forEach((item) => {
+		let pos = item.getBoundingClientRect();
+		const img = item.firstElementChild;
+
+		if (middleLeft >= pos.left && middleRight <= pos.right) {
+			img.style.width = "75px";
+		} else {
+			img.style.width = "50px";
+		}
+
+		if (
+			middleLeft >= pos.left &&
+			middleRight <= pos.right &&
+			item.classList.contains("main-roulette__list-item--red")
+		) {
+			item.style.boxShadow = "0px 0px 30px #de4c41";
+		} else if (
+			middleLeft >= pos.left &&
+			middleRight <= pos.right &&
+			item.classList.contains("main-roulette__list-item--black")
+		) {
+			item.style.boxShadow = "0px 0px 30px #636363";
+		} else if (
+			middleLeft >= pos.left &&
+			middleRight <= pos.right &&
+			item.classList.contains("main-roulette__list-item--green")
+		) {
+			item.style.boxShadow = "0px 0px 30px #00a941";
+		} else {
+			item.style.boxShadow = "0px 0px 30px none";
+		}
+	});
 }, 100);
+
+setTimeout(() => {
+	if (secondBet === false) {
+		secondBet = true;
+	}
+}, 20000);
 
 setInterval(() => {
 	spinRoulette();
@@ -77,11 +178,10 @@ setInterval(() => {
 		totalAmountOfBetsForBlack.textContent = "0";
 		totalAmountOfBetsForRed.textContent = "0";
 		totalAmountOfBetsForGreen.textContent = "0";
-		totalAmountOfBetsBalanceForBlack.textContent = "0.00"
-		totalAmountOfBetsBalanceForRed.textContent = "0.00"
-		totalAmountOfBetsBalanceForGreen.textContent = "0.00"
-		totalBetAmount = 0;
-	
+		totalAmountOfBetsBalanceForBlack.textContent = "0.00";
+		totalAmountOfBetsBalanceForRed.textContent = "0.00";
+		totalAmountOfBetsBalanceForGreen.textContent = "0.00";
+
 		rouletteItems.forEach((item) => {
 			let pos = item.getBoundingClientRect();
 
@@ -113,12 +213,11 @@ setInterval(() => {
 					lastDrops.append(lastDropItem);
 				}
 
-				if (playerBet === "red") {
-					playerBetAmount = playerBetAmount * 2;
-					console.log(playerBetAmount);
+				if (playerBetRed === true) {
+					playerBetAmountRed = playerBetAmountRed * 2;
 					let amountValue = parseFloat(balanceAmount.textContent);
-					let value = amountValue + playerBetAmount;
-
+					let value = amountValue + playerBetAmountRed;
+					winAudio.play()
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}
@@ -149,12 +248,11 @@ setInterval(() => {
 				} else {
 					lastDrops.append(lastDropItem);
 				}
-				if (playerBet === "black") {
-					playerBetAmount = playerBetAmount * 2;
-					console.log(playerBetAmount);
+				if (playerBetBlack === true) {
+					playerBetAmountBlack = playerBetAmountBlack * 2;
 					let amountValue = parseFloat(balanceAmount.textContent);
-					let value = amountValue + playerBetAmount;
-
+					let value = amountValue + playerBetAmountBlack;
+					winAudio.play()
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}
@@ -185,26 +283,27 @@ setInterval(() => {
 				} else {
 					lastDrops.append(lastDropItem);
 				}
-				if (playerBet === "green") {
-					playerBetAmount = playerBetAmount * 14;
-					console.log(playerBetAmount);
+				if (playerBetGreen === true) {
+					playerBetAmountGreen = playerBetAmountGreen * 14;
 					let amountValue = parseFloat(balanceAmount.textContent);
-					let value = amountValue + playerBetAmount;
-
+					let value = amountValue + playerBetAmountGreen;
+					winAudio.play()
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}
 			}
 		});
 
-		playerBet = 0;
+		playerBetRed = false;
+		playerBetBlack = false;
+		playerBetGreen = false;
 	}, 6000);
 
 	setTimeout(() => {
 		rouletteDiv.classList.remove("spin");
 		rouletteDiv.style.transform = `translate3d(0, 0, 0)`;
-	}, 9900);
-}, 10000);
+	}, 14900);
+}, 15000);
 
 const betAmountRed = () => {
 	const balance = localStorage.getItem("Balance");
@@ -212,22 +311,37 @@ const betAmountRed = () => {
 	if (
 		betInput.value !== 0 &&
 		betInput.value <= parseFloat(balance) &&
-		playerBet === 0 &&
+		playerBetRed === false &&
 		spinning === false
 	) {
+		const betsDiv = document.createElement("div");
 		let amountValue = parseFloat(balanceAmount.textContent);
 		let value = amountValue - betInput.value;
-		playerBet = "red";
-		playerBetAmount = betInput.value;
+		playerBetRed = true;
+		playerBetAmountRed = betInput.value;
 		lastBetAmount = betInput.value;
-		betInput.value = "";
-		totalBetAmount++;
-		totalAmountOfBetsForRed.textContent = totalBetAmount;
-		totalAmountOfBetsBalanceForRed.textContent = playerBetAmount;
+		betInput.value = lastBetAmount;
+		totalBetAmountRed++;
+		totalAmountOfBetsForRed.textContent = totalBetAmountRed;
+		totalAmountOfBetsBalanceForRed.textContent =
+			Number(playerBetAmountRed) + playersRedBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">You</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${playerBetAmountRed}</span>
+		</p>`;
+
+		playersBetsRed.append(betsDiv);
 	}
 };
 
@@ -237,22 +351,37 @@ const betAmountBlack = () => {
 	if (
 		betInput.value !== 0 &&
 		betInput.value <= parseFloat(balance) &&
-		playerBet === 0 &&
+		playerBetBlack === false &&
 		spinning === false
 	) {
+		const betsDiv = document.createElement("div");
 		let amountValue = parseFloat(balanceAmount.textContent);
 		let value = amountValue - betInput.value;
-		playerBet = "black";
-		playerBetAmount = betInput.value;
+		playerBetBlack = true;
+		playerBetAmountBlack = betInput.value;
 		lastBetAmount = betInput.value;
-		betInput.value = "";
-		totalBetAmount++;
-		totalAmountOfBetsForBlack.textContent = totalBetAmount;
-		totalAmountOfBetsBalanceForBlack.textContent = playerBetAmount;
+		betInput.value = lastBetAmount;
+		totalBetAmountBlack++;
+		totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
+		totalAmountOfBetsBalanceForBlack.textContent =
+			Number(playerBetAmountBlack) + playersBlackBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">You</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${playerBetAmountBlack}</span>
+		</p>`;
+
+		playersBetsBlack.append(betsDiv);
 	}
 };
 const betAmountGreen = () => {
@@ -261,31 +390,163 @@ const betAmountGreen = () => {
 	if (
 		betInput.value !== 0 &&
 		betInput.value <= parseFloat(balance) &&
-		playerBet === 0 &&
+		playerBetGreen === false &&
 		spinning === false
 	) {
+		const betsDiv = document.createElement("div");
 		let amountValue = parseFloat(balanceAmount.textContent);
 		let value = amountValue - betInput.value;
-		playerBet = "green";
-		playerBetAmount = betInput.value;
+		playerBetGreen = true;
+		playerBetAmountGreen = betInput.value;
 		lastBetAmount = betInput.value;
-		betInput.value = "";
-		totalBetAmount++;
-		totalAmountOfBetsForGreen.textContent = totalBetAmount;
-		totalAmountOfBetsBalanceForGreen.textContent = playerBetAmount;
+		betInput.value = lastBetAmount;
+		totalBetAmountGreen++;
+		totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
+		totalAmountOfBetsBalanceForGreen.textContent =
+			Number(playerBetAmountGreen) + playersGreenBetAmount;
 
 		balanceAmount.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">You</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${playerBetAmountGreen}</span>
+		</p>`;
+
+		playersBetsGreen.append(betsDiv);
 	}
 };
+
+const addRandomColorDropsToLastDrops = () => {
+	for (let i = 0; i < 10; i++) {
+		const dropColors = ["red", "black", "green"];
+		const randomNum = Math.floor(Math.random() * 100);
+		let colorPick;
+		const lastDropItem = document.createElement("div");
+		const lastDropItemImg = document.createElement("img");
+
+		if (randomNum <= 5) {
+			colorPick = 2;
+		} else if (randomNum > 10 && randomNum < 50) {
+			colorPick = 1;
+		} else {
+			colorPick = 0;
+		}
+
+		lastDropItemImg.setAttribute("class", "main-roulette__lastdrops-item-img");
+		lastDropItemImg.setAttribute("alt", "Coin Icon");
+		lastDropItemImg.setAttribute("src", "./dist/img/other/coin.png");
+		lastDropItem.append(lastDropItemImg);
+		lastDropItem.setAttribute(
+			"class",
+			`main-roulette__lastdrops-item main-roulette__lastdrops-item--${dropColors[colorPick]}`
+		);
+
+		lastDrops.append(lastDropItem);
+	}
+};
+
+const createRandomPlayersBetBlack = () => {
+	const randomAmountOfBets = Math.floor(Math.random() * 8);
+
+	for (let i = randomAmountOfBets; i < 8; i++) {
+		const randomNum = Math.floor(Math.random() * randomNames.length);
+		const randomAmount = Math.floor(Math.random() * 1500);
+		const betsDiv = document.createElement("div");
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">${randomNames[randomNum]}</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${randomAmount}</span>
+		</p>`;
+
+		playersBetsBlack.append(betsDiv);
+		playersBlackBetAmount = playersBlackBetAmount + randomAmount;
+	}
+	totalBetAmountBlack =
+		totalBetAmountBlack + playersBetsBlack.childElementCount;
+	totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
+	totalAmountOfBetsBalanceForBlack.textContent =
+		Number(playerBetAmountGreen) + playersBlackBetAmount;
+};
+
+const createRandomPlayersBetGreen = () => {
+	const randomAmountOfBets = Math.floor(Math.random() * 5);
+
+	for (let i = randomAmountOfBets; i < 5; i++) {
+		const randomNum = Math.floor(Math.random() * randomNames.length);
+		const randomAmount = Math.floor(Math.random() * 500);
+		const betsDiv = document.createElement("div");
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">${randomNames[randomNum]}</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${randomAmount}</span>
+		</p>`;
+
+		playersBetsGreen.append(betsDiv);
+		playersGreenBetAmount = playersGreenBetAmount + randomAmount;
+	}
+	totalBetAmountGreen =
+		totalBetAmountGreen + playersBetsGreen.childElementCount;
+	totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
+	totalAmountOfBetsBalanceForGreen.textContent =
+		Number(playerBetAmountGreen) + playersGreenBetAmount;
+};
+
+const createRandomPlayersBetRed = () => {
+	const randomAmountOfBets = Math.floor(Math.random() * 8);
+
+	for (let i = randomAmountOfBets; i < 8; i++) {
+		const randomNum = Math.floor(Math.random() * randomNames.length);
+		const randomAmount = Math.floor(Math.random() * 1500);
+		const betsDiv = document.createElement("div");
+		betsDiv.setAttribute("class", "main-roulette__betbuttons-players-player");
+		betsDiv.innerHTML = `<p class="main-roulette__betbuttons-players-player-name">${randomNames[randomNum]}</p>
+		<p class="main-roulette__betbuttons-players-player-amount">
+			<img
+			class="main-roulette__betbuttons-players-player-amount-img"
+			src="./dist/img/other/coin.png"
+			alt="Coin Icon"
+		/>
+		<span class="playerbet">${randomAmount}</span>
+		</p>`;
+
+		playersBetsRed.append(betsDiv);
+		playersRedBetAmount = playersRedBetAmount + randomAmount;
+	}
+	totalBetAmountRed = totalBetAmountRed + playersBetsRed.childElementCount;
+	totalAmountOfBetsForRed.textContent = totalBetAmountRed;
+	totalAmountOfBetsBalanceForRed.textContent =
+		Number(playerBetAmountRed) + playersRedBetAmount;
+};
+
+createRandomPlayersBetBlack();
+createRandomPlayersBetRed();
+createRandomPlayersBetGreen();
+addRandomColorDropsToLastDrops();
 
 redButton.addEventListener("click", betAmountRed);
 greenButton.addEventListener("click", betAmountGreen);
 blackButton.addEventListener("click", betAmountBlack);
 
 clearBtn.addEventListener("click", () => {
-	betInput.value = "";
+	betInput.value = 1;
 });
 
 lastBtn.addEventListener("click", () => {

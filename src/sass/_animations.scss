@@ -7,3 +7,43 @@
 		left: -225%;
 	}
 }
+
+@keyframes timer {
+	0% {
+		width: 100%;
+		background-color: green;
+	}
+
+	75% {
+		width: 25%;
+		background-color: orange;
+	}
+
+	90% {
+		width: 10%;
+		background-color: red;
+	}
+
+	100% {
+		width: 0%;
+		background-color: red;
+	}
+}
+
+@keyframes timer-time {
+	0% {
+		color: green;
+	}
+
+	75% {
+		color: orange;
+	}
+
+	90% {
+		color: red;
+	}
+
+	100% {
+		color: red;
+	}
+}

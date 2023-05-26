@@ -4,69 +4,19 @@ const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
 const openAudio = new Audio("./dist/audio/open.mp3");
-const itemsAnubisPrice = [
-	[2031],
-	[232, 156],
-	[21, 12, 9],
-	[9, 4, 2, 1],
-	[0.9, 0.8, 0.6, 0.7],
-	[0.12, 0.15, 0.2, 0.14, 0.11],
-];
-const itemsAnubisImg = [
-	["./dist/img/anubis/eyeofhorus.png"],
-	[
-		"./dist/img/anubis/apep'scurse.png",
-		"./dist/img/anubis/watersofnephthys.png",
-	],
-	[
-		"./dist/img/anubis/ramese'sreach.png",
-		"./dist/img/anubis/scarabrush.png",
-		"./dist/img/anubis/sobek'sbite.png",
-	],
-	[
-		"./dist/img/anubis/blacknile.png",
-		"./dist/img/anubis/steeldelta.png",
-		"./dist/img/anubis/mummy'srot.png",
-		"./dist/img/anubis/coppercoated.png",
-	],
-	[
-		"./dist/img/anubis/mudspec.png",
-		"./dist/img/anubis/deserttactical.png",
-		"./dist/img/anubis/azureglyph.png",
-		"./dist/img/anubis/echoingsands.png",
-	],
-	[
-		"./dist/img/anubis/hieroglyph.png",
-		"./dist/img/anubis/snakepit.png",
-		"./dist/img/anubis/submerged.png",
-		"./dist/img/anubis/sunbaked.png",
-		"./dist/img/anubis/inlay.png",
-	],
-];
-const itemsAnubisName = [
-	["M4A4 | Eye of Horus"],
-	["P250 | Apep's Curse", "FAMAS | Waters of Nephthys"],
-	["Glock-18 | Ramese's Reach", "P90 | ScaraB Rush", "Nova | Sobek's Bite"],
-	[
-		"AWP | Black Nile",
-		"AK47 | Steel Delta",
-		"Tec-9 | Mummy's Rot",
-		"MAG-7 | Copper Coated",
-	],
-	[
-		"M4A1-S | Mud-Spec",
-		"USP-S | Desert Tactical",
-		"SSG 08 | Azure Glyph",
-		"MAC-10 | Echoing Sands",
-	],
-	[
-		"XM1014 | Hieroglyph",
-		"AUG | Snake Pit",
-		"M249 | Submerged",
-		"MP7 | Sunbaked",
-		"R8 Revolver | Inlay",
-	],
-];
+const howlCase = {
+    under25: {
+        name: "M4A4 | Howl",
+        img: "./dist/img/howl/howl.png",
+        price: 5213,
+    },
+
+    above25: {
+        name: "M4A4 | Poly Mag",
+        img: "./dist/img/howl/polymag.png",
+        price: 0.68,
+    }
+}
 const red =
 	"radial-gradient(circle, rgba(135, 0, 0, .7) 0%, rgba(0, 0, 0, 1) 75%";
 const pink =
@@ -119,32 +69,16 @@ const setWinningItem = () => {
 
 	let chances = winningItemNumber;
 
-	if (chances <= 1) {
+	if (chances <= 25) {
 		chances = 0;
-	} else if (chances > 1 && chances <= 10) {
-		chances = 1;
-	} else if (chances > 10 && chances <= 20) {
-		chances = 2;
-	} else if (chances > 20 && chances <= 40) {
-		chances = 3;
-	} else if (chances > 40 && chances <= 60) {
-		chances = 4;
-	} else {
+	}  else {
 		chances = 5;
 	}
 
-	if (winningItemNumber <= 1) {
+	if (winningItemNumber <= 25) {
 		winningItem.style.background = red;
-	} else if (winningItemNumber > 1 && winningItemNumber <= 10) {
-		winningItem.style.background = pink;
-	} else if (winningItemNumber > 10 && winningItemNumber <= 20) {
-		winningItem.style.background = purple;
-	} else if (winningItemNumber > 20 && winningItemNumber <= 40) {
-		winningItem.style.background = blue;
-	} else if (winningItemNumber > 40 && winningItemNumber <= 60) {
-		winningItem.style.background = lightBlue;
 	} else {
-		winningItem.style.background = grey;
+		winningItem.style.background = lightBlue;
 	}
 	
 	const randomItemFromColor = Math.floor(

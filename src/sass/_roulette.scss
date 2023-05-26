@@ -1,7 +1,7 @@
 .main-roulette {
 	max-width: 1200px;
 	width: 100%;
-	height: 100vh;
+	height: 110vh;
 	overflow: hidden;
 	margin: 0 auto;
 
@@ -51,8 +51,35 @@
 	&__countdown {
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 		color: white;
 		font-size: 2rem;
+
+		&-timer {
+			margin-bottom: 1em;
+			font-weight: bold;
+			animation: timer-time 15s linear infinite;
+		}
+
+		&-timerline {
+			position: relative;
+			width: 100%;
+			height: 4px;
+			border-radius: 15px;
+			background-color: rgb(32, 30, 30);
+
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: "";
+				height: 4px;
+				width: 100%;
+				background-color: green;
+				animation: timer 15s linear infinite;
+			}
+		}
 	}
 
 	&__betbuttons {
@@ -61,6 +88,26 @@
 
 		&-box {
 			width: 300px;
+		}
+
+		&-players {
+			&-player {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.25em 0;
+				color: white;
+				
+				&-amount {
+					display: flex;
+					align-items: center;
+
+					&-img {
+						margin: 0 0.2em;
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
 		}
 
 		&-betsamount {
@@ -108,7 +155,7 @@
 
 			&--black {
 				background-color: #40454f;
-				box-shadow: 0px 0px 10px #40454f;
+				box-shadow: 0px 0px 10px #636363;
 
 				&:hover {
 					background-color: #353942;
@@ -219,26 +266,31 @@
 		}
 
 		&-item {
-			padding: 1em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 4.13em;
 			color: white;
+			width: 132px;
+			height: 136px;
 
 			&-img {
-				width: 100px;
+				width: 75px;
 			}
 
 			&--red {
 				background-color: #de4c41;
-				box-shadow: 0px 0px 10px #de4c41;
+				box-shadow: 0px 0px 10px none;
 			}
 
 			&--black {
 				background-color: #40454f;
-				box-shadow: 0px 0px 10px #40454f;
+				box-shadow: 0px 0px 10px none;
 			}
 
 			&--green {
 				background-color: #00a941;
-				box-shadow: 0px 0px 10px #00a941;
+				box-shadow: 0px 0px 10px none;
 			}
 		}
 	}
