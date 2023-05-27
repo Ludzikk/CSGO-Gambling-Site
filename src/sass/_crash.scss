@@ -1,0 +1,69 @@
+.main-crash {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+
+	&__multiplier {
+		padding: 1em;
+		margin-bottom: 1em;
+		font-size: 4rem;
+		color: white;
+		background-color: rgb(24, 24, 24);
+	}
+
+	&__bet {
+		padding: 1em;
+		font-size: 2rem;
+		border: none;
+		border-radius: 10px;
+		text-transform: uppercase;
+		color: white;
+		background-color: #00a941;
+		cursor: pointer;
+		transition: all 0.3s;
+
+		&:hover {
+			background-color: #008232;
+		}
+	}
+
+	&__countdown {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: white;
+		font-size: 2rem;
+		width: 100%;
+
+		&-timer {
+			margin-bottom: 1em;
+			font-weight: bold;
+			color: green;
+		}
+
+		&-timerline {
+			position: relative;
+			width: 100%;
+			height: 4px;
+			border-radius: 15px;
+			background-color: rgb(32, 30, 30);
+
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: "";
+				height: 4px;
+				width: 100%;
+				background-color: green;
+			}
+		}
+	}
+}
+

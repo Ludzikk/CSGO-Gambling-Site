@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>CSGOLuck | Knife 50/50 Case</title>
+		<title>CSGOLuck | Crash</title>
 		<link rel="icon" href="./dist/img/other/icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,64 +108,41 @@
 	  </button>  
 </nav>
 
-		<div class="casebox" data-aos="fade-in" data-aos-duration="500">
-			<div class="casebox__caseimg">
-				<img
-					class="casebox__caseimg-img"
-					src="./dist/img/knife5050/case.png"
-					alt="Anubis Case"
-				/>
+		<main class="main-crash" data-aos="fade-in" data-aos-duration="500">
+			<div class="main-crash__multiplier">
+				<p class="main-crash__multiplier-text">1.00x</p>
 			</div>
-			<div class="casebox-arrows">
-				<div class="casebox-arrows-arrow casebox-arrows-arrow--down">
-					<i class="casebox-arrow-down-icon fa-solid fa-arrow-down"></i>
-				</div>
-				<div class="casebox-arrows-arrow casebox-arrows-arrow--up">
-					<i class="casebox-arrow-up-icon fa-solid fa-arrow-up"></i>
-				</div>
+			<div class="main-crash__countdown">
+				<p class="main-crash__countdown-timer">
+					<span class="main-crash__countdown-timer-seconds">15s</span>
+				</p>
+				<!-- <div class="main-crash__countdown-timerline"></div> -->
 			</div>
-			<ul class="case"></ul>
-		</div>
-		<div class="open-btn-box" data-aos="fade-in" data-aos-duration="500">
-			<button class="open-btn">
-				open
-				<img
-					class="open-btn-icon"
-					src="./dist/img/other/coin.png"
-					alt="Coin Icon"
+			<div class="main-coinflip__inputbox">
+				<input
+					class="main-coinflip__input main-crash__input"
+					type="number"
+					placeholder="Place bet..."
+					value="0"
 				/>
-				<p class="open-btn-amount">800.00</p>
-			</button>
-		</div>
-		<div class="chances" data-aos="fade-in" data-aos-duration="500">
-			<ul class="chances__list">
-				<li class="chances__list-item chances__list-item--gold">
-					<img
-						src="./dist/img/knife5050/doppler.png"
-						alt="Karambit | Doppler"
-						class="chances__list-item-img"
-					/>
-					<p class="chances__list-item-text">50%</p>
-					<div class="chances__list-item-price hidden">
-						<p class="chances__list-item-price-text">1521.0</p>
-                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
-					</div>
-				</li>
-				<li class="chances__list-item
-				chances__list-item--grey">
-					<img
-						src="./dist/img/knife5050/navaja.png"
-						alt="Navaja | Safari Mesh"
-						class="chances__list-item-img"
-					/>
-					<p class="chances__list-item-text">50%</p>
-					<div class="chances__list-item-price hidden">
-						<p class="chances__list-item-price-text">98.28</p>
-                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
-					</div>
-				</li>
-			</ul>
-		</div>
+				<div
+					class="main-coinflip__inputbox-button main-coinflip__inputbox-button--clear"
+					id="clear"
+				>
+					Clear
+				</div>
+				<div class="main-coinflip__inputbox-button" id="last">Last</div>
+				<div class="main-coinflip__inputbox-button" id="plus1">+1</div>
+				<div class="main-coinflip__inputbox-button" id="plus10">+10</div>
+				<div class="main-coinflip__inputbox-button" id="plus100">+100</div>
+				<div class="main-coinflip__inputbox-button" id="plus1000">+1000</div>
+				<div class="main-coinflip__inputbox-button" id="half">1/2</div>
+				<div class="main-coinflip__inputbox-button" id="x2">x2</div>
+				<div class="main-coinflip__inputbox-button" id="max">max</div>
+			</div>
+            <button class="main-crash__bet">bet</button>
+			<button class="main-crash__bet main-crash__bet--withdraw">withdraw</button>
+		</main>
 		<footer class="footer" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
 	<ul class="footer__icons-list">
 		<li class="footer__icons-list-item">
@@ -196,14 +173,13 @@
 	</p>
 </footer>
 
-		<script src="./dist/js/knife5050.min.js"></script>
-		<script src="./dist/js/casechances.min.js"></script>
+		<script src="./dist/js/crash.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
 		<script src="./dist/js/setbalance.min.js"></script>
 		<script src="./dist/js/nav.min.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
 			AOS.init();
-		  </script>
+		</script>
 	</body>
 </html>

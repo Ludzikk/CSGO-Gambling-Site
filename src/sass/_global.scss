@@ -61,3 +61,11 @@ main {
 .coinflip-black {
 	animation: coinflip-black 5s;
 }
+
+.crash-time-text-start {
+	animation: timer-time 15s linear infinite;
+}
+
+.crash-time-line-start {
+	animation: timer 15s linear infinite;
+}

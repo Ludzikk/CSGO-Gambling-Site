@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<!-- @include "meta.kit" -->
+		<title>CSGOLuck | Crash</title>
+		<!-- @include "link.kit" -->
+	</head>
+	<body>
+		<!-- @include "nav.kit" -->
+		<main class="main-crash" data-aos="fade-in" data-aos-duration="500">
+			<div class="main-crash__multiplier">
+				<p class="main-crash__multiplier-text">1.00x</p>
+			</div>
+			<div class="main-crash__countdown">
+				<p class="main-crash__countdown-timer">
+					<span class="main-crash__countdown-timer-seconds">15s</span>
+				</p>
+				<!-- <div class="main-crash__countdown-timerline"></div> -->
+			</div>
+			<div class="main-coinflip__inputbox">
+				<input
+					class="main-coinflip__input main-crash__input"
+					type="number"
+					placeholder="Place bet..."
+					value="0"
+				/>
+				<div
+					class="main-coinflip__inputbox-button main-coinflip__inputbox-button--clear"
+					id="clear"
+				>
+					Clear
+				</div>
+				<div class="main-coinflip__inputbox-button" id="last">Last</div>
+				<div class="main-coinflip__inputbox-button" id="plus1">+1</div>
+				<div class="main-coinflip__inputbox-button" id="plus10">+10</div>
+				<div class="main-coinflip__inputbox-button" id="plus100">+100</div>
+				<div class="main-coinflip__inputbox-button" id="plus1000">+1000</div>
+				<div class="main-coinflip__inputbox-button" id="half">1/2</div>
+				<div class="main-coinflip__inputbox-button" id="x2">x2</div>
+				<div class="main-coinflip__inputbox-button" id="max">max</div>
+			</div>
+            <button class="main-crash__bet">bet</button>
+			<button class="main-crash__bet main-crash__bet--withdraw">withdraw</button>
+		</main>
+		<!-- @include "footer.kit" -->
+		<script src="./dist/js/crash.min.js"></script>
+		<script src="./dist/js/footeryear.min.js"></script>
+		<script src="./dist/js/setbalance.min.js"></script>
+		<script src="./dist/js/nav.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>
