@@ -83,8 +83,12 @@ const randomNames = [
 	"Lolek",
 	"Valorant",
 	"Transformers",
+	"Ma$a",
+	"Sikor",
+	"Janek key-drop",
 ];
 const winAudio = new Audio("./dist/audio/roulettewin.wav");
+const arrow = document.querySelectorAll(".arrow");
 
 const spinRoulette = () => {
 	const randomNum = Math.floor(Math.random() * 25000 + 5000);
@@ -144,21 +148,19 @@ setInterval(() => {
 			middleRight <= pos.right &&
 			item.classList.contains("main-roulette__list-item--red")
 		) {
-			item.style.boxShadow = "0px 0px 30px #de4c41";
+			arrow.forEach((item) => (item.style.color = "red"));
 		} else if (
 			middleLeft >= pos.left &&
 			middleRight <= pos.right &&
 			item.classList.contains("main-roulette__list-item--black")
 		) {
-			item.style.boxShadow = "0px 0px 30px #636363";
+			arrow.forEach((item) => (item.style.color = "black"));
 		} else if (
 			middleLeft >= pos.left &&
 			middleRight <= pos.right &&
 			item.classList.contains("main-roulette__list-item--green")
 		) {
-			item.style.boxShadow = "0px 0px 30px #00a941";
-		} else {
-			item.style.boxShadow = "0px 0px 30px none";
+			arrow.forEach((item) => (item.style.color = "green"));
 		}
 	});
 }, 100);
@@ -217,7 +219,7 @@ setInterval(() => {
 					playerBetAmountRed = playerBetAmountRed * 2;
 					let amountValue = parseFloat(balanceAmount.textContent);
 					let value = amountValue + playerBetAmountRed;
-					winAudio.play()
+					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}
@@ -252,7 +254,7 @@ setInterval(() => {
 					playerBetAmountBlack = playerBetAmountBlack * 2;
 					let amountValue = parseFloat(balanceAmount.textContent);
 					let value = amountValue + playerBetAmountBlack;
-					winAudio.play()
+					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}
@@ -287,7 +289,7 @@ setInterval(() => {
 					playerBetAmountGreen = playerBetAmountGreen * 14;
 					let amountValue = parseFloat(balanceAmount.textContent);
 					let value = amountValue + playerBetAmountGreen;
-					winAudio.play()
+					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 				}

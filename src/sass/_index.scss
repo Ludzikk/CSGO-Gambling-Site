@@ -1,5 +1,5 @@
 .main-index {
-    display: flex;
+	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	max-width: 1200px;
@@ -13,25 +13,25 @@
 
 		&-item {
 			padding: 1em;
-            margin: 0.5em;
-            background-color: #2c2f36;
+			margin: 0.5em;
+			background-color: #2c2f36;
 
-            &-link {
-                font-size: 2rem;
-                font-weight: bold;
-                text-decoration: none;
-                text-align: center;
-                color: white;
+			&-link {
+				font-size: 2rem;
+				font-weight: bold;
+				text-decoration: line-through;
+				text-align: center;
+				color: white;
 
-                &-img{
-                    width: 250px;
-                    transition: transform .3s;
+				&-img {
+					width: 250px;
+					transition: transform 0.3s;
 
-                    &:hover {
-                        transform: scale(0.9);
-                    }
-                }
-            }
+					&:hover {
+						transform: scale(0.9);
+					}
+				}
+			}
 		}
 	}
 }
