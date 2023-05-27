@@ -13,6 +13,7 @@
 	rel="stylesheet"
 />
 <link href="./dist/css/hamburgers/hamburgers.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="./dist/css/style.min.css" />
 <script
 	src="https://kit.fontawesome.com/bdb2f8ae99.js"
@@ -20,7 +21,7 @@
 ></script>
 	</head>
 	<body>
-		<nav class="nav">
+		<nav class="nav above" data-aos="fade-in" data-aos-duration="500">
 	<ul class="nav__list">
 		<li class="nav__list-item">
 			<a
@@ -107,7 +108,7 @@
 	  </button>  
 </nav>
 
-		<div class="casebox">
+		<div class="casebox" data-aos="fade-in" data-aos-duration="500">
 			<div class="casebox__caseimg">
 				<img
 					class="casebox__caseimg-img"
@@ -125,7 +126,7 @@
 			</div>
 			<ul class="case"></ul>
 		</div>
-		<div class="open-btn-box">
+		<div class="open-btn-box" data-aos="fade-in" data-aos-duration="500">
 			<button class="open-btn">
 				open
 				<img
@@ -136,7 +137,7 @@
 				<p class="open-btn-amount">20.00</p>
 			</button>
 		</div>
-		<div class="chances">
+		<div class="chances" data-aos="fade-in" data-aos-duration="500">
 			<ul class="chances__list">
 				<li class="chances__list-item chances__list-item--red">
 					<img
@@ -191,7 +192,7 @@
 				</li>
 			</ul>
 		</div>
-		<footer class="footer">
+		<footer class="footer" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
 	<ul class="footer__icons-list">
 		<li class="footer__icons-list-item">
 			<a href="https://github.com/Ludzikk" class="footer__icons-list-item-link"
@@ -224,6 +225,11 @@
 		<script src="./dist/js/caseprintstream.min.js"></script>
 		<script src="./dist/js/casechances.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
+		<script src="./dist/js/setbalance.min.js"></script>
 		<script src="./dist/js/nav.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		  </script>
 	</body>
 </html>

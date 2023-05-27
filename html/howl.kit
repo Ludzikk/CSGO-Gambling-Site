@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<!-- @include "nav.kit" -->
-		<div class="casebox">
+		<div class="casebox" data-aos="fade-in" data-aos-duration="500">
 			<div class="casebox__caseimg">
 				<img
 					class="casebox__caseimg-img"
@@ -25,7 +25,7 @@
 			</div>
 			<ul class="case"></ul>
 		</div>
-		<div class="open-btn-box">
+		<div class="open-btn-box" data-aos="fade-in" data-aos-duration="500">
 			<button class="open-btn">
 				open
 				<img
@@ -36,7 +36,7 @@
 				<p class="open-btn-amount">2600.00</p>
 			</button>
 		</div>
-		<div class="chances">
+		<div class="chances" data-aos="fade-in" data-aos-duration="500">
 			<ul class="chances__list">
 				<li class="chances__list-item chances__list-item--red">
 					<img
@@ -69,6 +69,11 @@
 		<script src="./dist/js/casehowl.min.js"></script>
 		<script src="./dist/js/casechances.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
+		<script src="./dist/js/setbalance.min.js"></script>
 		<script src="./dist/js/nav.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		  </script>
 	</body>
 </html>

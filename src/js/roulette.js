@@ -548,7 +548,7 @@ greenButton.addEventListener("click", betAmountGreen);
 blackButton.addEventListener("click", betAmountBlack);
 
 clearBtn.addEventListener("click", () => {
-	betInput.value = 1;
+	betInput.value = 0;
 });
 
 lastBtn.addEventListener("click", () => {

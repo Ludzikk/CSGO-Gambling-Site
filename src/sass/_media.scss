@@ -1,31 +1,66 @@
 @media (min-width: 556px) {
-    .nav__link--hometext {
-        display: block;
-    } 
+	.nav__link--hometext {
+		display: block;
+	}
 
-    .chances__list-item {
-        width: 33%;
-    }
+	.chances__list-item {
+		width: 33%;
+	}
+
+	.main-roulette__lastdrops {
+		width: 560px;
+		height: 80px;
+
+		&-item {
+			height: 50px;
+			width: 50px;
+		}
+	}
+
+	.main-roulette__arrow {
+		&-up {
+			top: 235px;
+		}
+
+		&-down {
+			top: 405px;
+		}
+	}
 }
 
 @media (min-width: 768px) {
-    .chances__list-item {
-        width: 25%;
-    }
+	.chances__list-item {
+		width: 25%;
+	}
+
+	.main-roulette__inputbox {
+		&-input {
+			width: 65%;
+		}
+
+		&-button {
+			display: block;
+		}
+	}
 }
 
 @media (min-width: 992px) {
-    .chances__list-item {
-        width: 20%;
-    }
+	.chances__list-item {
+		width: 20%;
+	}
+
+	.main-roulette__betbox {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 }
 
 @media (min-width: 1200px) {
-    .small {
-        display: block;
-    }
+	.small {
+		display: block;
+	}
 
-    .hamburger {
-        display: none;
-    }
+	.hamburger {
+		display: none;
+	}
 }

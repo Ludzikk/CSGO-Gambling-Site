@@ -13,6 +13,7 @@
 	rel="stylesheet"
 />
 <link href="./dist/css/hamburgers/hamburgers.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="./dist/css/style.min.css" />
 <script
 	src="https://kit.fontawesome.com/bdb2f8ae99.js"
@@ -20,7 +21,7 @@
 ></script>
 	</head>
 	<body>
-		<nav class="nav">
+		<nav class="nav above" data-aos="fade-in" data-aos-duration="500">
 	<ul class="nav__list">
 		<li class="nav__list-item">
 			<a
@@ -107,7 +108,7 @@
 	  </button>  
 </nav>
 
-		<main class="main-roulette">
+		<main class="main-roulette" data-aos="fade-in" data-aos-duration="500">
 			<div class="main-roulette__last100"></div>
 			<div class="main-roulette__lastdrops"></div>
 			<div class="main-roulette__arrow"></div>
@@ -2357,7 +2358,7 @@
 						</button>
 						<div class="main-roulette__betbuttons-betsamount">
 							<p class="main-roulette__betbuttons-betsamount-textvalue">
-							<span id="totalvaluetextred">0</span> Bet
+								<span id="totalvaluetextred">0</span> Bet
 							</p>
 							<p class="main-roulette__betbuttons-betsamount-coinsvalue">
 								<img
@@ -2368,7 +2369,9 @@
 								<span id="totalvaluered">0.00</span>
 							</p>
 						</div>
-						<div class="main-roulette__betbuttons-players main-roulette__betbuttons-players--red"></div>
+						<div
+							class="main-roulette__betbuttons-players main-roulette__betbuttons-players--red"
+						></div>
 					</div>
 				</div>
 				<div class="main-roulette__betbuttons-box">
@@ -2402,7 +2405,9 @@
 							<span id="totalvaluegreen">0.00</span>
 						</p>
 					</div>
-					<div class="main-roulette__betbuttons-players main-roulette__betbuttons-players--green"></div>
+					<div
+						class="main-roulette__betbuttons-players main-roulette__betbuttons-players--green"
+					></div>
 				</div>
 				<div class="main-roulette__betbuttons-box">
 					<div class="main-roulette__betbuttons-top">
@@ -2435,12 +2440,13 @@
 							<span id="totalvalueblack">0.00</span>
 						</p>
 					</div>
-					<div class="main-roulette__betbuttons-players main-roulette__betbuttons-players--black">
-					</div>
+					<div
+						class="main-roulette__betbuttons-players main-roulette__betbuttons-players--black"
+					></div>
 				</div>
 			</div>
 		</main>
-		<footer class="footer">
+		<footer class="footer" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
 	<ul class="footer__icons-list">
 		<li class="footer__icons-list-item">
 			<a href="https://github.com/Ludzikk" class="footer__icons-list-item-link"
@@ -2473,5 +2479,9 @@
 		<script src="./dist/js/roulette.min.js"></script>
 		<script src="./dist/js/setbalance.min.js"></script>
 		<script src="./dist/js/nav.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 	</body>
 </html>

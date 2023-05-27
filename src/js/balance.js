@@ -14,6 +14,7 @@ const addBalance = () => {
 	balanceAmount.textContent = value.toFixed(2);
 	balanceAmountMobile.textContent = value.toFixed(2);
 	localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+	depositInput.value = ""
 };
 
 depositButton.addEventListener("click", addBalance);
