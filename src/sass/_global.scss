@@ -27,9 +27,29 @@
 }
 
 main {
-	height: 80vh;
+	padding: 6em 0 4em 0;
 }
 
 .linethrough {
 	text-decoration: line-through;
+}
+
+.small {
+	display: none;
+}
+
+.above {
+	z-index: 110000;
+}
+
+.body-hidden {
+	overflow-y: hidden;
+}
+
+.hide {
+	animation: hide 0.3s linear;
+}
+
+.show {
+	animation: show 0.3s linear
 }

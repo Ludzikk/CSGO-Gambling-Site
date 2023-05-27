@@ -2,7 +2,7 @@
 	<ul class="nav__list">
 		<li class="nav__list-item">
 			<a
-				class="nav__list-item-link nav__list-item-link--logo nav__list-item-link--color"
+				class="nav__list-item-link nav__list-item-link--logo nav__list-item-link--color above"
 				href="index.html"
 			>
 				<img
@@ -15,21 +15,27 @@
 				</p>
 			</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="cases.html">Cases</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="roulette.html">Roulette</a>
+		</li>
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Coinflip</a>
 		</li>
-		<li class="nav__list-item">
-			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="roulette.html">Roulette</a>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Crash</a>
+		</li>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Upgrader</a>
 		</li>
 	</ul>
 	<ul class="nav__list">
-		<li class="nav__list-item">
-			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="#">Withdraw</a>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Withdraw</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<p class="nav__list-item-balance">
 				<img
 					class="nav__list-item-balance-icon"
@@ -39,8 +45,42 @@
 				<span class="nav__list-item-balance-amount">100.00</span>
 			</p>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--deposit" href="deposit.html">Deposit</a>
 		</li>
 	</ul>
+	<ul class="nav__list-mobile hidden hide">
+		<li class="nav__item-mobile">
+			<p class="nav__balance">
+				<img src="./dist/img/other/coin.png" alt="Coin Icon" class="nav__balance-img">
+				<span class="nav__balance-amount">100.00</span>
+			</p>
+			</li>
+		<li class="nav__item-mobile">
+			<a href="cases.html" class="nav__link-mobile">Cases</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="roulette.html" class="nav__link-mobile">Roulette</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Coinflip</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Crash</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Upgrader</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Withdraw</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="deposit.html" class="nav__link-mobile">Deposit</a>
+		</li>
+	</ul>
+	<button class="hamburger hamburger--collapse above" type="button">
+		<span class="hamburger-box">
+		  <span class="hamburger-inner"></span>
+		</span>
+	  </button>  
 </nav>

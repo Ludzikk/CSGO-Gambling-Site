@@ -2,4 +2,30 @@
     .nav__link--hometext {
         display: block;
     } 
+
+    .chances__list-item {
+        width: 33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .chances__list-item {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    .chances__list-item {
+        width: 20%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .small {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }

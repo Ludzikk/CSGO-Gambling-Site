@@ -1,22 +1,28 @@
+const howlCase = {
+	under25: {
+		name: "M4A4 | Howl",
+		img: "./dist/img/howl/howl.png",
+		price: 5213,
+	},
+
+	above25: {
+		name: "M4A4 | Poly Mag",
+		img: "./dist/img/howl/polymag.png",
+		price: 0.68,
+	},
+};
 const openBtn = document.querySelector(".open-btn");
 const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
 const openAudio = new Audio("./dist/audio/open.mp3");
-const howlCase = {
-    under25: {
-        name: "M4A4 | Howl",
-        img: "./dist/img/howl/howl.png",
-        price: 5213,
-    },
-
-    above25: {
-        name: "M4A4 | Poly Mag",
-        img: "./dist/img/howl/polymag.png",
-        price: 0.68,
-    }
-}
+const itemsAnubisPrice = [[5213], [0.68]];
+const itemsAnubisImg = [
+	["./dist/img/howl/howl.png"],
+	["./dist/img/howl/polymag.png"],
+];
+const itemsAnubisName = [["M4A4 | Howl"], ["M4A4 | Poly Mag"]];
 const red =
 	"radial-gradient(circle, rgba(135, 0, 0, .7) 0%, rgba(0, 0, 0, 1) 75%";
 const pink =
@@ -44,7 +50,7 @@ const addBalance = () => {
 
 const removeBalanceOnOpen = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
-	let value = amountValue - 5;
+	let value = amountValue - 2000;
 
 	balanceAmount.textContent = value.toFixed(2);
 };
@@ -66,21 +72,20 @@ const setWinningItem = () => {
 	const winningItem = document.createElement("li");
 	const winningItemImg = document.createElement("img");
 	const winningItemText = document.createElement("p");
-
 	let chances = winningItemNumber;
 
-	if (chances <= 25) {
+	if (chances <= 50) {
 		chances = 0;
-	}  else {
-		chances = 5;
+	} else {
+		chances = 1;
 	}
 
-	if (winningItemNumber <= 25) {
+	if (winningItemNumber <= 50) {
 		winningItem.style.background = red;
 	} else {
-		winningItem.style.background = lightBlue;
+		winningItem.style.background = blue;
 	}
-	
+
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsAnubisImg[chances].length
 	);
@@ -98,6 +103,8 @@ const setWinningItem = () => {
 	winningItemText.setAttribute("class", "case-item-name");
 	winningItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
 
+	console.log(itemsAnubisName[chances][randomItemFromColor]);
+
 	winningItem.append(winningItemImg, winningItemText);
 	winningItemDiv.append(winningItem);
 	caseBox.append(winningItemDiv);
@@ -113,10 +120,6 @@ const setWinningItem = () => {
 
 	setTimeout(() => {
 		winningItemDiv.remove();
-		winningImg.setAttribute(
-			"src",
-			itemsAnubisImg[chances][randomItemFromColor]
-		);
 	}, 6500);
 };
 
@@ -130,36 +133,20 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-		if (chances <= 1) {
+		if (chances <= 50) {
 			chances = 0;
-		} else if (chances > 1 && chances <= 10) {
+		}  else {
 			chances = 1;
-		} else if (chances > 10 && chances <= 20) {
-			chances = 2;
-		} else if (chances > 20 && chances <= 40) {
-			chances = 3;
-		} else if (chances > 40 && chances <= 60) {
-			chances = 4;
-		} else {
-			chances = 5;
 		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
-		if (normalItemNumber <= 1) {
+		if (normalItemNumber <= 50) {
 			normalItem.style.background = red;
-		} else if (normalItemNumber > 1 && normalItemNumber <= 10) {
-			normalItem.style.background = pink;
-		} else if (normalItemNumber > 10 && normalItemNumber <= 20) {
-			normalItem.style.background = purple;
-		} else if (normalItemNumber > 20 && normalItemNumber <= 40) {
+		}  else {
 			normalItem.style.background = blue;
-		} else if (normalItemNumber > 40 && normalItemNumber <= 60) {
-			normalItem.style.background = lightBlue;
-		} else {
-			normalItem.style.background = grey;
 		}
 
 		normalItem.setAttribute("class", "case-item");
@@ -195,38 +182,22 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-		if (chances <= 1) {
+		if (chances <= 50) {
 			chances = 0;
-		} else if (chances > 1 && chances <= 10) {
+		}  else {
 			chances = 1;
-		} else if (chances > 10 && chances <= 20) {
-			chances = 2;
-		} else if (chances > 20 && chances <= 40) {
-			chances = 3;
-		} else if (chances > 40 && chances <= 60) {
-			chances = 4;
-		} else {
-			chances = 5;
 		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
-		if (normalItemNumber <= 1) {
+		if (normalItemNumber <= 50) {
 			normalItem.style.background = red;
-		} else if (normalItemNumber > 1 && normalItemNumber <= 10) {
-			normalItem.style.background = pink;
-		} else if (normalItemNumber > 10 && normalItemNumber <= 20) {
-			normalItem.style.background = purple;
-		} else if (normalItemNumber > 20 && normalItemNumber <= 40) {
+		}  else {
 			normalItem.style.background = blue;
-		} else if (normalItemNumber > 40 && normalItemNumber <= 60) {
-			normalItem.style.background = lightBlue;
-		} else {
-			normalItem.style.background = grey;
 		}
-		
+
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
 		normalItemImg.setAttribute(
@@ -255,7 +226,7 @@ const resetOpening = () => {
 };
 
 openBtn.addEventListener("click", () => {
-	if (opened === false && parseFloat(balanceAmount.textContent) >= 1) {
+	if (opened === false && parseFloat(balanceAmount.textContent) >= 2000) {
 		startOpeningAnimation();
 		openAudio.play();
 	}

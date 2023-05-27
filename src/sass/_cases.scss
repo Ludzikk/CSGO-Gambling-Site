@@ -1,13 +1,14 @@
 .main-cases {
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
 
 	&__list {
 		display: flex;
+		justify-content: center;
 		flex-wrap: wrap;
 		list-style: none;
 
@@ -64,6 +65,7 @@
 			&-button {
 				padding: 0.5em;
 				font-size: 2rem;
+				font-weight: bold;
 				text-transform: uppercase;
 				border: none;
 				border-radius: 15px;

@@ -5,25 +5,26 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>CSGOLuck | Printstream Case</title>
-		<link rel="icon" href="./dist/img/other/icon.png">
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="./dist/css/style.min.css" />
-		<script
-			src="https://kit.fontawesome.com/bdb2f8ae99.js"
-			crossorigin="anonymous"
-		></script>
+		<link rel="icon" href="./dist/img/other/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;700&display=swap"
+	rel="stylesheet"
+/>
+<link href="./dist/css/hamburgers/hamburgers.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="./dist/css/style.min.css" />
+<script
+	src="https://kit.fontawesome.com/bdb2f8ae99.js"
+	crossorigin="anonymous"
+></script>
 	</head>
 	<body>
 		<nav class="nav">
 	<ul class="nav__list">
 		<li class="nav__list-item">
 			<a
-				class="nav__list-item-link nav__list-item-link--logo nav__list-item-link--color"
+				class="nav__list-item-link nav__list-item-link--logo nav__list-item-link--color above"
 				href="index.html"
 			>
 				<img
@@ -36,21 +37,27 @@
 				</p>
 			</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="cases.html">Cases</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="roulette.html">Roulette</a>
+		</li>
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Coinflip</a>
 		</li>
-		<li class="nav__list-item">
-			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="roulette.html">Roulette</a>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Crash</a>
+		</li>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Upgrader</a>
 		</li>
 	</ul>
 	<ul class="nav__list">
-		<li class="nav__list-item">
-			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color" href="#">Withdraw</a>
+		<li class="nav__list-item small">
+			<a class="nav__list-item-link nav__list-item-link--underline nav__list-item-link--color linethrough" href="#">Withdraw</a>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<p class="nav__list-item-balance">
 				<img
 					class="nav__list-item-balance-icon"
@@ -60,10 +67,44 @@
 				<span class="nav__list-item-balance-amount">100.00</span>
 			</p>
 		</li>
-		<li class="nav__list-item">
+		<li class="nav__list-item small">
 			<a class="nav__list-item-link nav__list-item-link--deposit" href="deposit.html">Deposit</a>
 		</li>
 	</ul>
+	<ul class="nav__list-mobile hidden hide">
+		<li class="nav__item-mobile">
+			<p class="nav__balance">
+				<img src="./dist/img/other/coin.png" alt="Coin Icon" class="nav__balance-img">
+				<span class="nav__balance-amount">100.00</span>
+			</p>
+			</li>
+		<li class="nav__item-mobile">
+			<a href="cases.html" class="nav__link-mobile">Cases</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="roulette.html" class="nav__link-mobile">Roulette</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Coinflip</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Crash</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Upgrader</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="#" class="nav__link-mobile">Withdraw</a>
+		</li>
+		<li class="nav__item-mobile">
+			<a href="deposit.html" class="nav__link-mobile">Deposit</a>
+		</li>
+	</ul>
+	<button class="hamburger hamburger--collapse above" type="button">
+		<span class="hamburger-box">
+		  <span class="hamburger-inner"></span>
+		</span>
+	  </button>  
 </nav>
 
 		<div class="casebox">
@@ -183,5 +224,6 @@
 		<script src="./dist/js/caseprintstream.min.js"></script>
 		<script src="./dist/js/casechances.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
+		<script src="./dist/js/nav.min.js"></script>
 	</body>
 </html>
