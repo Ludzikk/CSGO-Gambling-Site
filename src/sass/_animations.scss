@@ -67,3 +67,23 @@
 		opacity: 0;
 	}
 }
+
+@keyframes coinflip-red {
+	from {
+		transform: rotateY(0deg);
+	} 
+
+	to {
+		transform: rotateY(-1440deg);
+	}
+}
+
+@keyframes coinflip-black {
+	from {
+		transform: rotateY(-90deg);
+	} 
+
+	to {
+		transform: rotateY(-1600deg);
+	}
+}

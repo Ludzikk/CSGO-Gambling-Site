@@ -87,7 +87,8 @@ const randomNames = [
 	"Sikor",
 	"Janek key-drop",
 ];
-const winAudio = new Audio("./dist/audio/roulettewin.wav");
+const winAudio = new Audio("./dist/audio/win.wav");
+const betAudio = new Audio("./dist/audio/bet.wav");
 const arrow = document.querySelectorAll(".arrow");
 
 const spinRoulette = () => {
@@ -120,6 +121,11 @@ setInterval(() => {
 		totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
 		totalAmountOfBetsForRed.textContent = totalBetAmountRed;
 		totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
+		setTimeout(() => {
+			playerBetAmountBlack = 0;
+			playerBetAmountGreen = 0;
+			playerBetAmountRed = 0;
+		}, 500);
 	}
 }, 1000);
 
@@ -344,6 +350,7 @@ const betAmountRed = () => {
 		</p>`;
 
 		playersBetsRed.append(betsDiv);
+		betAudio.play();
 	}
 };
 
@@ -384,6 +391,7 @@ const betAmountBlack = () => {
 		</p>`;
 
 		playersBetsBlack.append(betsDiv);
+		betAudio.play();
 	}
 };
 const betAmountGreen = () => {
@@ -423,6 +431,7 @@ const betAmountGreen = () => {
 		</p>`;
 
 		playersBetsGreen.append(betsDiv);
+		betAudio.play();
 	}
 };
 
