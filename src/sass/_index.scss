@@ -59,7 +59,8 @@
 		justify-content: center;
 		align-items: center;
 		padding-bottom: 0.5em;
-		border-bottom: 1px solid black;
+		font-weight: bold;
+		border-bottom: 2px solid #00a941;
 
 		&-text {
 			position: relative;
@@ -72,17 +73,38 @@
 		flex-direction: column;
 
 		&-item {
+			position: relative;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
+			height: 92.5px;
 
-			img {
+			&-img {
 				width: 50%;
+			}
+
+			&-pricebox {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: rgba(0, 0, 0, 0.6);
+
+				&-img {
+					width: 25px;
+					height: 25px;
+				}
 			}
 
 			&-name {
 				font-size: 1.2rem;
 			}
+
 			&--red {
 				border-left: 4px solid #de4c41;
 			}
@@ -97,6 +119,10 @@
 
 			&--purple {
 				border-left: 4px solid rgb(125, 50, 255);
+			}
+
+			&--blue {
+				border-left: 4px solid rgb(75, 147, 255);
 			}
 		}
 	}
