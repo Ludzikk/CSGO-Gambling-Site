@@ -1,4 +1,4 @@
-const lastDropsBox = document.querySelector(".main__dropsbox");
+const lastItemDrops = document.querySelector(".main__dropsbox");
 const color = ["red", "gold", "pink", "red", "red", "purple", "purple", "pink", "pink", "gold", "red", "red", "red", "red", "red"];
 const items = [
 	"./dist/img/anubis/eyeofhorus.png",
@@ -55,10 +55,10 @@ const createNewDrop = () => {
 	itemText.textContent = itemsName[randomColor];
 
 	item.append(itemImg, itemText);
-	lastDropsBox.append(item);
+	lastItemDrops.append(item);
 
-	if (lastDropsBox.childElementCount > 10) {
-		lastDropsBox.firstElementChild.remove();
+	if (lastItemDrops.childElementCount > 10) {
+		lastItemDrops.firstElementChild.remove();
 	}
 
     if(id % 2 === 0) {

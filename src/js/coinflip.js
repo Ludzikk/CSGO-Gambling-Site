@@ -20,6 +20,7 @@ let playerColor;
 let betAmount = 0;
 let lastBetAmount = 0;
 let flipping = false;
+let moveUp;
 
 const setWinningCoin = () => {
 	const randomNum = Math.floor(Math.random() * 2);
@@ -61,6 +62,31 @@ const addMoneyToBalance = () => {
 		let value = amountValue + betAmount;
 		balanceAmount.textContent = value.toFixed(2);
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		const winPopUp = document.createElement("p");
+		winPopUp.setAttribute("class", "win");
+		winPopUp.textContent = betAmount.toFixed(2);
+		const randomFromTop = Math.floor(Math.random() * 30 + 20);
+		const randomFromLeft = Math.floor(Math.random() * 35 + 30);
+
+		winPopUp.style.top = `${randomFromTop}%`;
+		winPopUp.style.left = `${randomFromLeft}%`;
+
+		document.body.append(winPopUp);
+
+		let moveUpValue = randomFromTop;
+
+		moveUp = setInterval(() => {
+			moveUpValue -= 0.5;
+			winPopUp.style.top = `${moveUpValue}%`;
+		}, 100);
+
+		setTimeout(() => {
+			document.body.lastElementChild.remove();
+			clearInterval(moveUp);
+		}, 2000);
+
+		betAmount = 0;
 	}
 };
 
