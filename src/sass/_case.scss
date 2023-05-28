@@ -123,6 +123,7 @@
 		&-item {
 			position: relative;
 			width: 50%;
+			border: 1px solid black;
 
 			&-price {
 				position: absolute;
@@ -151,58 +152,58 @@
 			}
 
 			&--gold {
-				background: radial-gradient(
-					circle,
-					rgba(255, 248, 0, 0.7) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(255, 248, 0, 0.5) 100%
 				);
 			}
 
 			&--red {
-				background: radial-gradient(
-					circle,
-					rgba(135, 0, 0, 0.7) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(135, 0, 0, 0.5) 100%
 				);
 			}
 
 			&--pink {
-				background: radial-gradient(
-					circle,
-					rgba(255, 50, 240, 0.5) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(255, 50, 240, 0.5) 100%
 				);
 			}
 
 			&--purple {
-				background: radial-gradient(
-					circle,
-					rgba(125, 50, 255, 0.5) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(125, 50, 255, 0.5) 100%
 				);
 			}
 
 			&--lightblue {
-				background: radial-gradient(
-					circle,
-					rgba(160, 211, 255, 0.5) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(160, 211, 255, 0.5) 100%
 				);
 			}
 
 			&--blue {
-				background: radial-gradient(
-					circle,
-					rgba(50, 113, 255, 0.5) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(50, 113, 255, 0.5) 100%
 				);
 			}
 
 			&--grey {
-				background: radial-gradient(
-					circle,
-					rgba(78, 78, 78, 0.5) 0%,
-					rgba(0, 0, 0, 1) 75%
+				background: linear-gradient(
+					180deg,
+					#1d2126 40%,
+					rgba(78, 78, 78, 0.5) 100%
 				);
 			}
 

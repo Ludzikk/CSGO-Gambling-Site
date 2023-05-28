@@ -86,6 +86,14 @@ const randomNames = [
 	"Ma$a",
 	"Sikor",
 	"Janek key-drop",
+	"Czopi",
+	"Czokus",
+	"Loli",
+	"Bolek",
+	"Maciu",
+	"240/h",
+	"102kg",
+	"twardy"
 ];
 const winAudio = new Audio("./dist/audio/win.wav");
 const betAudio = new Audio("./dist/audio/bet.wav");
@@ -534,9 +542,9 @@ const addRandomColorDropsToLastDrops = () => {
 };
 
 const createRandomPlayersBetBlack = () => {
-	const randomAmountOfBets = Math.floor(Math.random() * 8);
+	const randomAmountOfBets = Math.floor(Math.random() * 20);
 
-	for (let i = randomAmountOfBets; i < 8; i++) {
+	for (let i = randomAmountOfBets; i < 20; i++) {
 		const randomNum = Math.floor(Math.random() * randomNames.length);
 		const randomAmount = Math.floor(Math.random() * 1500);
 		const betsDiv = document.createElement("div");
@@ -562,9 +570,9 @@ const createRandomPlayersBetBlack = () => {
 };
 
 const createRandomPlayersBetGreen = () => {
-	const randomAmountOfBets = Math.floor(Math.random() * 5);
+	const randomAmountOfBets = Math.floor(Math.random() * 10);
 
-	for (let i = randomAmountOfBets; i < 5; i++) {
+	for (let i = randomAmountOfBets; i < 10; i++) {
 		const randomNum = Math.floor(Math.random() * randomNames.length);
 		const randomAmount = Math.floor(Math.random() * 500);
 		const betsDiv = document.createElement("div");
@@ -590,9 +598,9 @@ const createRandomPlayersBetGreen = () => {
 };
 
 const createRandomPlayersBetRed = () => {
-	const randomAmountOfBets = Math.floor(Math.random() * 8);
+	const randomAmountOfBets = Math.floor(Math.random() * 20);
 
-	for (let i = randomAmountOfBets; i < 8; i++) {
+	for (let i = randomAmountOfBets; i < 20; i++) {
 		const randomNum = Math.floor(Math.random() * randomNames.length);
 		const randomAmount = Math.floor(Math.random() * 1500);
 		const betsDiv = document.createElement("div");

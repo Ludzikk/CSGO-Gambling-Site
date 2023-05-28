@@ -24,17 +24,17 @@ const itemsAnubisImg = [
 ];
 const itemsAnubisName = [["M4A4 | Howl"], ["M4A4 | Poly Mag"]];
 const red =
-	"radial-gradient(circle, rgba(135, 0, 0, .7) 0%, rgba(0, 0, 0, 1) 75%";
+	"linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
 const pink =
-	"radial-gradient(circle, rgba(255, 50, 240, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
 const purple =
-	"radial-gradient(circle, rgba(125, 50, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(125, 50, 255, .5) 100%)";
 const lightBlue =
-	"radial-gradient(circle, rgba(160, 211, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)"; 
 const blue =
-	"radial-gradient(circle, rgba(50, 113, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
 const grey =
-	"radial-gradient(circle, rgba(78, 78, 78, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");

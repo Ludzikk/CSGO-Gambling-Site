@@ -10,19 +10,15 @@ const itemsAnubisImg = [
 	["./dist/img/knife5050/navaja.png"],
 ];
 const itemsAnubisName = [["Karambit | Doppler"], ["Navaja | Safari Mesh"]];
-const gold = "radial-gradient(circle, rgba(255,248,0,.7) 0%, rgba(0, 0, 0, 1) 75%";
-const red =
-	"radial-gradient(circle, rgba(135, 0, 0, .7) 0%, rgba(0, 0, 0, 1) 75%";
-const pink =
-	"radial-gradient(circle, rgba(255, 50, 240, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+const gold = "linear-gradient(180deg, black 40%, rgba(255,248,0, .5) 100%";
+const red = "linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
+const pink = "linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
 const purple =
-	"radial-gradient(circle, rgba(125, 50, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(125, 50, 255, .5) 100%)";
 const lightBlue =
-	"radial-gradient(circle, rgba(160, 211, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
-const blue =
-	"radial-gradient(circle, rgba(50, 113, 255, .5) 0%, rgba(0, 0, 0, 1) 75%)";
-const grey =
-	"radial-gradient(circle, rgba(78, 78, 78, .5) 0%, rgba(0, 0, 0, 1) 75%)";
+	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)";
+const blue = "linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
+const grey = "linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -133,7 +129,7 @@ const addItems = () => {
 
 		if (normalItemNumber <= 50) {
 			normalItem.style.background = gold;
-		}  else {
+		} else {
 			normalItem.style.background = grey;
 		}
 
@@ -182,7 +178,7 @@ const addItems = () => {
 
 		if (normalItemNumber <= 50) {
 			normalItem.style.background = gold;
-		}  else {
+		} else {
 			normalItem.style.background = grey;
 		}
 
