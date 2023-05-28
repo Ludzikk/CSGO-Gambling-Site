@@ -64,3 +64,9 @@
 		display: none;
 	}
 }
+
+@media (min-width: 1600px) {
+	.main {
+		display: block;
+	}
+}

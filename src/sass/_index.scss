@@ -37,3 +37,64 @@
 		}
 	}
 }
+
+.main {
+	display: none;
+
+	&__drops {
+		position: absolute;
+		right: 0;
+		top: 85px;
+		width: 250px;
+		min-height: 100%;
+		max-height: 100%;
+		overflow: hidden;
+		color: white;
+		background-color: #1d2126;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 0.5em;
+
+		&-text {
+			font-size: 2rem;
+		}
+	}
+
+	&__dropsbox {
+		display: flex;
+		flex-direction: column;
+
+		&-item {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+
+			img {
+				width: 50%;
+			}
+
+			&-name {
+				font-size: 1.2rem;
+			}
+			&--red {
+				border-left: 4px solid #de4c41;
+			}
+
+			&--gold {
+				border-left: 4px solid gold;
+			}
+
+			&--pink {
+				border-left: 4px solid rgb(255, 112, 136);
+			}
+
+			&--purple {
+				border-left: 4px solid rgb(125, 50, 255);
+			}
+		}
+	}
+}

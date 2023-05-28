@@ -169,7 +169,9 @@ const startTimerOnEnter = () => {
 };
 
 const playerBet = () => {
-	if (betInput.value > 0 && crashGoingStatus === false && didBet === false) {
+	const balance = localStorage.getItem("Balance");
+
+	if (betInput.value > 0 && crashGoingStatus === false && didBet === false && betInput.value <= parseFloat(balance)) {
 		didBet = true;
 		lastBetAmount = betAmount;
 		betInput.value = 0;

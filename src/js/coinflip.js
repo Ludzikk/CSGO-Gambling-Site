@@ -72,23 +72,35 @@ const removeBalance = () => {
 };
 
 redBtn.addEventListener("click", () => {
-	if (betInput.value !== "" && flipping === false) {
+	const balance = localStorage.getItem("Balance");
+
+	if (
+		betInput.value > 0 &&
+		flipping === false &&
+		betInput.value <= parseFloat(balance)
+	) {
 		playerColor = "red";
 		betAmount = betInput.value;
 		betInput.value = 0;
 		lastBetAmount = betAmount;
-		betAudio.play()
+		betAudio.play();
 		setWinningCoin();
 	}
 });
 
 blackBtn.addEventListener("click", () => {
-	if (betInput.value !== "" && flipping === false) {
+	const balance = localStorage.getItem("Balance");
+
+	if (
+		betInput.value > 0 &&
+		flipping === false &&
+		betInput.value <= parseFloat(balance)
+	) {
 		playerColor = "black";
 		betAmount = betInput.value;
 		betInput.value = 0;
 		lastBetAmount = betAmount;
-		betAudio.play()
+		betAudio.play();
 		setWinningCoin();
 	}
 });
