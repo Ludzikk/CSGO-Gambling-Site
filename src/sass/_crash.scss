@@ -8,6 +8,20 @@
 	width: 100%;
 	margin: 0 auto;
 
+	&__coin {
+		width: 20px;
+		height: 20px;
+	}
+
+	&__lastdrops {
+		display: flex;
+		font-size: 1.6rem;
+	}
+
+	&__lastdropitem {
+		padding: 0 0.25em;
+	}
+
 	&__multiplier {
 		padding: 1em;
 		margin-bottom: 1em;
@@ -38,7 +52,7 @@
 		align-items: center;
 		flex-direction: column;
 		color: white;
-		font-size: 2rem;
+		font-size: 3rem;
 		width: 100%;
 
 		&-timer {
@@ -46,24 +60,5 @@
 			font-weight: bold;
 			color: green;
 		}
-
-		&-timerline {
-			position: relative;
-			width: 100%;
-			height: 4px;
-			border-radius: 15px;
-			background-color: rgb(32, 30, 30);
-
-			&::before {
-				position: absolute;
-				left: 0;
-				top: 0;
-				content: "";
-				height: 4px;
-				width: 100%;
-				background-color: green;
-			}
-		}
 	}
 }
-

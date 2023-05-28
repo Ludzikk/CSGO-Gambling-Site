@@ -116,7 +116,7 @@
 				<p class="main-crash__countdown-timer">
 					<span class="main-crash__countdown-timer-seconds">15s</span>
 				</p>
-				<!-- <div class="main-crash__countdown-timerline"></div> -->
+				<div class="main-crash__lastdrops"></div>
 			</div>
 			<div class="main-coinflip__inputbox">
 				<input
@@ -140,8 +140,16 @@
 				<div class="main-coinflip__inputbox-button" id="x2">x2</div>
 				<div class="main-coinflip__inputbox-button" id="max">max</div>
 			</div>
-            <button class="main-crash__bet">bet</button>
-			<button class="main-crash__bet main-crash__bet--withdraw">withdraw</button>
+			<div class="main-coinflip__buttons">
+				<button class="main-crash__bet">bet</button>
+				<button class="main-crash__bet main-crash__bet--withdraw">
+					withdraw
+					<span class="main-crash__withdrawamount">0.00 
+					</span>
+					<img class="main-crash__coin" src="./dist/img/other/coin.png" alt="Coin Icon">
+				</button>
+			</div>
+			<!-- <img class="win__img" src="./dist/img/other/coin.png" alt="Coin Icon"> -->
 		</main>
 		<footer class="footer" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
 	<ul class="footer__icons-list">
