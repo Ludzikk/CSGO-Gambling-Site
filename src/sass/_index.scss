@@ -210,6 +210,7 @@
 	&__msg {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		padding: 1em;
 
 		&--second {
@@ -218,7 +219,9 @@
 	}
 
 	&__avatar {
-		width: 25px;
-		height: 25px;
+		margin-right: 1em;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
 	}
 }

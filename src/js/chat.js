@@ -1,16 +1,30 @@
 const chatBox = document.querySelector(".main-chat__messages");
+const randomAvatarArr = [
+	"./dist/img/other/avatar1.jpg",
+	"./dist/img/other/avatar2.jpg",
+	"./dist/img/other/avatar3.jpg",
+];
+const randomMsgArr = [
+	"No elo",
+	"Polska gurom",
+	"Ale essa",
+	"Double Green",
+	"120kg na klate",
+];
 let idChat = 0;
 
 const createMsg = () => {
+	const randomAvatarNum = Math.floor(Math.random() * randomAvatarArr.length);
+	const randomMsgNum = Math.floor(Math.random() * randomMsgArr.length);
 	const chatMsg = document.createElement("div");
 	const avatar = document.createElement("img");
 	const msg = document.createElement("p");
 
 	avatar.setAttribute("class", "main-chat__avatar");
-	avatar.setAttribute("src", "./dist/img/other/coin.png");
+	avatar.setAttribute("src", `${randomAvatarArr[randomAvatarNum]}`);
 	avatar.setAttribute("alt", "Avatar");
 	msg.setAttribute("class", "main-chat__player-msg");
-	msg.textContent = "Elo";
+	msg.textContent = randomMsgArr[randomMsgNum];
 
 	if (idChat % 2 === 0) {
 		chatMsg.setAttribute("class", "main-chat__msg");
