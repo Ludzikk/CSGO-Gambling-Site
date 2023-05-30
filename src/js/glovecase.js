@@ -6,35 +6,18 @@ const winningButton = document.querySelector(".winning-item-button");
 const spinningBtn = document.querySelector(".open-btn--spinning");
 const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const openAudio = new Audio("./dist/audio/open.mp3");
-const itemsAnubisPrice = [
-	[9521, 9123],
-	[5324, 6231],
-	[152.42],
-	[39.12, 45.52],
-	[0.12],
-];
+const itemsAnubisPrice = [[1085], [463, 585], [92]];
 const itemsAnubisImg = [
-	["./dist/img/awp/dragonlore.png", "./dist/img/awp/gungnir.png"],
-	["./dist/img/awp/medusa.png", "./dist/img/awp/theprince.png"],
-	["./dist/img/awp/asimov.png"],
-	["./dist/img/awp/wildfire.png", "./dist/img/awp/neonoir.png"],
-	["./dist/img/awp/safarimesh.png"],
+	["./dist/img/glove/slingshot.png"],
+	["./dist/img/glove/marblefade.png", "./dist/img/glove/cobaltskulls.png"],
+	["./dist/img/glove/unhinged.png"],
 ];
 const itemsAnubisName = [
-	["AWP | Dragonlore", "AWP | Gungnir"],
-	["AWP | Medusa", "AWP | The Prince"],
-	["AWP | Asimov"],
-	["AWP | Wildfire", "AWP | Neo-noir"],
-	["AWP | Safari mesh"],
+	["Sport Gloves | Slingshot"],
+	["Specialist Gloves | Marble Fade", "Hand Wraps | Cobalt Skulls"],
+	["Broken Fang Gloves | Unhinged"],
 ];
 const red = "linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
-const pink = "linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
-const purple =
-	"linear-gradient(180deg, black 40%, rgba(125, 50, 255, .5) 100%)";
-const lightBlue =
-	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)";
-const blue = "linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
-const grey = "linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -51,7 +34,7 @@ const addBalance = () => {
 
 const removeBalanceOnOpen = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
-	let value = amountValue - 2000;
+	let value = amountValue - 200;
 
 	balanceAmount.textContent = value.toFixed(2);
 	balanceAmountMobile.textContent = value.toFixed(2);
@@ -76,29 +59,15 @@ const setWinningItem = () => {
 	const winningItemText = document.createElement("p");
 	let chances = winningItemNumber;
 
-	if (chances <= 5) {
+	if (chances <= 10) {
 		chances = 0;
-	} else if (chances > 5 && chances <= 10) {
+	} else if (chances > 10 && chances <= 40) {
 		chances = 1;
-	} else if (chances > 10 && chances <= 20) {
-		chances = 2;
-	} else if (chances > 20 && chances <= 30) {
-		chances = 3;
 	} else {
-		chances = 4;
+		chances = 2;
 	}
 
-	if (winningItemNumber <= 5) {
-		winningItem.style.background = red;
-	} else if (winningItemNumber > 5 && winningItemNumber <= 10) {
-		winningItem.style.background = pink;
-	} else if (winningItemNumber > 10 && winningItemNumber <= 20) {
-		winningItem.style.background = purple;
-	} else if (winningItemNumber > 20 && winningItemNumber <= 30) {
-		winningItem.style.background = blue;
-	} else {
-		winningItem.style.background = grey;
-	}
+	winningItem.style.background = red;
 
 	const randomItemFromColor = Math.floor(
 		Math.random() * itemsAnubisImg[chances].length
@@ -150,33 +119,19 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-		if (chances <= 5) {
+		if (chances <= 10) {
 			chances = 0;
-		} else if (chances > 5 && chances <= 10) {
+		} else if (chances > 10 && chances <= 40) {
 			chances = 1;
-		} else if (chances > 10 && chances <= 20) {
-			chances = 2;
-		} else if (chances > 20 && chances <= 30) {
-			chances = 3;
 		} else {
-			chances = 4;
+			chances = 2;
 		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
-		if (normalItemNumber <= 5) {
-			normalItem.style.background = red;
-		} else if (normalItemNumber > 5 && normalItemNumber <= 10) {
-			normalItem.style.background = pink;
-		} else if (normalItemNumber > 10 && normalItemNumber <= 20) {
-			normalItem.style.background = purple;
-		} else if (normalItemNumber > 20 && normalItemNumber <= 30) {
-			normalItem.style.background = blue;
-		} else {
-			normalItem.style.background = grey;
-		}
+		normalItem.style.background = red;
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
@@ -211,33 +166,19 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-		if (chances <= 5) {
+		if (chances <= 10) {
 			chances = 0;
-		} else if (chances > 5 && chances <= 10) {
+		} else if (chances > 10 && chances <= 40) {
 			chances = 1;
-		} else if (chances > 10 && chances <= 20) {
-			chances = 2;
-		} else if (chances > 20 && chances <= 30) {
-			chances = 3;
 		} else {
-			chances = 4;
+			chances = 2;
 		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
-		if (normalItemNumber <= 5) {
-			normalItem.style.background = red;
-		} else if (normalItemNumber > 5 && normalItemNumber <= 10) {
-			normalItem.style.background = pink;
-		} else if (normalItemNumber > 10 && normalItemNumber <= 20) {
-			normalItem.style.background = purple;
-		} else if (normalItemNumber > 20 && normalItemNumber <= 30) {
-			normalItem.style.background = blue;
-		} else {
-			normalItem.style.background = grey;
-		}
+		normalItem.style.background = red;
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");

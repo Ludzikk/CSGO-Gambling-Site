@@ -3,7 +3,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 80vh;
+	min-height: 80vh;
 
 	&__coin {
 		position: relative;
@@ -64,6 +64,7 @@
 	}
 
 	&__inputbox-button {
+		display: none;
 		padding: 0.25em 0.5em;
 		margin: 0 0.5em;
 		border: 1px solid #1d2126;

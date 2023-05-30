@@ -4,6 +4,7 @@ const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
 const spinningBtn = document.querySelector(".open-btn--spinning");
+const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [[1521.09], [98.28]];
 const itemsAnubisImg = [
@@ -31,6 +32,7 @@ const addBalance = () => {
 	let value = amountValue + currentWinningItemPrice;
 
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 };
 
 const removeBalanceOnOpen = () => {
@@ -38,6 +40,7 @@ const removeBalanceOnOpen = () => {
 	let value = amountValue - 800;
 
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 };
 
 const startOpeningAnimation = () => {
@@ -87,8 +90,6 @@ const setWinningItem = () => {
 	);
 	winningItemText.setAttribute("class", "case-item-name");
 	winningItemText.textContent = itemsAnubisName[chances][randomItemFromColor];
-
-	console.log(itemsAnubisName[chances][randomItemFromColor]);
 
 	winningItem.append(winningItemImg, winningItemText);
 	winningItemDiv.append(winningItem);

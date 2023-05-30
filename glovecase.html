@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>CSGOLuck | Best csgo casino</title>
+		<title>CSGOLuck | Glove Case</title>
 		<link rel="icon" href="./dist/img/other/icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,24 +108,112 @@
 	  </button>  
 </nav>
 
-		<main class="main-dep" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
-			<div class="main-dep__top">
-				<p class="main-dep__top-text">Deposit</p>
-				<a class="main-dep__top-button" href="index.html">
-					<i class="fa-solid fa-x main-dep__top-button-icon"></i>
-				</a>
-			</div>
-			<div class="main-dep__middle">
-				<label for="amount" class="main-dep__middle-label">Amount:</label>
-				<input
-					type="number"
-					class="main-dep__middle-input"
-					id="amount"
-					placeholder="Put value..."
+		<div class="main">
+			<aside class="main__drops" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
+				<div class="main__top">
+					<p class="main__top-text">Last Drops</p>
+				</div>
+				<div class="main__dropsbox">
+				</div>
+			</aside>
+		</div>
+		<div class="casebox" data-aos="fade-in" data-aos-duration="500">
+			<div class="casebox__caseimg">
+				<img
+					class="casebox__caseimg-img"
+					src="./dist/img/glove/case.png"
+					alt="Glove Case"
 				/>
-				<button class="main-dep__middle-deposit">Deposit</button>
 			</div>
-		</main>
+			<div class="casebox-arrows">
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--down">
+					<i class="casebox-arrow-down-icon fa-solid fa-arrow-down"></i>
+				</div>
+				<div class="casebox-arrows-arrow casebox-arrows-arrow--up">
+					<i class="casebox-arrow-up-icon fa-solid fa-arrow-up"></i>
+				</div>
+			</div>
+			<ul class="case"></ul>
+		</div>
+		<div class="open-btn-box" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
+			<button class="open-btn">
+				open
+				<img
+					class="open-btn-icon"
+					src="./dist/img/other/coin.png"
+					alt="Coin Icon"
+				/>
+				<p class="open-btn-amount">200.00</p>
+			</button>
+			<button class="open-btn open-btn--spinning hidden">
+				Spinning...
+			</button>
+		</div>
+		<div class="chances" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
+			<ul class="chances__list">
+				<li class="chances__list-item chances__list-item--red">
+					<img
+						src="./dist/img/glove/slingshot.png"
+						alt="Sport Gloves | Slingshot"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">10%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">1085</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+				</li>
+				<li class="chances__list-item
+				chances__list-item--red">
+					<img
+						src="./dist/img/glove/marblefade.png"
+						alt="Specialist Gloves | Marble Fade"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">15%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">463</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+				</li>
+				<li class="chances__list-item
+				chances__list-item--red">
+					<img
+						src="./dist/img/glove/cobaltskulls.png"
+						alt="Hand Wraps | Cobalt Skulls"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">15%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">585</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+				</li>
+				<li class="chances__list-item
+				chances__list-item--red">
+					<img
+						src="./dist/img/glove/unhinged.png"
+						alt="Broken Fang Gloves | Unhinged"
+						class="chances__list-item-img"
+					/>
+					<p class="chances__list-item-text">60%</p>
+					<div class="chances__list-item-price hidden">
+						<p class="chances__list-item-price-text">92</p>
+                        <img class="chances__list-item-price-icon" src="./dist/img/other/coin.png" alt="Coin Icon">
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="main-chat">
+			<aside class="main-chat__chatbox" data-aos="fade-in" data-aos-duration="500">
+				<div class="main-chat__messages">
+				</div>
+				<div class="main-chat__inputbox">
+					<input type="text" class="main-chat__input" placeholder="Send msg...">
+					<button class="main-chat__button">Send</button>
+				</div>
+			</aside>
+		</div>
 		<footer class="footer" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
 	<ul class="footer__icons-list">
 		<li class="footer__icons-list-item">
@@ -156,10 +244,13 @@
 	</p>
 </footer>
 
-		<script src="./dist/js/balance.min.js"></script>
+		<script src="./dist/js/glovecase.min.js"></script>
+		<script src="./dist/js/casechances.min.js"></script>
 		<script src="./dist/js/footeryear.min.js"></script>
 		<script src="./dist/js/setbalance.min.js"></script>
 		<script src="./dist/js/nav.min.js"></script>
+		<script src="./dist/js/lastdrops.min.js"></script>
+		<script src="./dist/js/chat.min.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
 			AOS.init();

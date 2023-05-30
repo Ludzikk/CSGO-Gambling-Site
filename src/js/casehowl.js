@@ -17,6 +17,7 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
+const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [[5213], [0.68]];
 const itemsAnubisImg = [
@@ -43,6 +44,7 @@ const addBalance = () => {
 	let value = amountValue + currentWinningItemPrice;
 
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 };
 
 const removeBalanceOnOpen = () => {
@@ -50,6 +52,7 @@ const removeBalanceOnOpen = () => {
 	let value = amountValue - 2000;
 
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 };
 
 const startOpeningAnimation = () => {
