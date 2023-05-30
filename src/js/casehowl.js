@@ -12,6 +12,7 @@ const howlCase = {
 	},
 };
 const openBtn = document.querySelector(".open-btn");
+const spinningBtn = document.querySelector(".open-btn--spinning");
 const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
@@ -23,18 +24,14 @@ const itemsAnubisImg = [
 	["./dist/img/howl/polymag.png"],
 ];
 const itemsAnubisName = [["M4A4 | Howl"], ["M4A4 | Poly Mag"]];
-const red =
-	"linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
-const pink =
-	"linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
+const red = "linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
+const pink = "linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
 const purple =
 	"linear-gradient(180deg, black 40%, rgba(125, 50, 255, .5) 100%)";
 const lightBlue =
-	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)"; 
-const blue =
-	"linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
-const grey =
-	"linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
+	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)";
+const blue = "linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
+const grey = "linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -113,6 +110,9 @@ const setWinningItem = () => {
 
 	removeBalanceOnOpen();
 
+	openBtn.classList.add("hidden");
+	spinningBtn.classList.remove("hidden");
+
 	setTimeout(() => {
 		addBalance();
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
@@ -120,6 +120,8 @@ const setWinningItem = () => {
 
 	setTimeout(() => {
 		winningItemDiv.remove();
+		openBtn.classList.remove("hidden");
+		spinningBtn.classList.add("hidden");
 	}, 6500);
 };
 
@@ -135,7 +137,7 @@ const addItems = () => {
 
 		if (chances <= 50) {
 			chances = 0;
-		}  else {
+		} else {
 			chances = 1;
 		}
 
@@ -145,7 +147,7 @@ const addItems = () => {
 
 		if (normalItemNumber <= 50) {
 			normalItem.style.background = red;
-		}  else {
+		} else {
 			normalItem.style.background = blue;
 		}
 
@@ -184,7 +186,7 @@ const addItems = () => {
 
 		if (chances <= 50) {
 			chances = 0;
-		}  else {
+		} else {
 			chances = 1;
 		}
 
@@ -194,7 +196,7 @@ const addItems = () => {
 
 		if (normalItemNumber <= 50) {
 			normalItem.style.background = red;
-		}  else {
+		} else {
 			normalItem.style.background = blue;
 		}
 

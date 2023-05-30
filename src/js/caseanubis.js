@@ -3,6 +3,7 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
+const spinningBtn = document.querySelector(".open-btn--spinning");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [
 	[2031],
@@ -172,6 +173,9 @@ const setWinningItem = () => {
 
 	removeBalanceOnOpen();
 
+	openBtn.classList.add("hidden");
+	spinningBtn.classList.remove("hidden");
+
 	setTimeout(() => {
 		addBalance();
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
@@ -179,10 +183,8 @@ const setWinningItem = () => {
 
 	setTimeout(() => {
 		winningItemDiv.remove();
-		winningImg.setAttribute(
-			"src",
-			itemsAnubisImg[chances][randomItemFromColor]
-		);
+		openBtn.classList.remove("hidden");
+	spinningBtn.classList.add("hidden");
 	}, 6500);
 };
 

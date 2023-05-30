@@ -409,7 +409,7 @@ const betAmountRed = () => {
 		totalBetAmountRed++;
 		totalAmountOfBetsForRed.textContent = totalBetAmountRed;
 		totalAmountOfBetsBalanceForRed.textContent =
-			Number(playerBetAmountRed) + playersRedBetAmount;
+			(Number(playerBetAmountRed) + playersRedBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -450,7 +450,7 @@ const betAmountBlack = () => {
 		totalBetAmountBlack++;
 		totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
 		totalAmountOfBetsBalanceForBlack.textContent =
-			Number(playerBetAmountBlack) + playersBlackBetAmount;
+			(Number(playerBetAmountBlack) + playersBlackBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -490,7 +490,7 @@ const betAmountGreen = () => {
 		totalBetAmountGreen++;
 		totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
 		totalAmountOfBetsBalanceForGreen.textContent =
-			Number(playerBetAmountGreen) + playersGreenBetAmount;
+			(Number(playerBetAmountGreen) + playersGreenBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
 
@@ -566,7 +566,7 @@ const createRandomPlayersBetBlack = () => {
 		totalBetAmountBlack + playersBetsBlack.childElementCount;
 	totalAmountOfBetsForBlack.textContent = totalBetAmountBlack;
 	totalAmountOfBetsBalanceForBlack.textContent =
-		Number(playerBetAmountGreen) + playersBlackBetAmount;
+		(Number(playerBetAmountGreen) + playersBlackBetAmount).toFixed(2);
 };
 
 const createRandomPlayersBetGreen = () => {
@@ -594,7 +594,7 @@ const createRandomPlayersBetGreen = () => {
 		totalBetAmountGreen + playersBetsGreen.childElementCount;
 	totalAmountOfBetsForGreen.textContent = totalBetAmountGreen;
 	totalAmountOfBetsBalanceForGreen.textContent =
-		Number(playerBetAmountGreen) + playersGreenBetAmount;
+		(Number(playerBetAmountGreen) + playersGreenBetAmount).toFixed(2);
 };
 
 const createRandomPlayersBetRed = () => {
@@ -621,7 +621,7 @@ const createRandomPlayersBetRed = () => {
 	totalBetAmountRed = totalBetAmountRed + playersBetsRed.childElementCount;
 	totalAmountOfBetsForRed.textContent = totalBetAmountRed;
 	totalAmountOfBetsBalanceForRed.textContent =
-		Number(playerBetAmountRed) + playersRedBetAmount;
+		(Number(playerBetAmountRed) + playersRedBetAmount).toFixed(2);
 };
 
 createRandomPlayersBetBlack();

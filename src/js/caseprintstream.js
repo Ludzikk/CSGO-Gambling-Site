@@ -3,6 +3,7 @@ const caseBox = document.querySelector(".case");
 const winningItemBox = document.querySelector(".winning-item");
 const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
+const spinningBtn = document.querySelector(".open-btn--spinning");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [[451], [120, 87], [0.5]];
 const itemsAnubisImg = [
@@ -18,18 +19,14 @@ const itemsAnubisName = [
 	["USP-S | Printstream", "Desert Eagle | Printstream"],
 	["CZ-75 | Jungle Dashed"],
 ];
-const red =
-	"linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
-const pink =
-	"linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
+const red = "linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
+const pink = "linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
 const purple =
 	"linear-gradient(180deg, black 40%, rgba(125, 50, 255, .5) 100%)";
 const lightBlue =
-	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)"; 
-const blue =
-	"linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
-const grey =
-	"linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
+	"linear-gradient(180deg, black 40%, rgba(160, 211, 255, .5) 100%)";
+const blue = "linear-gradient(180deg, black 40%, rgba(50, 113, 255, .5) 100%)";
+const grey = "linear-gradient(180deg, black 40%, rgba(78, 78, 78, .5) 100%)";
 let opened = false;
 let currentWinningItemPrice;
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -112,6 +109,9 @@ const setWinningItem = () => {
 
 	removeBalanceOnOpen();
 
+	openBtn.classList.add("hidden");
+	spinningBtn.classList.remove("hidden");
+
 	setTimeout(() => {
 		addBalance();
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
@@ -119,6 +119,8 @@ const setWinningItem = () => {
 
 	setTimeout(() => {
 		winningItemDiv.remove();
+		openBtn.classList.remove("hidden");
+		spinningBtn.classList.add("hidden");
 	}, 6500);
 };
 
@@ -132,25 +134,25 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-        if (chances <= 5) {
-            chances = 0;
-        } else if (chances > 5 && chances <= 30) {
-            chances = 1;
-        } else {
-            chances = 2;
-        }
+		if (chances <= 5) {
+			chances = 0;
+		} else if (chances > 5 && chances <= 30) {
+			chances = 1;
+		} else {
+			chances = 2;
+		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
-	if (normalItemNumber <= 5) {
-		normalItem.style.background = red;
-	} else if (normalItemNumber > 5 && normalItemNumber <= 30) {
-		normalItem.style.background = pink;
-	} else {
-		normalItem.style.background = grey;
-	}
+		if (normalItemNumber <= 5) {
+			normalItem.style.background = red;
+		} else if (normalItemNumber > 5 && normalItemNumber <= 30) {
+			normalItem.style.background = pink;
+		} else {
+			normalItem.style.background = grey;
+		}
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
@@ -185,25 +187,25 @@ const addItems = () => {
 
 		let chances = normalItemNumber;
 
-        if (chances <= 5) {
-            chances = 0;
-        } else if (chances > 5 && chances <= 30) {
-            chances = 1;
-        } else {
-            chances = 2;
-        }
+		if (chances <= 5) {
+			chances = 0;
+		} else if (chances > 5 && chances <= 30) {
+			chances = 1;
+		} else {
+			chances = 2;
+		}
 
 		const randomItemFromColor = Math.floor(
 			Math.random() * itemsAnubisImg[chances].length
 		);
 
 		if (normalItemNumber <= 5) {
-            normalItem.style.background = red;
-        } else if (normalItemNumber > 5 && normalItemNumber <= 30) {
-            normalItem.style.background = pink;
-        } else {
-            normalItem.style.background = grey;
-        }
+			normalItem.style.background = red;
+		} else if (normalItemNumber > 5 && normalItemNumber <= 30) {
+			normalItem.style.background = pink;
+		} else {
+			normalItem.style.background = grey;
+		}
 
 		normalItem.setAttribute("class", "case-item");
 		normalItemImg.setAttribute("class", "case-item-img");
