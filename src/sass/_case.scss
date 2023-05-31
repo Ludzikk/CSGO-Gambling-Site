@@ -1,10 +1,12 @@
+@use "./colors" as *;
+
 .casebox {
 	position: relative;
 	height: 250px;
 	margin: 8em auto;
 	max-width: 1200px;
 	width: 100%;
-	border: 2px solid #00a941;
+	border: 2px solid $green-button;
 	border-radius: 100px;
 	overflow: hidden;
 
@@ -35,9 +37,9 @@
 			align-items: center;
 			width: 50px;
 			height: 50px;
-			border: 2px solid #00a941;
+			border: 2px solid $green-button;
 			border-radius: 50%;
-			color: #00a941;
+			color: $green-button;
 			background-color: rgba(0, 0, 0, 0.6);
 		}
 	}
@@ -67,7 +69,7 @@
 			font-weight: bold;
 			font-size: 2rem;
 			padding-bottom: 0.5em;
-			color: white;
+			color: $white-text;
 		}
 	}
 }
@@ -81,19 +83,19 @@
 	text-transform: uppercase;
 	border: none;
 	border-radius: 15px;
-	background-color: #00a941;
-	color: white;
+	background-color: $green-button;
+	color: $white-text;
 	cursor: pointer;
 	transition: background-color 0.3s;
 
 	&:hover {
-		background-color: #008232;
+		background-color: $green-button-hover;
 	}
 
 	&--spinning {
 		cursor: default;
 		padding: 0.75em 2.5em;
-		background-color: #008232;
+		background-color: $green-button-hover;
 	}
 
 	&-icon {
@@ -121,9 +123,9 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		list-style: none;
-		border: 2px solid #00a941;
+		border: 2px solid $green-button;
 		border-radius: 25px;
-		background-color: #1d2126;
+		background-color: $darker-black;
 		overflow: hidden;
 
 		&-item {
@@ -149,7 +151,7 @@
 
 				&-text {
 					font-size: 2rem;
-					color: white;
+					color: $white-text;
 				}
 
 				&-icon {
@@ -160,7 +162,7 @@
 			&--gold {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(255, 248, 0, 0.5) 100%
 				);
 			}
@@ -168,7 +170,7 @@
 			&--red {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(135, 0, 0, 0.5) 100%
 				);
 			}
@@ -176,7 +178,7 @@
 			&--pink {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(255, 50, 240, 0.5) 100%
 				);
 			}
@@ -184,7 +186,7 @@
 			&--purple {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(125, 50, 255, 0.5) 100%
 				);
 			}
@@ -192,7 +194,7 @@
 			&--lightblue {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(160, 211, 255, 0.5) 100%
 				);
 			}
@@ -200,7 +202,7 @@
 			&--blue {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(50, 113, 255, 0.5) 100%
 				);
 			}
@@ -208,7 +210,7 @@
 			&--grey {
 				background: linear-gradient(
 					180deg,
-					#1d2126 40%,
+					$darker-black 40%,
 					rgba(78, 78, 78, 0.5) 100%
 				);
 			}
@@ -220,7 +222,7 @@
 			&-text {
 				font-size: 2rem;
 				text-align: center;
-				color: white;
+				color: $white-text;
 			}
 		}
 	}

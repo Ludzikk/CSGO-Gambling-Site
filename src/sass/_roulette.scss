@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-roulette {
 	max-width: 1200px;
 	width: 100%;
@@ -10,14 +12,14 @@
 		margin: 2em 0;
 		padding: 0.5em;
 		border-radius: 8px;
-		background-color: #1d2126;
+		background-color: $darker-black;
 
 		&-input {
 			width: 100%;
 			font-size: 1.8rem;
-			border: 1px solid #1d2126;
-			color: white;
-			background-color: #1d2126;
+			border: 1px solid $darker-black;
+			color: $white-text;
+			background-color: $darker-black;
 			outline: none;
 		}
 
@@ -25,12 +27,12 @@
 			display: none;
 			padding: 0.25em 0.5em;
 			margin: 0 0.5em;
-			border: 1px solid #1d2126;
+			border: 1px solid $darker-black;
 			border-radius: 10px;
 			text-transform: uppercase;
 			font-weight: bold;
-			color: white;
-			background-color: #40454f;
+			color: $white-text;
+			background-color: $lighter-black;
 			cursor: pointer;
 			transition: transform 0.3s;
 
@@ -53,7 +55,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		color: white;
+		color: $white-text;
 		font-size: 2rem;
 
 		&-timer {
@@ -67,7 +69,7 @@
 			width: 100%;
 			height: 4px;
 			border-radius: 15px;
-			background-color: rgb(32, 30, 30);
+			background-color: $timer-line-bg;
 
 			&::before {
 				position: absolute;
@@ -94,7 +96,7 @@
 				display: flex;
 				justify-content: space-between;
 				padding: 0.25em 0;
-				color: white;
+				color: $white-text;
 
 				&-amount {
 					display: flex;
@@ -114,7 +116,7 @@
 			justify-content: space-between;
 			align-items: center;
 			padding: 1em 0;
-			color: white;
+			color: $white-text;
 
 			&-textvalue {
 				font-size: 2rem;
@@ -132,32 +134,32 @@
 			font-size: 2rem;
 			font-weight: bold;
 			border: none;
-			color: white;
-			background-color: #00a941;
-			box-shadow: 0px 0px 10px #00a941;
+			color: $white-text;
+			background-color: $green-button;
+			box-shadow: 0px 0px 10px $green-button;
 			cursor: pointer;
 			transition: background-color 0.3s, transform 0.3s;
 
 			&:hover {
-				background-color: #008232;
+				background-color: $green-button-hover;
 				transform: translateY(-2px);
 			}
 
 			&--red {
-				background-color: #de4c41;
-				box-shadow: 0px 0px 10px #de4c41;
+				background-color: $red;
+				box-shadow: 0px 0px 10px $red;
 
 				&:hover {
-					background-color: #bf4138;
+					background-color: $red-hover;
 				}
 			}
 
 			&--black {
-				background-color: #40454f;
-				box-shadow: 0px 0px 10px #636363;
+				background-color: $lighter-black;
+				box-shadow: 0px 0px 10px $black-button-roulette;
 
 				&:hover {
-					background-color: #23252b;
+					background-color: $black-button-roulette-hover;
 				}
 			}
 		}
@@ -178,7 +180,7 @@
 			padding: 0.6em 0;
 			border-top-left-radius: 10px;
 			border-top-right-radius: 10px;
-			background-color: #1d2126;
+			background-color: $darker-black;
 
 			&-imgbox {
 				display: flex;
@@ -190,15 +192,15 @@
 				border-radius: 50%;
 
 				&--red {
-					background-color: #de4c41;
+					background-color: $red;
 				}
 
 				&--black {
-					background-color: #40454f;
+					background-color: $lighter-black;
 				}
 
 				&--green {
-					background-color: #00a941;
+					background-color: $green-button;
 				}
 
 				&-img {
@@ -210,7 +212,7 @@
 			&-text {
 				font-size: 1.8rem;
 				font-weight: bold;
-				color: white;
+				color: $white-text;
 			}
 		}
 	}
@@ -230,15 +232,15 @@
 			cursor: pointer;
 
 			&--red {
-				background-color: #de4c41;
+				background-color: $red;
 			}
 
 			&--black {
-				background-color: #40454f;
+				background-color: $lighter-black;
 			}
 
 			&--green {
-				background-color: #00a941;
+				background-color: $green-button;
 			}
 
 			&-img {
@@ -255,7 +257,7 @@
 		width: 3px;
 		height: 135px;
 		transform: translate(-50%);
-		background-color: white;
+		background-color: $white-text;
 		z-index: 1000;
 		opacity: 0;
 
@@ -292,7 +294,7 @@
 			justify-content: center;
 			align-items: center;
 			padding: 4.13em;
-			color: white;
+			color: $white-text;
 			width: 132px;
 			height: 136px;
 
@@ -301,18 +303,18 @@
 			}
 
 			&--red {
-				background-color: #de4c41;
-				box-shadow: 0px 0px 10px #de4c41;
+				background-color: $red;
+				box-shadow: 0px 0px 10px $red;
 			}
 
 			&--black {
-				background-color: #40454f;
-				box-shadow: 0px 0px 10px #636363;
+				background-color: $lighter-black;
+				box-shadow: 0px 0px 10px $black-button-roulette;
 			}
 
 			&--green {
-				background-color: #00a941;
-				box-shadow: 0px 0px 10px #00a941;
+				background-color: $green-button;
+				box-shadow: 0px 0px 10px $green-button;
 			}
 		}
 	}
@@ -326,7 +328,7 @@
 		height: 40px;
 		border-radius: 10px;
 		overflow: hidden;
-		background-color: #1d2126;
+		background-color: $darker-black;
 
 		&-item {
 			display: flex;
@@ -343,15 +345,15 @@
 			}
 
 			&--red {
-				background-color: #de4c41;
+				background-color: $red;
 			}
 
 			&--black {
-				background-color: #40454f;
+				background-color: $lighter-black;
 			}
 
 			&--green {
-				background-color: #00a941;
+				background-color: $green-button;
 			}
 		}
 	}

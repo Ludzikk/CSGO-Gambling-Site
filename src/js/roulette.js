@@ -2,6 +2,7 @@ const rouletteDiv = document.querySelector(".main-roulette__list");
 const rouletteItems = document.querySelectorAll(".main-roulette__list-item");
 let winningColor;
 const elem = document.querySelector(".main-roulette__arrow");
+const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 let elemOffset = elem.getBoundingClientRect();
 let middleLeft = elemOffset.left + 2;
 let middleRight = elemOffset.right - 2;
@@ -236,7 +237,9 @@ setInterval(() => {
 					let value = amountValue + playerBetAmountRed;
 					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
+					balanceAmountMobile.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
 					const winPopUp = document.createElement("p");
 					winPopUp.setAttribute("class", "win");
 					winPopUp.textContent = playerBetAmountRed.toFixed(2);
@@ -293,6 +296,7 @@ setInterval(() => {
 					let value = amountValue + playerBetAmountBlack;
 					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
+					balanceAmountMobile.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
 					const winPopUp = document.createElement("p");
@@ -351,6 +355,7 @@ setInterval(() => {
 					let value = amountValue + playerBetAmountGreen;
 					winAudio.play();
 					balanceAmount.textContent = value.toFixed(2);
+					balanceAmountMobile.textContent = value.toFixed(2);
 					localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
 					const winPopUp = document.createElement("p");
@@ -412,6 +417,7 @@ const betAmountRed = () => {
 			(Number(playerBetAmountRed) + playersRedBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
+		balanceAmountMobile.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
@@ -453,6 +459,7 @@ const betAmountBlack = () => {
 			(Number(playerBetAmountBlack) + playersBlackBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
+		balanceAmountMobile.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
@@ -493,6 +500,7 @@ const betAmountGreen = () => {
 			(Number(playerBetAmountGreen) + playersGreenBetAmount).toFixed(2);
 
 		balanceAmount.textContent = value.toFixed(2);
+		balanceAmountMobile.textContent = value.toFixed(2);
 
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 

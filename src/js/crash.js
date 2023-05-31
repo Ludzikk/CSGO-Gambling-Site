@@ -3,6 +3,7 @@ const betBtn = document.querySelector(".main-crash__bet");
 const withdrawBtn = document.querySelector(".main-crash__bet--withdraw");
 const betInput = document.querySelector(".main-crash__input");
 const timer = document.querySelector(".main-crash__countdown-timer-seconds");
+const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const clearBtn = document.querySelector("#clear");
 const lastBtn = document.querySelector("#last");
 const plusOneBtn = document.querySelector("#plus1");
@@ -177,7 +178,7 @@ const playerBet = () => {
 		betInput.value = 0;
 		betAudio.play();
 		withdrawed = false;
-		withdrawAmount.textContent = betAmount;
+		withdrawAmount.textContent = Number(betAmount).toFixed(2);
 		removeBalance();
 	}
 };
@@ -186,6 +187,7 @@ const removeBalance = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
 	let value = amountValue - betAmount;
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 	localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 };
 
@@ -198,6 +200,7 @@ const addMoneyToBalance = () => {
 		let amountValue = parseFloat(balanceAmount.textContent);
 		let value = amountValue + betAmount;
 		balanceAmount.textContent = value.toFixed(2);
+		balanceAmountMobile.textContent = value.toFixed(2);
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
 		const winPopUp = document.createElement("p");

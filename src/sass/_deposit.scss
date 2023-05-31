@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-dep {
 	display: flex;
 	flex-direction: column;
@@ -10,7 +12,7 @@
 		justify-content: space-around;
 		width: 75%;
 		padding-bottom: 5em;
-		color: white;
+		color: $white-text;
 
 		&-text {
 			font-size: 2.4rem;
@@ -22,17 +24,17 @@
 			padding: 1em;
 			border: none;
 			border-radius: 5px;
-			background-color: #00a941;
+			background-color: $green-button;
 			cursor: pointer;
 			transition: background-color 0.3s, transform 0.3s;
 
 			&:hover {
-				background-color: #008232;
+				background-color: $green-button-hover;
 				transform: scale(1.1);
 			}
 
 			&-icon {
-				color: white;
+				color: $white-text;
 				font-size: 2rem;
 			}
 		}
@@ -41,23 +43,23 @@
 	&__middle {
 		&-label {
 			font-size: 2.2rem;
-			color: white;
+			color: $white-text;
 		}
 
 		&-input {
 			margin: 0 0.5em;
 			padding: 0.2em 0.4em;
 			font-size: 2rem;
-			border: 2px solid #00a941;
+			border: 2px solid $green-button;
 			border-radius: 10px;
 			outline: none;
-			color: white;
-			background-color: #1d2126;
+			color: $white-text;
+			background-color: $darker-black;
 			transition: background-color 0.3s;
 
 			&:focus,
 			&:hover {
-				border: 2px solid #008232;
+				border: 2px solid $green-button-hover;
 			}
 		}
 
@@ -67,13 +69,13 @@
 			text-transform: uppercase;
 			border: none;
 			border-radius: 5px;
-			color: white;
-			background-color: #00a941;
+			color: $white-text;
+			background-color: $green-button;
 			cursor: pointer;
 			transition: background-color 0.3s;
 
 			&:hover {
-				background-color: #008232;
+				background-color: $green-button-hover;
 			}
 		}
 	}

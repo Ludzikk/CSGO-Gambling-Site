@@ -3,6 +3,7 @@ const coinBlack = document.querySelector(".main-coinflip__black");
 const redBtn = document.querySelector(".main-coinflip__button--red");
 const blackBtn = document.querySelector(".main-coinflip__button--black");
 const betInput = document.querySelector(".main-coinflip__input");
+const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const winAudio = new Audio("./dist/audio/win.wav");
 const betAudio = new Audio("./dist/audio/bet.wav");
 const balanceAmount = document.querySelector(".nav__list-item-balance-amount");
@@ -61,6 +62,7 @@ const addMoneyToBalance = () => {
 		let amountValue = parseFloat(balanceAmount.textContent);
 		let value = amountValue + betAmount;
 		balanceAmount.textContent = value.toFixed(2);
+		balanceAmountMobile.textContent = value.toFixed(2);
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 
 		const winPopUp = document.createElement("p");
@@ -94,6 +96,7 @@ const removeBalance = () => {
 	let amountValue = parseFloat(balanceAmount.textContent);
 	let value = amountValue - betAmount;
 	balanceAmount.textContent = value.toFixed(2);
+	balanceAmountMobile.textContent = value.toFixed(2);
 	localStorage.setItem("Balance", `${balanceAmount.textContent}`);
 };
 

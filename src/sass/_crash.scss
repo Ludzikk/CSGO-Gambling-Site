@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-crash {
 	display: flex;
 	flex-direction: column;
@@ -31,7 +33,7 @@
 		padding: 1em;
 		margin-bottom: 1em;
 		font-size: 4rem;
-		color: white;
+		color: $white-text;
 		background-color: rgb(24, 24, 24);
 		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 	}
@@ -42,13 +44,13 @@
 		border: none;
 		border-radius: 10px;
 		text-transform: uppercase;
-		color: white;
-		background-color: #00a941;
+		color: $white-text;
+		background-color: $green-button;
 		cursor: pointer;
 		transition: all 0.3s;
 
 		&:hover {
-			background-color: #008232;
+			background-color: $green-button-hover;
 		}
 	}
 
@@ -57,7 +59,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		color: white;
+		color: $white-text;
 		font-size: 3rem;
 		width: 100%;
 

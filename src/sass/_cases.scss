@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-cases {
 	display: flex;
 	justify-content: center;
@@ -17,13 +19,13 @@
 			flex-direction: column;
 			padding: 1em;
 			margin: 0.5em;
-			background-color: #2c2f36;
+			background-color: $main-item-color;
 
 			&-name,
 			&-price {
 				font-weight: bold;
 				text-transform: uppercase;
-				color: white;
+				color: $white-text;
 			}
 
 			&-name {
@@ -38,8 +40,8 @@
 				margin: 0.5em auto;
 				padding: 0.5em;
 				border-radius: 50px;
-				color: #00a941;
-				background-color: rgba(0, 130, 50, .6);
+				color: $green-button;
+				background-color: $cases-price;
 
 				&-img {
 					margin: 0 0.15em;
@@ -71,13 +73,13 @@
 				border-radius: 15px;
 				text-align: center;
 				text-decoration: none;
-				background-color: #00a941;
-				color: white;
+				background-color: $green-button;
+				color: $white-text;
 				transition: background-color 0.3s;
 				cursor: pointer;
 
 				&:hover {
-					background-color: #008232;
+					background-color: $green-button-hover;
 				}
 			}
 		}

@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .nav {
 	position: fixed;
 	top: 0;
@@ -6,9 +8,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #1d2126;
+	background-color: $darker-black;
 	text-transform: uppercase;
-	color: white;
+	color: $white-text;
 	font-weight: bold;
 
 	&__list {
@@ -28,7 +30,6 @@
 				align-items: center;
 				padding: 0.4em;
 				border-radius: 4px;
-				background-color: #1b1f23;
 
 				&-icon {
 					width: 40px;
@@ -39,15 +40,15 @@
 			&-link {
 				position: relative;
 				text-decoration: none;
-				color: #ffffff80;
+				color: $nav-link-color;
 				transition: color 0.3s;
 
 				&--color:hover {
-					color: white;
+					color: $white-text;
 				}
 
 				&-text-green {
-					color: rgb(0, 179, 0);
+					color: $darker-green;
 				}
 
 				&--logo {
@@ -62,7 +63,7 @@
 						bottom: -5px;
 						height: 2px;
 						width: 0px;
-						background-color: rgb(0, 179, 0);
+						background-color: $darker-green;
 						transition: width 0.3s;
 					}
 
@@ -78,13 +79,13 @@
 
 				&--deposit {
 					padding: 1em;
-					background-color: #00a941;
+					background-color: $green-button;
 					border-radius: 10px;
-					color: white;
+					color: $white-text;
 					transition: all 0.3s;
 
 					&:hover {
-						background-color: #008232;
+						background-color: $green-button-hover;
 					}
 				}
 			}
@@ -103,7 +104,7 @@
 		align-items: center;
 		height: 100vh;
 		list-style-type: none;
-		background-color: #1d2126;
+		background-color: $darker-black;
 		z-index: 100000;
 	}
 
@@ -114,13 +115,12 @@
 
 	&__link-mobile {
 		text-decoration: none;
-		color: white;
+		color: $white-text;
 	}
 
 	&__balance {
 		display: flex;
 		align-items: center;
-		background-color: #1b1f23;
 
 		&-img {
 			width: 40px;

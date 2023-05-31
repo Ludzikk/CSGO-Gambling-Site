@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 *,
 *::after,
 *::before {
@@ -19,5 +21,5 @@ input {
 body {
 	font-size: 1.6rem;
 	overflow-x: hidden;
-	background-color: #31353d;
+	background-color: $light-black;
 }

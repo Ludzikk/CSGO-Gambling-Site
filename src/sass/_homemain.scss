@@ -1,3 +1,4 @@
+@use "./colors" as *;
 
 .casesbox {
 	&-case {
@@ -13,7 +14,7 @@
 
 		&-name {
 			font-size: 3rem;
-			color: white;
+			color: $white-text;
 		}
 	}
 }

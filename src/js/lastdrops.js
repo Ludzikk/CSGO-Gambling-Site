@@ -19,6 +19,8 @@ const color = [
 	"blue",
 	"blue",
 	"blue",
+	"red",
+	"red",
 ];
 const items = [
 	"./dist/img/anubis/eyeofhorus.png",
@@ -40,6 +42,8 @@ const items = [
 	"./dist/img/anubis/steeldelta.png",
 	"./dist/img/anubis/mummy'srot.png",
 	"./dist/img/anubis/coppercoated.png",
+	"./dist/img/glove/slingshot.png",
+	"./dist/img/glove/marblefade.png",
 ];
 const itemsName = [
 	"M4A4 | Eye of Horus",
@@ -61,6 +65,8 @@ const itemsName = [
 	"AK-47 | Steel Delta",
 	"Tec-9 | Mummy's Rot",
 	"MAG-7 | Copper Coated",
+	"Sport Gloves | Slingshot",
+	"Specialist Gloves | Marble Fade",
 ];
 const colorOfItem = [
 	"rgba(222, 76, 65, 0.2) 100%",
@@ -82,6 +88,8 @@ const colorOfItem = [
 	"rgba(75, 138, 255, 0.2) 100%",
 	"rgba(75, 138, 255, 0.2) 100%",
 	"rgba(75, 138, 255, 0.2) 100%",
+	"rgba(222, 76, 65, 0.2) 100%",
+	"rgba(222, 76, 65, 0.2) 100%",
 ];
 const itemsPriceArr = [
 	"2031",
@@ -103,6 +111,8 @@ const itemsPriceArr = [
 	"4",
 	"2",
 	"1",
+	"1085",
+	"463",
 ];
 let id = 0;
 

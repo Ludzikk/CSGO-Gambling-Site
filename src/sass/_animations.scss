@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 @keyframes open {
 	from {
 		left: 50%;

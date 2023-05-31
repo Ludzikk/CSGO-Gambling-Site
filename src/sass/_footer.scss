@@ -1,10 +1,12 @@
+@use "./colors" as *;
+
 .footer {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	padding: 4em 0;
-	color: white;
-	background-color: #1d2126;
+	color: $white-text;
+	background-color: $darker-black;
 	z-index: 1;
 
 	&__icons-list {
@@ -23,7 +25,7 @@
 			}
             
 			&-link {
-				color: white;
+				color: $white-text;
 			}
 		}
 	}

@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-index {
 	display: flex;
 	justify-content: center;
@@ -16,14 +18,14 @@
 		&-item {
 			padding: 1em;
 			margin: 0.5em;
-			background-color: #2c2f36;
+			background-color: $main-item-color;
 
 			&-link {
 				font-size: 2rem;
 				font-weight: bold;
 				text-decoration: none;
 				text-align: center;
-				color: white;
+				color: $white-text;
 
 				&-img {
 					width: 250px;
@@ -49,8 +51,8 @@
 		min-height: 100%;
 		max-height: 100%;
 		overflow: hidden;
-		color: white;
-		background-color: #1d2126;
+		color: $white-text;
+		background-color: $darker-black;
 		z-index: 2;
 	}
 
@@ -60,7 +62,7 @@
 		align-items: center;
 		padding-bottom: 0.5em;
 		font-weight: bold;
-		border-bottom: 2px solid #00a941;
+		border-bottom: 2px solid $green-button;
 
 		&-text {
 			position: relative;
@@ -106,7 +108,7 @@
 			}
 
 			&--red {
-				border-left: 4px solid #de4c41;
+				border-left: 4px solid $red;
 			}
 
 			&--gold {
@@ -139,8 +141,8 @@
 		min-height: 92%;
 		max-height: 92%;
 		overflow: hidden;
-		color: white;
-		background-color: #282e35;
+		color: $white-text;
+		background-color: $chat-color;
 		z-index: 2;
 	}
 
@@ -153,7 +155,8 @@
 		bottom: 0;
 		width: 100%;
 		height: 150px;
-		background-color: #1d2126;
+		border-top: 2px solid $green-button;
+		background-color: $darker-black;
 	}
 
 	&__input {
@@ -163,7 +166,7 @@
 		outline: none;
 		color: black;
 		border-radius: 5px;
-		background-color: white;
+		background-color: $white-text;
 	}
 
 	&__button {
@@ -174,13 +177,13 @@
 		text-transform: uppercase;
 		border: none;
 		border-radius: 5px;
-		color: white;
-		background-color: #00a941;
+		color: $white-text;
+		background-color: $green-button;
 		cursor: pointer;
 		transition: all 0.3s;
 
 		&:hover {
-			background-color: #008232;
+			background-color: $green-button-hover;
 		}
 	}
 
@@ -189,14 +192,14 @@
 		left: 0;
 		right: 0;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		height: 715px;
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
 
 	&__messages::-webkit-scrollbar-track {
-		background-color: #1d2126;
+		background-color: $darker-black;
 	}
 	
 	&__messages::-webkit-scrollbar {
@@ -204,7 +207,7 @@
 	}
 	
 	&__messages::-webkit-scrollbar-thumb {
-		background-color: #00a941;
+		background-color: $green-button;
 	}
 
 	&__msg {
@@ -214,7 +217,7 @@
 		padding: 1em;
 
 		&--second {
-			background-color: #1d2126;
+			background-color: $darker-black;
 		}
 	}
 

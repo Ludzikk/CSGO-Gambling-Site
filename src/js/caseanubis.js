@@ -326,7 +326,7 @@ const resetOpening = () => {
 };
 
 openBtn.addEventListener("click", () => {
-	if (opened === false && parseFloat(balanceAmount.textContent) >= 1) {
+	if (opened === false && parseFloat(balanceAmount.textContent) >= 5) {
 		startOpeningAnimation();
 		openAudio.play();
 	}

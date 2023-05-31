@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 .main-coinflip {
 	display: flex;
 	flex-direction: column;
@@ -27,13 +29,13 @@
 	}
 
 	&__red {
-		background-color: #de4c41;
-		box-shadow: 0px 0px 30px #de4c41;
+		background-color: $red;
+		box-shadow: 0px 0px 30px $red;
 	}
 
 	&__black {
-		background-color: #40454f;
-		box-shadow: 0px 0px 30px #636363;
+		background-color: $black-coinflip;
+		box-shadow: 0px 0px 30px $black-button-roulette;
 	}
 
 	&__img {
@@ -51,15 +53,15 @@
 		margin: 2em 0;
 		padding: 0.5em;
 		border-radius: 8px;
-		background-color: #1d2126;
+		background-color: $darker-black;
 	}
 
 	&__input {
 		width: 100%;
 		font-size: 1.8rem;
-		border: 1px solid #1d2126;
-		color: white;
-		background-color: #1d2126;
+		border: 1px solid $darker-black;
+		color: $white-text;
+		background-color: $darker-black;
 		outline: none;
 	}
 
@@ -67,12 +69,12 @@
 		display: none;
 		padding: 0.25em 0.5em;
 		margin: 0 0.5em;
-		border: 1px solid #1d2126;
+		border: 1px solid $darker-black;
 		border-radius: 10px;
 		text-transform: uppercase;
 		font-weight: bold;
-		color: white;
-		background-color: #40454f;
+		color: $white-text;
+		background-color: $black-coinflip;
 		cursor: pointer;
 		transition: transform 0.3s;
 
@@ -104,13 +106,13 @@
 		}
 
 		&--red {
-			background-color: #de4c41;
-			box-shadow: 0px 0px 30px #de4c41;
+			background-color: $red;
+			box-shadow: 0px 0px 30px $red;
 		}
 
 		&--black {
-			background-color: #40454f;
-			box-shadow: 0px 0px 10px #636363;
+			background-color: $black-coinflip;
+			box-shadow: 0px 0px 30px $black-button-roulette;
 		}
 	}
 
