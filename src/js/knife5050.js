@@ -5,6 +5,7 @@ const winningImg = document.querySelector(".winning-item img");
 const winningButton = document.querySelector(".winning-item-button");
 const spinningBtn = document.querySelector(".open-btn--spinning");
 const balanceAmountMobile = document.querySelector(".nav__balance-amount");
+const lastItemDrops = document.querySelector(".main__dropsbox");
 const openAudio = new Audio("./dist/audio/open.mp3");
 const itemsAnubisPrice = [[1521.09], [98.28]];
 const itemsAnubisImg = [
@@ -105,6 +106,58 @@ const setWinningItem = () => {
 	setTimeout(() => {
 		addBalance();
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		id++
+		const item = document.createElement("div");
+		const itemImg = document.createElement("img");
+		const itemPriceBox = document.createElement("div");
+		const itemPrice = document.createElement("p");
+		const itemText = document.createElement("p");
+		const itemPriceIcon = document.createElement("img");
+		item.setAttribute(
+			"class",
+			"main__dropsbox-item main__dropsbox-item--gold"
+		);
+		item.setAttribute("id", id);
+		itemImg.setAttribute("class", "main__dropsbox-item-img");
+		itemImg.setAttribute(
+			"src",
+			`${itemsAnubisImg[chances][randomItemFromColor]}`
+		);
+		itemImg.setAttribute(
+			"alt",
+			`${itemsAnubisImg[chances][randomItemFromColor]}`
+		);
+		itemText.setAttribute("class", "main__dropsbox-item-name");
+		itemPrice.setAttribute("class", "main__dropsbox-item-price");
+		itemPriceIcon.setAttribute("class", "main__dropsbox-item-pricebox-img");
+		itemPriceIcon.setAttribute("src", "./dist/img/other/coin.png");
+		itemPriceIcon.setAttribute("alt", "Coin Icon");
+		itemPriceBox.setAttribute("class", "main__dropsbox-item-pricebox hidden");
+		itemPrice.textContent = itemsAnubisPrice[chances][randomItemFromColor];
+		item.style.order = "-" + id;
+		itemText.textContent = itemsAnubisName[chances][randomItemFromColor];
+		itemPriceBox.append(itemPrice, itemPriceIcon);
+		item.append(itemImg, itemText, itemPriceBox);
+		lastItemDrops.append(item);
+
+		if (lastItemDrops.childElementCount > 10) {
+			lastItemDrops.firstElementChild.remove();
+		}
+
+		if (id % 2 === 0) {
+			item.style.background = `linear-gradient(90deg, #1d2126 25%, rgba(255, 255, 1, 0.1) 100%`;
+		} else {
+			item.style.background = `linear-gradient(90deg, #282e35 25%, rgba(255, 255, 1, 0.1) 100%`;
+		}
+
+		item.addEventListener("mouseover", () => {
+			itemPriceBox.classList.remove("hidden");
+		});
+
+		item.addEventListener("mouseleave", () => {
+			itemPriceBox.classList.add("hidden");
+		});
 	}, 5500);
 
 	setTimeout(() => {

@@ -1,16 +1,3 @@
-const howlCase = {
-	under25: {
-		name: "M4A4 | Howl",
-		img: "./dist/img/howl/howl.png",
-		price: 5213,
-	},
-
-	above25: {
-		name: "M4A4 | Poly Mag",
-		img: "./dist/img/howl/polymag.png",
-		price: 0.68,
-	},
-};
 const openBtn = document.querySelector(".open-btn");
 const spinningBtn = document.querySelector(".open-btn--spinning");
 const caseBox = document.querySelector(".case");
@@ -25,6 +12,10 @@ const itemsAnubisImg = [
 	["./dist/img/howl/polymag.png"],
 ];
 const itemsAnubisName = [["M4A4 | Howl"], ["M4A4 | Poly Mag"]];
+const lastDropBg = [
+	"rgba(222, 76, 65, 0.2) 100%",
+	"rgba(75, 138, 255, 0.2) 100%",
+];
 const red = "linear-gradient(180deg, black 40%, rgba(222, 76, 65, .5) 100%)";
 const pink = "linear-gradient(180deg, black 40%, rgba(255, 50, 240, .5) 100%)";
 const purple =
@@ -119,6 +110,67 @@ const setWinningItem = () => {
 	setTimeout(() => {
 		addBalance();
 		localStorage.setItem("Balance", `${balanceAmount.textContent}`);
+
+		id++;
+		const item = document.createElement("div");
+		const itemImg = document.createElement("img");
+		const itemPriceBox = document.createElement("div");
+		const itemPrice = document.createElement("p");
+		const itemText = document.createElement("p");
+		const itemPriceIcon = document.createElement("img");
+
+		if (chances <= 0) {
+			item.setAttribute(
+				"class",
+				"main__dropsbox-item main__dropsbox-item--red"
+			);
+		} else {
+			item.setAttribute(
+				"class",
+				"main__dropsbox-item main__dropsbox-item--blue"
+			);
+		}
+
+		item.setAttribute("id", id);
+		itemImg.setAttribute("class", "main__dropsbox-item-img");
+		itemImg.setAttribute(
+			"src",
+			`${itemsAnubisImg[chances][randomItemFromColor]}`
+		);
+		itemImg.setAttribute(
+			"alt",
+			`${itemsAnubisImg[chances][randomItemFromColor]}`
+		);
+		itemText.setAttribute("class", "main__dropsbox-item-name");
+		itemPrice.setAttribute("class", "main__dropsbox-item-price");
+		itemPriceIcon.setAttribute("class", "main__dropsbox-item-pricebox-img");
+		itemPriceIcon.setAttribute("src", "./dist/img/other/coin.png");
+		itemPriceIcon.setAttribute("alt", "Coin Icon");
+		itemPriceBox.setAttribute("class", "main__dropsbox-item-pricebox hidden");
+		itemPrice.textContent = itemsAnubisPrice[chances][randomItemFromColor];
+		item.style.order = "-" + id;
+		itemText.textContent = itemsAnubisName[chances][randomItemFromColor];
+		itemPriceBox.append(itemPrice, itemPriceIcon);
+		item.append(itemImg, itemText, itemPriceBox);
+		lastItemDrops.append(item);
+
+		if (lastItemDrops.childElementCount > 10) {
+			lastItemDrops.firstElementChild.remove();
+		}
+
+		if (id % 2 === 0) {
+			item.style.background = `linear-gradient(90deg, #1d2126 25%, ${lastDropBg[chances]}`;
+		} else {
+			item.style.background = `linear-gradient(90deg, #282e35 25%, ${lastDropBg[chances]}`;
+		}
+
+		item.addEventListener("mouseover", () => {
+			itemPriceBox.classList.remove("hidden");
+		});
+
+		item.addEventListener("mouseleave", () => {
+			itemPriceBox.classList.add("hidden");
+		});
 	}, 5500);
 
 	setTimeout(() => {

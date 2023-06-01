@@ -19,8 +19,8 @@ const color = [
 	"blue",
 	"blue",
 	"blue",
-	"red",
-	"red",
+	"gold",
+	"gold",
 ];
 const items = [
 	"./dist/img/anubis/eyeofhorus.png",
@@ -88,8 +88,8 @@ const colorOfItem = [
 	"rgba(75, 138, 255, 0.2) 100%",
 	"rgba(75, 138, 255, 0.2) 100%",
 	"rgba(75, 138, 255, 0.2) 100%",
-	"rgba(222, 76, 65, 0.2) 100%",
-	"rgba(222, 76, 65, 0.2) 100%",
+	"rgba(255, 255, 1, 0.1) 100%",
+	"rgba(255, 255, 1, 0.1) 100%",
 ];
 const itemsPriceArr = [
 	"2031",

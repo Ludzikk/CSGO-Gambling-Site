@@ -10,8 +10,6 @@
 
 @use "./cases";
 
-@use "./index";
-
 @use "./roulette";
 
 @use "./coinflip";
@@ -21,6 +19,8 @@
 @use "./footer";
 
 @use "./hamburgers/hamburgers.scss";
+
+@use "./index";
 
 @use "./global";
 
