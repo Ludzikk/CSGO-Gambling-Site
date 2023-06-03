@@ -6,51 +6,73 @@
 		<!-- @include "link.kit" -->
 	</head>
 	<body>
-		<!-- @include "nav.kit" -->
-		<main class="main-slot" data-aos="fade-in" data-aos-duration="500" data-aos-once="true">
-            <div class="main-slot__box">
+		<main
+			class="main-slot"
+			data-aos="fade-in"
+			data-aos-duration="500"
+			data-aos-once="true"
+		>
+			<div class="main-slot__machine">
+				<div class="main-slot__box">
+					<div class="main-slot__boxitem main-slot__boxitem--one">
+						<div
+							class="main-slot__spin main-slot__spin--one"
+							id="one-one"
+						></div>
+					</div>
+					<div class="main-slot__boxitem main-slot__boxitem--two">
+						<div
+							class="main-slot__spin main-slot__spin--two"
+							id="one-two"
+						></div>
+					</div>
+					<div class="main-slot__boxitem main-slot__boxitem--three">
+						<div
+							class="main-slot__spin main-slot__spin-three"
+							id="one-three"
+						></div>
+					</div>
+				</div>
+				<div class="main-slot__betbox">
+					<input class="main-slot__input" type="number" value="0" />
+					<button class="main-slot__button">spin</button>
+				</div>
+			</div>
+			<div class="main-slot__payout">
+				<p class="main-slot__icon">🍌 - x100</p>
+				<p class="main-slot__icon">🍎 - x50</p>
+				<p class="main-slot__icon">🍊 - x25</p>
+				<p class="main-slot__icon">🍉 - x10</p>
+			</div>
+			<div class="main-slot__time">
+				<div class="main-slot__hour"></div>
+				<div class="main-slot__min"></div>
+			</div>
+			<!-- <div class="main-slot__box">
                 <div class="main-slot__boxitem main-slot__boxitem--one">
-                    <div class="main-slot__spin main-slot__spin--one">
+                    <div class="main-slot__spin main-slot__spin--one" id="two-one">
                     </div>
                 </div>
                 <div class="main-slot__boxitem main-slot__boxitem--two">
-                    <div class="main-slot__spin main-slot__spin--two"></div>
+                    <div class="main-slot__spin main-slot__spin--two" id="two-two"></div>
                 </div>
                 <div class="main-slot__boxitem main-slot__boxitem--three">
-                    <div class="main-slot__spin main-slot__spin-three"></div>
+                    <div class="main-slot__spin main-slot__spin-three" id="two-three"></div>
                 </div>
             </div>
-            <div class="main-slot__betbox">
-                <input class="main-slot__input" type="number" value="0">
-                <button class="main-slot__button">spin</button>
-            </div>
+			<div class="main-slot__box">
+                <div class="main-slot__boxitem main-slot__boxitem--one">
+                    <div class="main-slot__spin main-slot__spin--one" id="three-one">
+                    </div>
+                </div>
+                <div class="main-slot__boxitem main-slot__boxitem--two">
+                    <div class="main-slot__spin main-slot__spin--two" id="three-two"></div>
+                </div>
+                <div class="main-slot__boxitem main-slot__boxitem--three">
+                    <div class="main-slot__spin main-slot__spin-three" id="three-three"></div>
+                </div> -->
 		</main>
-		<div class="main">
-			<aside class="main__drops" data-aos="fade-in" data-aos-duration="500">
-				<div class="main__top">
-					<p class="main__top-text">Last Drops</p>
-				</div>
-				<div class="main__dropsbox">
-				</div>
-			</aside>
-		</div>
-		<div class="main-chat">
-			<aside class="main-chat__chatbox" data-aos="fade-in" data-aos-duration="500">
-				<div class="main-chat__messages">
-				</div>
-				<div class="main-chat__inputbox">
-					<input type="text" class="main-chat__input" placeholder="Send msg...">
-					<button class="main-chat__button">Send</button>
-				</div>
-			</aside>
-		</div>
-		<!-- @include "footer.kit" -->
-		<script src="./dist/js/setbalance.min.js"></script>
-		<script src="./dist/js/footeryear.min.js"></script>
-		<script src="./dist/js/nav.min.js"></script>
-		<script src="./dist/js/lastdrops.min.js"></script>
-		<script src="./dist/js/chat.min.js"></script>
-		<script src="./dist/js/sendmsg.min.js"></script>
+		<!-- <script src="./dist/js/setbalance.min.js"></script> -->
 		<script src="./dist/js/bananarush.min.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
