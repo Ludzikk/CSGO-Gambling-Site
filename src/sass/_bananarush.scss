@@ -1,0 +1,30 @@
+.main-slot {
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 75vh;
+
+	&__box {
+		display: flex;
+		justify-content: space-around;
+        margin-bottom: 3em;
+	}
+
+	&__boxitem {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		font-size: 6rem;
+		margin: 0 0.25em;
+		height: 100px;
+		width: 100px;
+		background-color: white;
+		overflow: hidden;
+	}
+
+    &__spin {
+        transition: transform 1s cubic-bezier(0, 0, 0, 0.99);
+    }
+}
