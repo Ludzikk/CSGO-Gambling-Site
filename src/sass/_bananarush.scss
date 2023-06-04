@@ -1,3 +1,5 @@
+@use "./colors" as *;
+
 // .main-slot {
 // 	display: flex;
 //     flex-direction: column;
@@ -93,14 +95,14 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: url("/dist/img/other/bananarush.jpg");
+	background: url("../img/other/bananarushbg.gif");
 	background-position: center;
 	background-size: cover;
 
 	&__box {
 		display: flex;
 		justify-content: center;
-		background-color: rgba(0, 0, 0, 0.7);
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 
 	&__boxitem {
@@ -109,11 +111,11 @@
 		justify-content: flex-end;
 		align-items: center;
 		font-size: 9em;
-		border: 1px solid purple;
+		border: 1px solid $green-button;
 		height: 200px;
 		width: 200px;
 		overflow: hidden;
-		transition: background-color .3s;
+		transition: background-color 0.3s;
 	}
 
 	&__spin {
@@ -144,15 +146,20 @@
 	}
 
 	&__button {
-		width: 150px;
+		width: 250px;
 		height: 150px;
 		font-size: 3rem;
 		text-transform: uppercase;
-		border: none;
-		border-radius: 50%;
+		border: 2px solid black;
+		border-radius: 25px;
 		color: white;
-		background-color: red;
+		background-color: $green-button;
 		cursor: pointer;
+		transition: background-color .3s;
+		
+		&:hover {
+			background-color: $green-button-hover;
+		}
 	}
 
 	&__betbox {
@@ -172,9 +179,10 @@
 		width: 250px;
 		margin: 0.25em 0.25em;
 		font-size: 4rem;
-		// color: white;
-		background-color: white;
+		color: white;
+		border-radius: 25px;
 		border: 1px solid black;
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 
 	&__betbuttons {
@@ -189,7 +197,81 @@
 		font-size: 3rem;
 		border: none;
 		color: white;
-		background: purple;
+		background-color: $green-button;
 		cursor: pointer;
+		transition: background-color .3s;
+
+		&:hover {
+			background-color: $green-button-hover;
+		}
+	}
+
+	&__light {
+		position: absolute;
+		z-index: -1;
+		animation: light 2s infinite;
+
+		&--one {
+			top: 50px;
+			left: 500px;
+		}
+
+		&--two {
+			top: 150px;
+			right: 500px;
+		}
+
+		&--three {
+			top: 425px;
+			left: 600px;
+		}
+
+		&--four {
+			top: 600px;
+			right: 355px;
+		}
+
+		img {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
+.win-amount {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding-top: 2em;
+	font-size: 10rem;
+	color: $green-button;
+
+	&__text {
+		z-index: 5;
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: 0;
+	}
+
+	&__gifbox {
+		z-index: 2;
+	}
+
+	&__gif {
+		width: 150px;
+		height: 150px;
 	}
 }

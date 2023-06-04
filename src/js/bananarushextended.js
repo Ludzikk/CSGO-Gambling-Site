@@ -12,8 +12,11 @@ const spinBoxThree = document.querySelectorAll(".main-slot__spin-three");
 const betInput = document.querySelector(".main-slot__input");
 const balanceAmountMobile = document.querySelector(".nav__balance-amount");
 const betBtn = document.querySelector(".main-slot__button");
-const addBetAmount = document.querySelector("#add")
-const removeBetAmount = document.querySelector("#remove")
+const addBetAmount = document.querySelector("#add");
+const winGif = document.querySelector(".win-amount__gif");
+const winAmountCounting = document.querySelector(".win-amount__text");
+const winAmountBox = document.querySelector(".win-amount");
+const removeBetAmount = document.querySelector("#remove");
 const music = new Audio("./dist/audio/bananarushmusic.wav");
 const won = new Audio("./dist/audio/bananarushwin.wav");
 const lost = new Audio("./dist/audio/bananarushlost.wav");
@@ -33,6 +36,7 @@ const winAmount = document.querySelector("#winamount");
 const balanceAmount = document.querySelector("#balanceamount");
 const speed = 3620;
 let winMul = 0;
+let cantSpin = false;
 // let leftRow = [];
 // let midRow = [];
 // let rightRow = [];
@@ -44,7 +48,7 @@ let winningIcons = 0;
 music.volume = 0.25;
 music.loop = true;
 
-balanceAmount.textContent = localStorage.getItem("Balance")
+balanceAmount.textContent = localStorage.getItem("Balance");
 
 const startSlot = () => {
 	rows = [[], [], []];
@@ -56,8 +60,7 @@ const startSlot = () => {
 		Number(localStorage.getItem("Balance")) - Number(betAmount.textContent)
 	).toFixed(2);
 
-	localStorage.setItem("Balance", balanceAmount.textContent)
-	
+	localStorage.setItem("Balance", balanceAmount.textContent);
 
 	spinBox.forEach((slot) => {
 		slot.innerHTML = "";
@@ -392,7 +395,103 @@ const checkIfWon = () => {
 			Number(localStorage.getItem("Balance")) + Number(winAmount.textContent)
 		).toFixed(2);
 
-		localStorage.setItem("Balance", balanceAmount.textContent)
+		localStorage.setItem("Balance", balanceAmount.textContent);
+		wonAnimCheck();
+	}
+};
+
+const wonAnimCheck = () => {
+	let amountOfWin = 0;
+	let winAmountInterval;
+	winGif.setAttribute("src", "");
+	winGif.classList.add("hidden");
+
+	if (winMul >= 3 && winMul < 5) {
+		winAmountBox.classList.remove("hidden");
+		winAmountCounting.textContent = "0.00";
+		cantSpin = true;
+
+		winAmountInterval = setInterval(() => {
+			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
+				amountOfWin += 0.1;
+				winAmountCounting.textContent = amountOfWin.toFixed(2);
+			} else {
+				winAmountCounting.textContent = (
+					Number(betAmount.textContent) * winMul
+				).toFixed(2);
+				clearInterval(winAmountInterval);
+				setTimeout(() => {
+					winAmountBox.classList.add("hidden");
+					cantSpin = false;
+				}, 2500);
+			}
+		}, 10);
+	} else if (winMul >= 5 && winMul < 7.5) {
+		winAmountBox.classList.remove("hidden");
+		winAmountCounting.textContent = "0.00";
+		cantSpin = true;
+		winGif.setAttribute("src", "../dist/img/other/midwinbananarush.gif");
+		winGif.classList.remove("hidden");
+
+		winAmountInterval = setInterval(() => {
+			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
+				amountOfWin += 0.25;
+				winAmountCounting.textContent = amountOfWin.toFixed(2);
+			} else {
+				winAmountCounting.textContent = (
+					Number(betAmount.textContent) * winMul
+				).toFixed(2);
+				clearInterval(winAmountInterval);
+				setTimeout(() => {
+					winAmountBox.classList.add("hidden");
+					cantSpin = false;
+				}, 2500);
+			}
+		}, 10);
+	} else if (winMul >= 7.5 && winMul < 10) {
+		winAmountBox.classList.remove("hidden");
+		winAmountCounting.textContent = "0.00";
+		cantSpin = true;
+		winGif.setAttribute("src", "../dist/img/other/bigwinbananarush.gif");
+		winGif.classList.remove("hidden");
+
+		winAmountInterval = setInterval(() => {
+			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
+				amountOfWin += 0.5;
+				winAmountCounting.textContent = amountOfWin.toFixed(2);
+			} else {
+				winAmountCounting.textContent = (
+					Number(betAmount.textContent) * winMul
+				).toFixed(2);
+				clearInterval(winAmountInterval);
+				setTimeout(() => {
+					winAmountBox.classList.add("hidden");
+					cantSpin = false;
+				}, 2500);
+			}
+		}, 10);
+	} else if (winMul >= 10) {
+		winAmountBox.classList.remove("hidden");
+		winAmountCounting.textContent = "0.00";
+		cantSpin = true;
+		winGif.setAttribute("src", "../dist/img/other/hugewinbananarush.gif");
+		winGif.classList.remove("hidden");
+
+		winAmountInterval = setInterval(() => {
+			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
+				amountOfWin += 0.75;
+				winAmountCounting.textContent = amountOfWin.toFixed(2);
+			} else {
+				winAmountCounting.textContent = (
+					Number(betAmount.textContent) * winMul
+				).toFixed(2);
+				clearInterval(winAmountInterval);
+				setTimeout(() => {
+					winAmountBox.classList.add("hidden");
+					cantSpin = false;
+				}, 2500);
+			}
+		}, 10);
 	}
 };
 
@@ -441,7 +540,9 @@ setInterval(() => {
 betBtn.addEventListener("click", () => {
 	if (
 		spinning === false &&
-		Number(localStorage.getItem("Balance")) - Number(betAmount.textContent) >= 0
+		Number(localStorage.getItem("Balance")) - Number(betAmount.textContent) >=
+			0 &&
+		cantSpin === false
 	) {
 		spinBox.forEach((slot) => (slot.style.transform = `translate3d(0, 0, 0)`));
 		setTimeout(() => {
@@ -451,16 +552,15 @@ betBtn.addEventListener("click", () => {
 });
 
 addBetAmount.addEventListener("click", () => {
-	if(Number(betAmount.textContent) < 10) {
-		betAmount.textContent = (Number(betAmount.textContent) + 1).toFixed(2)
+	if (Number(betAmount.textContent) < 10) {
+		betAmount.textContent = (Number(betAmount.textContent) + 1).toFixed(2);
 	}
-})
+});
 
 removeBetAmount.addEventListener("click", () => {
-	if(Number(betAmount.textContent) > 1) {
-		betAmount.textContent = (Number(betAmount.textContent) - 1).toFixed(2)
+	if (Number(betAmount.textContent) > 1) {
+		betAmount.textContent = (Number(betAmount.textContent) - 1).toFixed(2);
 	}
-})
+});
 
 setTime();
-
