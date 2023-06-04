@@ -17,6 +17,7 @@ const winGif = document.querySelector(".win-amount__gif");
 const winAmountCounting = document.querySelector(".win-amount__text");
 const winAmountBox = document.querySelector(".win-amount");
 const removeBetAmount = document.querySelector("#remove");
+const winAnimationBg = document.querySelector(".win-amount__bg");
 const music = new Audio("./dist/audio/bananarushmusic.wav");
 const won = new Audio("./dist/audio/bananarushwin.wav");
 const lost = new Audio("./dist/audio/bananarushlost.wav");
@@ -34,6 +35,7 @@ const min = document.querySelector(".main-slot__min");
 const betAmount = document.querySelector("#betamount");
 const winAmount = document.querySelector("#winamount");
 const balanceAmount = document.querySelector("#balanceamount");
+const letsGo = new Audio("./dist/audio/letsgo.mp3");
 const speed = 3620;
 let winMul = 0;
 let cantSpin = false;
@@ -45,7 +47,7 @@ let rowsElement = [[], [], []];
 let speedOfAnim = 0;
 let spinning = false;
 let winningIcons = 0;
-music.volume = 0.25;
+music.volume = 0.1;
 music.loop = true;
 
 balanceAmount.textContent = localStorage.getItem("Balance");
@@ -406,6 +408,10 @@ const wonAnimCheck = () => {
 	winGif.setAttribute("src", "");
 	winGif.classList.add("hidden");
 
+	winAnimationBg.addEventListener("click", () => {
+		amountOfWin = Number(betAmount.textContent) * winMul;
+	});
+
 	if (winMul >= 3 && winMul < 5) {
 		winAmountBox.classList.remove("hidden");
 		winAmountCounting.textContent = "0.00";
@@ -423,15 +429,18 @@ const wonAnimCheck = () => {
 				setTimeout(() => {
 					winAmountBox.classList.add("hidden");
 					cantSpin = false;
+					letsGo.pause()
+					letsGo.currentTime = 0;
 				}, 2500);
 			}
-		}, 10);
+		}, 100);
 	} else if (winMul >= 5 && winMul < 7.5) {
 		winAmountBox.classList.remove("hidden");
 		winAmountCounting.textContent = "0.00";
 		cantSpin = true;
-		winGif.setAttribute("src", "../dist/img/other/midwinbananarush.gif");
+		winGif.setAttribute("src", "./dist/img/other/midwinbananarush.gif");
 		winGif.classList.remove("hidden");
+		letsGo.play();
 
 		winAmountInterval = setInterval(() => {
 			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
@@ -445,15 +454,18 @@ const wonAnimCheck = () => {
 				setTimeout(() => {
 					winAmountBox.classList.add("hidden");
 					cantSpin = false;
+					letsGo.pause()
+					letsGo.currentTime = 0;
 				}, 2500);
 			}
-		}, 10);
+		}, 100);
 	} else if (winMul >= 7.5 && winMul < 10) {
 		winAmountBox.classList.remove("hidden");
 		winAmountCounting.textContent = "0.00";
 		cantSpin = true;
-		winGif.setAttribute("src", "../dist/img/other/bigwinbananarush.gif");
+		winGif.setAttribute("src", "./dist/img/other/bigwinbananarush.gif");
 		winGif.classList.remove("hidden");
+		letsGo.play();
 
 		winAmountInterval = setInterval(() => {
 			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
@@ -467,15 +479,18 @@ const wonAnimCheck = () => {
 				setTimeout(() => {
 					winAmountBox.classList.add("hidden");
 					cantSpin = false;
+					letsGo.pause()
+					letsGo.currentTime = 0;
 				}, 2500);
 			}
-		}, 10);
+		}, 100);
 	} else if (winMul >= 10) {
 		winAmountBox.classList.remove("hidden");
 		winAmountCounting.textContent = "0.00";
 		cantSpin = true;
-		winGif.setAttribute("src", "../dist/img/other/hugewinbananarush.gif");
+		winGif.setAttribute("src", "./dist/img/other/hugewinbananarush.gif");
 		winGif.classList.remove("hidden");
+		letsGo.play();
 
 		winAmountInterval = setInterval(() => {
 			if (amountOfWin < (Number(betAmount.textContent) * winMul).toFixed(2)) {
@@ -489,9 +504,11 @@ const wonAnimCheck = () => {
 				setTimeout(() => {
 					winAmountBox.classList.add("hidden");
 					cantSpin = false;
+					letsGo.pause()
+					letsGo.currentTime = 0;
 				}, 2500);
 			}
-		}, 10);
+		}, 100);
 	}
 };
 

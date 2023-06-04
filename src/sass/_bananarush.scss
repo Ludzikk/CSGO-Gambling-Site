@@ -250,7 +250,7 @@
 	align-items: center;
 	padding-top: 2em;
 	font-size: 10rem;
-	color: $green-button;
+	color: $white-text;
 
 	&__text {
 		z-index: 5;
@@ -262,7 +262,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.4);
 		z-index: 0;
 	}
 
