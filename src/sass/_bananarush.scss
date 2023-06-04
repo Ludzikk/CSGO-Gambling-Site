@@ -12,7 +12,7 @@
 // 		border: 15px solid red;
 // 		margin-bottom: 4em;
 // 	}
-	
+
 // 	&__boxitem {
 // 		display: flex;
 // 		flex-direction: column;
@@ -89,32 +89,36 @@
 
 .main-slot {
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 75vh;
+	height: 100vh;
+	background: url("/dist/img/other/bananarush.jpg");
+	background-position: center;
+	background-size: cover;
 
 	&__box {
 		display: flex;
 		justify-content: center;
-		background-color: white;
+		background-color: rgba(0, 0, 0, 0.7);
 	}
-	
+
 	&__boxitem {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: center;
-		font-size: 8.4rem;
-		border: 1px solid black;
-		height: 150px;
-		width: 150px;
+		font-size: 9em;
+		border: 1px solid purple;
+		height: 200px;
+		width: 200px;
 		overflow: hidden;
+		transition: background-color .3s;
 	}
 
-    &__spin {
-        transition: transform 1s cubic-bezier(0, 0, 0, 0.99);
-    }
+	&__spin {
+		transition: transform 1s cubic-bezier(0, 0, 0, 0.99);
+	}
 
 	&__payout {
 		display: flex;
@@ -148,6 +152,44 @@
 		border-radius: 50%;
 		color: white;
 		background-color: red;
+		cursor: pointer;
+	}
+
+	&__betbox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__win,
+	&__balance,
+	&__bet {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		height: 150px;
+		width: 250px;
+		margin: 0.25em 0.25em;
+		font-size: 4rem;
+		// color: white;
+		background-color: white;
+		border: 1px solid black;
+	}
+
+	&__betbuttons {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+	}
+
+	&__betbutton {
+		width: 50px;
+		height: 50px;
+		font-size: 3rem;
+		border: none;
+		color: white;
+		background: purple;
 		cursor: pointer;
 	}
 }
